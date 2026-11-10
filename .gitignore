@@ -1,0 +1,19 @@
+# Cloudflare & Node
+node_modules/
+.wrangler/
+.env*
+dist/
+
+# Vault Secrets (Air-Gapped, DO NOT COMMIT TO PUBLIC REPO)
+data/resources_vault_secret.json
+backend-cloudflare/vault_kv_data.json
+backend-cloudflare/vault_kv_data.jsonl
+*.pem
+*.key
+
+# Python & OS
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #080808;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* HIỆU ỨNG VÙNG SÁNG TO (GLOW EFFECT) */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+body::before {
+    width: 1000px;
+    height: 1000px;
+    background: #ffffff;
+    top: -400px;
+    left: -300px;
+}
+
+body::after {
+    width: 800px;
+    height: 800px;
+    background: #555;
+    bottom: -200px;
+    right: -200px;
+}
+
+/* CONTAINER CHÍNH - Kích thước 720px theo yêu cầu */
+.container {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 720px; /* Khớp với thông số Inspect của bạn */
+    border-radius: 40px;
+    padding: 40px;
+    margin-bottom: 144px; /* Margin bottom 144px từ thông số của bạn */
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Header & Nav */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.nav-btn {
+    border: 1.5px solid #f0f0f0;
+    background: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar-container {
+    width: 490px;
+    height: 290px;
+    margin: 0 auto 25px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.bio {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.8rem;
+
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #000;
+}
+/* --- ĐỊNH DẠNG MÀU XANH CHO ICON --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 28px; /* Khoảng cách giữa các icon */
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #000000; /* Màu xanh dương rực rỡ như trong ảnh */
+    font-size: 2rem; /* Kích thước icon */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+ .social-link:hover {
+    color: #ffffff; /* Xanh đậm hơn khi di chuột vào */
+    transform: scale(1.2); /* Phóng to nhẹ khi hover */
+}
+
+/* DANH SÁCH LINK - Thiết kế theo ảnh mới */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    background-color: #ebedef; /* Màu nền xám nhạt như ảnh */
+    padding: 16px 20px;
+    border-radius: 100px; /* Bo tròn pill-style */
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.link-item:hover {
+    background-color: #e2e4e6;
+    transform: scale(1.01);
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+.link-text {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 700; /* Chữ đậm như ảnh */
+    font-size: 1.05rem;
+    padding-right: 45px; /* Để bù lại chiều rộng của icon, giúp chữ căn giữa tuyệt đối */
+}
+
+
+
+/*them hieu ung*/
+/* ... (Giữ nguyên toàn bộ CSS cũ của bạn ở trên) ... */
+
+/* =========================================
+   THÊM MỚI: HIỆU ỨNG HẠT BỤI KHÔNG GIAN
+========================================= */
+.bg-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Nằm cùng lớp với vệt sáng mờ */
+    pointer-events: none; /* Không chặn chuột */
+    overflow: hidden;
+}
+
+.bg-particles span {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 3px; /* Kích thước hạt cơ bản */
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4); /* Màu trắng mờ */
+    border-radius: 50%;
+    bottom: -150px; /* Xuất phát từ dưới màn hình */
+    animation: particleAnimation 25s linear infinite;
+}
+
+/* Tạo sự ngẫu nhiên cho từng hạt (vị trí, tốc độ, kích thước) */
+.bg-particles span:nth-child(1) { left: 10%; width: 4px; height: 4px; animation-delay: 0s; animation-duration: 18s; opacity: 0.3; }
+.bg-particles span:nth-child(2) { left: 25%; width: 2px; height: 2px; animation-delay: 2s; animation-duration: 25s; opacity: 0.5; }
+.bg-particles span:nth-child(3) { left: 35%; width: 5px; height: 5px; animation-delay: 4s; animation-duration: 20s; opacity: 0.2; }
+.bg-particles span:nth-child(4) { left: 50%; width: 3px; height: 3px; animation-delay: 0s; animation-duration: 30s; opacity: 0.4; }
+.bg-particles span:nth-child(5) { left: 65%; width: 2px; height: 2px; animation-delay: 6s; animation-duration: 22s; opacity: 0.3; }
+.bg-particles span:nth-child(6) { left: 80%; width: 4px; height: 4px; animation-delay: 3s; animation-duration: 15s; opacity: 0.5; }
+.bg-particles span:nth-child(7) { left: 90%; width: 3px; height: 3px; animation-delay: 8s; animation-duration: 28s; opacity: 0.2; }
+.bg-particles span:nth-child(8) { left: 5%; width: 2px; height: 2px; animation-delay: 12s; animation-duration: 35s; opacity: 0.4; }
+.bg-particles span:nth-child(9) { left: 20%; width: 5px; height: 5px; animation-delay: 10s; animation-duration: 40s; opacity: 0.1; }
+.bg-particles span:nth-child(10){ left: 40%; width: 3px; height: 3px; animation-delay: 5s; animation-duration: 19s; opacity: 0.3; }
+.bg-particles span:nth-child(11){ left: 60%; width: 2px; height: 2px; animation-delay: 15s; animation-duration: 32s; opacity: 0.5; }
+.bg-particles span:nth-child(12){ left: 75%; width: 4px; height: 4px; animation-delay: 7s; animation-duration: 24s; opacity: 0.2; }
+.bg-particles span:nth-child(13){ left: 85%; width: 3px; height: 3px; animation-delay: 1s; animation-duration: 21s; opacity: 0.4; }
+.bg-particles span:nth-child(14){ left: 95%; width: 2px; height: 2px; animation-delay: 11s; animation-duration: 33s; opacity: 0.3; }
+.bg-particles span:nth-child(15){ left: 15%; width: 5px; height: 5px; animation-delay: 9s; animation-duration: 26s; opacity: 0.2; }
+
+/* Chuyển động trôi từ dưới lên trên */
+@keyframes particleAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5; /* Hiện rõ dần */
+    }
+    80% {
+        opacity: 0.5; /* Giữ độ sáng */
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg); /* Bay quá màn hình trên và xoay nhẹ */
+        opacity: 0; /* Mờ dần khi biến mất */
+    }
+}
+
+/* =========================================
+   RESPONSIVE - DÁN VÀO CUỐI FILE CSS
+========================================= */
+
+/* Dành cho Máy tính bảng và màn hình nhỏ hơn 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;          /* Mở rộng chiều ngang container một chút */
+        padding: 30px 20px;  /* Giảm padding 2 bên từ 40px xuống 20px để có chỗ cho nội dung */
+        margin-bottom: 100px; 
+    }
+
+    .avatar-container {
+        width: 200px;       /* Thu nhỏ ảnh đại diện */
+        height: 256px;      /* Giữ tỉ lệ tương đối (tỉ lệ 4:5) */
+    }
+
+    .username {
+        font-size: 1.5rem;  /* Giảm cỡ chữ tên */
+    }
+}
+
+/* Dành cho Điện thoại di động (Màn hình dọc) - Dưới 480px */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;        /* Full màn hình để tận dụng tối đa không gian */
+        border-radius: 30px 30px 0 0; /* Bo tròn phía trên, phía dưới thẳng cho đẹp */
+        padding: 25px 15px; /* Giảm padding tối đa */
+        margin-bottom: 0;   /* Sát đáy màn hình nếu cần */
+        box-shadow: none;   /* Bỏ bóng trên mobile để nhẹ máy */
+    }
+
+    /* Điều chỉnh nút điều hướng trên cùng */
+    .top-nav {
+        margin-bottom: 20px;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Thu nhỏ Avatar hơn nữa */
+    .avatar-container {
+        width: 160px;
+        height: 200px;
+        margin-bottom: 15px;
+    }
+
+    /* Chỉnh lại các nút liên kết để không bị tràn chữ */
+    .link-item {
+        padding: 12px 15px; /* Giảm độ dày nút */
+    }
+
+    .icon-box {
+        width: 35px;       /* Thu nhỏ icon */
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .link-text {
+        font-size: 0.95rem; /* Giảm cỡ chữ link */
+        padding-right: 35px; /* Cân đối lại padding căn giữa */
+        word-wrap: break-word; /* Xuống dòng nếu chữ quá dài */
+    }
+
+    /* Chỉnh lại icon mạng xã hội */
+    .social-icons {
+        gap: 20px;
+    }
+    
+    .social-link {
+        font-size: 1.6rem;
+    }
+}

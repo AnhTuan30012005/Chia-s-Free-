@@ -1,0 +1,39 @@
+name: Auto Sync Resources
+
+on:
+  schedule:
+    # Chạy tự động mỗi Chủ Nhật lúc 00:00 UTC (7h sáng Việt Nam)
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Crawler & Update Data
+        run: |
+          python scripts/crawler.py
+
+      - name: Commit and Push if Changes Detected
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/resources.json index.html
+          if git diff --staged --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "chore(sync): automated resource update via GitHub Action [skip ci]"
+            git push
+          fi
+

@@ -1,0 +1,28 @@
+name = "studio-vault-api"
+main = "src/index.js"
+compatibility_date = "2024-03-01"
+
+[vars]
+ALLOW_ANY_ORIGIN = "false"
+
+# 1. Primary Vault KV (Contains all 72 Google Drive Links)
+# Run `wrangler kv:namespace create VAULT_KV` and paste the generated id below
+[[kv_namespaces]]
+binding = "VAULT_KV"
+id = "VAULT_KV_ID_PLACEHOLDER"
+preview_id = "VAULT_KV_PREVIEW_PLACEHOLDER"
+
+# 2. Ephemeral Single-Use Tickets KV (Burn-On-Read)
+# Run `wrangler kv:namespace create TICKETS_KV` and paste the generated id below
+[[kv_namespaces]]
+binding = "TICKETS_KV"
+id = "TICKETS_KV_ID_PLACEHOLDER"
+preview_id = "TICKETS_KV_PREVIEW_PLACEHOLDER"
+
+# 3. Rate Limit & Telemetry KV
+# Run `wrangler kv:namespace create STATS_KV` and paste the generated id below
+[[kv_namespaces]]
+binding = "STATS_KV"
+id = "STATS_KV_ID_PLACEHOLDER"
+preview_id = "STATS_KV_PREVIEW_PLACEHOLDER"
+
