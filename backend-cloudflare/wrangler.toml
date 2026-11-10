@@ -4,6 +4,12 @@ compatibility_date = "2024-03-01"
 
 [vars]
 ALLOW_ANY_ORIGIN = "false"
+# Telegram Real-time Notification Bot (Optional)
+# Set via: wrangler secret put TELEGRAM_BOT_TOKEN
+# Or un-comment below for testing:
+# TELEGRAM_BOT_TOKEN = "your_bot_token"
+# TELEGRAM_CHAT_ID = "your_chat_id"
+# TELEGRAM_ALERT_ON_CLICK = "false" # Set "true" to also alert on click before PoW completes
 
 # 1. Primary Vault KV (Contains all 72 Google Drive Links)
 # Run `wrangler kv:namespace create VAULT_KV` and paste the generated id below

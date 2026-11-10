@@ -114,6 +114,17 @@ export default {
       const rawPayload = `${clientIp}:${timestamp}:${nonce}:${code}:${secret}`;
       const signature = await sha256(rawPayload);
 
+      // Optional Telegram notification on click event
+      if (env.TELEGRAM_ALERT_ON_CLICK === 'true') {
+        ctx.waitUntil(sendTelegramAlert(env, {
+          code,
+          ip: clientIp,
+          cf: request.cf,
+          ua: request.headers.get('User-Agent') || 'unknown',
+          action: 'challenge'
+        }));
+      }
+
       return new Response(JSON.stringify({
         code,
         seed: nonce,
@@ -241,6 +252,15 @@ export default {
           })());
         }
 
+        // Asynchronous Telegram Notification Dispatcher (Zero Client Latency)
+        ctx.waitUntil(sendTelegramAlert(env, {
+          code,
+          ip: clientIp,
+          cf: request.cf,
+          ua: request.headers.get('User-Agent') || 'unknown',
+          action: 'unlocked'
+        }));
+
         return new Response(JSON.stringify({
           success: true,
           ticket: ticketId,
@@ -334,6 +354,64 @@ export default {
     return new Response(JSON.stringify({ error: 'Endpoint Not Found' }), { status: 404, headers });
   }
 };
+
+// Asynchronous Telegram Notification Dispatcher (Zero Client Latency)
+async function sendTelegramAlert(env, details) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  const chatId = env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return;
+
+  try {
+    const { code, ip, cf, ua, action } = details;
+    const city = cf?.city || 'Unknown';
+    const region = cf?.region || '';
+    const country = cf?.country || 'VN';
+    const isp = cf?.asOrganization || 'ISP';
+    const locStr = region ? `${city}, ${region}, ${country}` : `${city}, ${country}`;
+    
+    // Convert to Vietnam Time (GMT+7)
+    const nowVn = new Date(Date.now() + 7 * 3600 * 1000)
+      .toISOString()
+      .replace('T', ' ')
+      .substring(0, 19);
+
+    const isUnlock = (action === 'unlocked');
+    const headerTitle = isUnlock
+      ? '🚀 <b>[STUDIO ARCHIVE] CÓ KHÁCH VỪA MỞ KHÓA TÀI NGUYÊN</b>'
+      : '👀 <b>[STUDIO ARCHIVE] CÓ KHÁCH BẤM MỞ KHÓA</b>';
+
+    const statusBadge = isUnlock
+      ? '✅ <i>Đã giải mã PoW thành công & cấp vé tải 45s</i>'
+      : '⏳ <i>Khách vừa bấm nút Mở Khoá trên web</i>';
+
+    const cleanUa = (ua || 'Trình duyệt ẩn').replace(/[<>&]/g, '');
+
+    const text = [
+      headerTitle,
+      '',
+      `📦 <b>Tài nguyên:</b> <code>#${code}</code>`,
+      `📍 <b>Vị trí:</b> ${locStr}`,
+      `🌐 <b>Địa chỉ IP:</b> <code>${ip}</code> (${isp})`,
+      `💻 <b>Thiết bị:</b> <i>${cleanUa.substring(0, 80)}</i>`,
+      `⏱️ <b>Thời gian:</b> <code>${nowVn}</code> (Giờ VN)`,
+      `🛡️ <b>Trạng thái:</b> ${statusBadge}`
+    ].join('\n');
+
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: text,
+        parse_mode: 'HTML',
+        disable_web_page_preview: true
+      })
+    });
+  } catch (err) {
+    // Fail-safe: Never block worker execution
+    console.error('Telegram alert dispatch error:', err);
+  }
+}
 
 // Aesthetic midnight navy error page for expired/invalid burn tickets
 function errorPage(message, status = 403) {
