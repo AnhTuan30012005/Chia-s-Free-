@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Studio Archive Automated Crawler & Sanitizer
-Runs periodically via GitHub Actions to sync new resources from public feeds,
-bypassing countdown gates and removing legacy brand names.
+Studio Archive Air-Gapped Crawler & Sanitizer
+Syncs new resources from public feeds, sanitizes names,
+stores metadata in public resources.json (ZERO URLs),
+and vaults raw Drive URLs exclusively into local git-ignored vault files.
 """
 
 import os
@@ -12,11 +13,11 @@ import urllib.parse
 import re
 
 DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "resources.json")
-INDEX_FILE = os.path.join(os.path.dirname(__file__), "..", "index.html")
+SECRET_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "resources_vault_secret.json")
+KV_FILE = os.path.join(os.path.dirname(__file__), "..", "backend-cloudflare", "vault_kv_data.json")
 
 FEED_URL = "https://www.tungmuvang.in/feeds/posts/default?alt=json&max-results=50"
 
-# Banned keywords to sanitize
 BANNED_WORDS = [
     r"Tùng Mũ Vàng", r"TÙNG MŨ VÀNG", r"TungMuVang", r"tungmuvang",
     r"TMV", r"tmv", r"ZunPhoto", r"Zun Photo", r"zunphoto"
@@ -39,7 +40,7 @@ def extract_drive_from_redirect(url):
     return url
 
 def run_sync():
-    print("Starting Studio Archive Feed Sync...")
+    print("Starting Air-Gapped Studio Feed Sync...")
     if not os.path.exists(DATA_FILE):
         print(f"Error: {DATA_FILE} not found.")
         return
@@ -47,9 +48,17 @@ def run_sync():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         existing_resources = json.load(f)
 
-    # Collect existing URLs to prevent duplicate entries
-    existing_urls = set(item["url"] for item in existing_resources)
-    existing_titles = set(item["title"].lower() for item in existing_resources)
+    # Load secret vault to avoid duplicate URL checks
+    vault_data = []
+    if os.path.exists(SECRET_FILE):
+        try:
+            with open(SECRET_FILE, "r", encoding="utf-8") as f:
+                vault_data = json.load(f)
+        except Exception:
+            vault_data = []
+
+    existing_titles = set(item.get("title", "").lower() for item in existing_resources)
+    existing_urls = set(item.get("url", "") for item in vault_data if "url" in item)
 
     req = urllib.request.Request(FEED_URL, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
     try:
@@ -62,14 +71,21 @@ def run_sync():
     entries = data.get("feed", {}).get("entry", [])
     print(f"Feed fetched: {len(entries)} posts retrieved.")
 
-    new_items_added = 0
+    new_public_items = 0
     next_stt = max([item.get("stt", 0) for item in existing_resources] + [0]) + 1
+
+    kv_payload = []
+    if os.path.exists(KV_FILE):
+        try:
+            with open(KV_FILE, "r", encoding="utf-8") as f:
+                kv_payload = json.load(f)
+        except Exception:
+            kv_payload = []
 
     for e in entries:
         raw_title = e.get("title", {}).get("$t", "")
         content = e.get("content", {}).get("$t", "")
 
-        # Find drive or redirect links
         drives = re.findall(r'https://drive\.google\.com/[^\s"\'<>]+', content)
         redirects = re.findall(r'https://www\.tungmuvang\.in/p/chuyen-huong[^\s"\'<>]+', content)
 
@@ -84,11 +100,9 @@ def run_sync():
 
         clean_title = sanitize_text(raw_title)
 
-        # Check for duplication
         if target_url in existing_urls or clean_title.lower() in existing_titles:
             continue
 
-        # Classify category
         cats = [c.get("term", "") for c in e.get("category", [])]
         cat_code = "software"
         cat_name = "Phần Mềm & Panel"
@@ -107,30 +121,53 @@ def run_sync():
             cat_code = "courses"
             cat_name = "Khóa Học & Tài Liệu"
 
-        new_entry = {
+        code = f"L-{next_stt:02d}"
+
+        # 1. Public Item (Air-gapped: ZERO URLs)
+        public_entry = {
+            "code": code,
             "stt": next_stt,
+            "series": "lab",
+            "series_name": "Lab Tools",
+            "series_badge": "L",
             "title": clean_title,
-            "url": target_url,
             "category": cat_code,
             "cat_name": cat_name,
             "format": "Google Drive Cloud",
             "platform": "Universal",
             "tag": "Auto Synced",
-            "desc": f"Tài nguyên {clean_title} được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+            "desc": f"Tài nguyên {clean_title} được đồng bộ vào kho an toàn Cloudflare Edge.",
+            "has_link": True
         }
 
-        existing_resources.append(new_entry)
+        # 2. Secret Vault Item (Git-ignored)
+        secret_entry = dict(public_entry)
+        secret_entry["url"] = target_url
+
+        existing_resources.append(public_entry)
+        vault_data.append(secret_entry)
+        kv_payload.append({"key": f"res:{code}", "value": target_url})
+
         existing_urls.add(target_url)
         existing_titles.add(clean_title.lower())
         next_stt += 1
-        new_items_added += 1
-        print(f" + Added new item #{new_entry['stt']}: {clean_title}")
+        new_public_items += 1
+        print(f" + Added air-gapped item #{code}: {clean_title}")
 
-    if new_items_added > 0:
+    if new_public_items > 0:
+        # Write sanitized public resources.json (0 URLs)
         with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(existing_resources, f, ensure_ascii=False, indent=2)
-        print(f"Sync complete: {new_items_added} new items added to {DATA_FILE}.")
-        # Rebuild index.html
+
+        # Write secret backup (git-ignored)
+        with open(SECRET_FILE, "w", encoding="utf-8") as f:
+            json.dump(vault_data, f, ensure_ascii=False, indent=2)
+
+        # Write KV bulk data for Cloudflare Workers (git-ignored)
+        with open(KV_FILE, "w", encoding="utf-8") as f:
+            json.dump(kv_payload, f, ensure_ascii=False, indent=2)
+
+        print(f"Sync complete: {new_public_items} items added without exposing raw URLs.")
         try:
             from build_html import build
             build()

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import html as html_escape
 
 repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 json_path = os.path.join(repo_dir, "data", "resources.json")
@@ -35,6 +36,17 @@ def build():
             "courses": "text-blue-300 bg-blue-500/10 border-blue-400/25"
         }.get(item["category"], "text-slate-300 bg-slate-800 border-slate-700")
 
+        # Anti-XSS Sanitization (Strict HTML Escaping)
+        safe_title = html_escape.escape(item.get("title", ""), quote=True)
+        safe_desc = html_escape.escape(item.get("desc", ""), quote=True)
+        safe_format = html_escape.escape(item.get("format", ""), quote=True)
+        safe_tag = html_escape.escape(item.get("tag", ""), quote=True)
+        safe_platform = html_escape.escape(item.get("platform", "Universal"), quote=True)
+        safe_cat_name = html_escape.escape(item.get("cat_name", ""), quote=True)
+        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')}"
+        safe_search = html_escape.escape(raw_search, quote=True)
+        js_title = item.get('title', '').replace('\\', '\\\\').replace("'", " ").replace('"', ' ')
+
         # Responsive 2-column card architecture (p-3 sm:p-5, compact text and magnetic buttons)
         cards_html += f"""
             <!-- Resource Card #{code} (Responsive 2-Col Mobile, Dark Navy & Ice White) -->
@@ -42,7 +54,7 @@ def build():
                  style="--spotlight-color: {spotlight_color};"
                  data-series="{series}"
                  data-cat="{item['category']}"
-                 data-search="{code} #{code} {item['title']} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')}">
+                 data-search="{safe_search}">
                 
                 <!-- Card Header with Z-Elevation -->
                 <div class="space-y-1.5 sm:space-y-3 card-inner-elevate relative z-10">
@@ -54,21 +66,21 @@ def build():
                             {series_badge}
                         </div>
                         <span class="px-1.5 sm:px-2 py-0.5 rounded text-[8px] sm:text-[10px] font-bold uppercase tracking-wider border {category_badge}">
-                            {item['cat_name']}
+                            {safe_cat_name}
                         </span>
                     </div>
 
                     <div class="space-y-1">
                         <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-slate-400 truncate">
-                            <span class="truncate">{item.get('format', '')}</span>
+                            <span class="truncate">{safe_format}</span>
                             <span class="text-slate-600">•</span>
-                            <span class="text-cyan-300 font-semibold truncate">{item.get('tag', '')}</span>
+                            <span class="text-cyan-300 font-semibold truncate">{safe_tag}</span>
                         </div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-100 transition-colors leading-snug line-clamp-2" title="{item['title']}">
-                            {item['title']}
+                        <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-100 transition-colors leading-snug line-clamp-2" title="{safe_title}">
+                            {safe_title}
                         </h3>
                         <p class="text-[10px] sm:text-xs text-slate-400 leading-relaxed line-clamp-1 sm:line-clamp-2">
-                            {item.get('desc', '')}
+                            {safe_desc}
                         </p>
                     </div>
                 </div>
@@ -77,18 +89,18 @@ def build():
                 <div class="space-y-2 sm:space-y-3 pt-2 sm:pt-3 border-t border-white/[0.08] card-inner-elevate relative z-10">
                     <div class="hidden sm:flex items-center justify-between text-[11px] text-slate-400 font-mono">
                         <span class="flex items-center gap-1"><i data-lucide="monitor" class="w-3 h-3 text-cyan-400/60"></i> Hệ thống:</span>
-                        <span class="text-slate-200">{item.get('platform', 'Universal')}</span>
+                        <span class="text-slate-200">{safe_platform}</span>
                     </div>
                     
                     <div class="flex items-center justify-between gap-1.5 sm:gap-2.5">
-                        <button onclick="triggerSecureVault('{code}', '{item.get('title', '').replace("'", " ").replace('"', ' ')}', 'copy')"
+                        <button onclick="triggerSecureVault('{code}', '{js_title}', 'copy')"
                                 id="btn-copy-{code}"
                                 class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-[#0e182e] hover:bg-[#152342] text-[10px] sm:text-xs font-semibold text-slate-300 hover:text-white border border-cyan-500/20 hover:border-cyan-400/40 transition-all flex items-center justify-center gap-1 active:scale-95">
                             <i data-lucide="copy" class="w-3 h-3 text-cyan-400"></i>
                             <span class="truncate">Sao Chép</span>
                         </button>
                         
-                        <button onclick="triggerSecureVault('{code}', '{item.get('title', '').replace("'", " ").replace('"', ' ')}', 'download')"
+                        <button onclick="triggerSecureVault('{code}', '{js_title}', 'download')"
                                 id="btn-dl-{code}"
                                 class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 hover:text-white text-[10px] sm:text-xs font-semibold border border-cyan-400/40 transition-all flex items-center justify-center gap-1 active:scale-95 shadow-md shadow-cyan-950">
                             <i data-lucide="shield-check" class="w-3 h-3 text-cyan-300"></i>
@@ -972,10 +984,10 @@ def build():
 
                 showHudToast(`Đang xác thực bảo mật tài nguyên #${{code}}...`, 'info');
                 
-                // 1. Request PoW Challenge
+                // 1. Request PoW Challenge cryptographically bound to resource code
                 let challengeRes;
                 try {{
-                    challengeRes = await fetch(`${{endpoint}}/api/challenge`, {{
+                    challengeRes = await fetch(`${{endpoint}}/api/challenge?code=${{encodeURIComponent(code)}}`, {{
                         headers: {{ 'Accept': 'application/json' }}
                     }});
                 }} catch (netErr) {{

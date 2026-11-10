@@ -1,9 +1,10 @@
 name: Auto Sync Resources
 
 on:
-  schedule:
-    # Chạy tự động mỗi Chủ Nhật lúc 00:00 UTC (7h sáng Việt Nam)
-    - cron: '0 0 * * 0'
+  # Tắt cron tự động ngầm để tránh vô tình leak dữ liệu nếu feed bị đổi
+  # Chỉ kích hoạt thủ công khi quản trị viên bấm 'Run workflow'
+  # schedule:
+  #   - cron: '0 0 * * 0'
   workflow_dispatch:
 
 permissions:

@@ -100,13 +100,22 @@ export default {
     // 3. PoW Challenge Seed Generator (/api/challenge)
     if (path === '/api/challenge' && method === 'GET') {
       const clientIp = getClientIp(request);
+      const code = url.searchParams.get('code') || '';
+      if (!code) {
+        return new Response(JSON.stringify({
+          error: 'Bad Request: Missing target resource code'
+        }), { status: 400, headers });
+      }
+
       const timestamp = Date.now();
       const nonce = crypto.randomUUID();
       const secret = getSignSecret(env);
-      const rawPayload = `${clientIp}:${timestamp}:${nonce}:${secret}`;
+      // Cryptographic binding: IP + timestamp + seed + target code + secret
+      const rawPayload = `${clientIp}:${timestamp}:${nonce}:${code}:${secret}`;
       const signature = await sha256(rawPayload);
 
       return new Response(JSON.stringify({
+        code,
         seed: nonce,
         timestamp,
         difficulty: POW_DIFFICULTY,
@@ -136,13 +145,26 @@ export default {
           }), { status: 403, headers });
         }
 
-        // Verification B: Challenge Signature Integrity
+        // Verification B: Challenge Signature Integrity (Must match exact resource code)
         const secret = getSignSecret(env);
-        const expectedSig = await sha256(`${clientIp}:${timestamp}:${seed}:${secret}`);
+        const expectedSig = await sha256(`${clientIp}:${timestamp}:${seed}:${code}:${secret}`);
         if (signature !== expectedSig) {
           return new Response(JSON.stringify({
-            error: 'Invalid challenge signature.'
+            error: 'Invalid challenge signature or mismatched resource code.'
           }), { status: 403, headers });
+        }
+
+        // Verification B2: Anti-Replay / Seed Burning (Single-Use Challenge)
+        if (env.STATS_KV) {
+          const seedKey = `used_seed:${seed}`;
+          const isReused = await env.STATS_KV.get(seedKey);
+          if (isReused) {
+            return new Response(JSON.stringify({
+              error: 'Thử thách PoW đã được sử dụng (Replay Attack Detected). Vui lòng yêu cầu thử thách mới.'
+            }), { status: 403, headers });
+          }
+          // Burn seed for 120 seconds
+          await env.STATS_KV.put(seedKey, '1', { expirationTtl: 120 });
         }
 
         // Verification C: Proof of Work Verification
