@@ -46,6 +46,9 @@ def build():
         raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')}"
         safe_search = html_escape.escape(raw_search, quote=True)
         js_title = item.get('title', '').replace('\\', '\\\\').replace("'", " ").replace('"', ' ')
+        url = item.get("url", "")
+        safe_url = html_escape.escape(url, quote=True)
+        js_url = url.replace('\\', '\\\\').replace("'", "\\'")
 
         # Responsive 2-column card architecture (p-3 sm:p-5, compact text and magnetic buttons)
         cards_html += f"""
@@ -93,19 +96,21 @@ def build():
                     </div>
                     
                     <div class="flex items-center justify-between gap-1.5 sm:gap-2.5">
-                        <button onclick="triggerSecureVault('{code}', '{js_title}', 'copy')"
+                        <button onclick="copyResourceUrl('{js_url}', '{js_title}')"
                                 id="btn-copy-{code}"
                                 class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-[#0e182e] hover:bg-[#152342] text-[10px] sm:text-xs font-semibold text-slate-300 hover:text-white border border-cyan-500/20 hover:border-cyan-400/40 transition-all flex items-center justify-center gap-1 active:scale-95">
                             <i data-lucide="copy" class="w-3 h-3 text-cyan-400"></i>
                             <span class="truncate">Sao Chép</span>
                         </button>
                         
-                        <button onclick="triggerSecureVault('{code}', '{js_title}', 'download')"
-                                id="btn-dl-{code}"
-                                class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 hover:text-white text-[10px] sm:text-xs font-semibold border border-cyan-400/40 transition-all flex items-center justify-center gap-1 active:scale-95 shadow-md shadow-cyan-950">
-                            <i data-lucide="shield-check" class="w-3 h-3 text-cyan-300"></i>
-                            <span class="truncate font-bold">Mở Khoá</span>
-                        </button>
+                        <a href="{safe_url}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           id="btn-dl-{code}"
+                           class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-[10px] sm:text-xs font-semibold border border-sky-400/40 transition-all flex items-center justify-center gap-1 active:scale-95 shadow-md shadow-sky-950">
+                            <i data-lucide="external-link" class="w-3 h-3 text-white"></i>
+                            <span class="truncate font-bold">Tải Drive</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -377,48 +382,6 @@ def build():
         <span class="text-xs font-semibold text-slate-100" id="toastTitle">Đã xác thực</span>
     </div>
 
-    <!-- VAULT SHIELD MODAL (Edge Cloudflare Backend Notice / Settings) -->
-    <div id="vaultModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative w-full max-w-md p-6 bg-[#091122] border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-950/80 text-white">
-            <div class="flex items-center justify-between pb-4 border-b border-white/10">
-                <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                    <h3 class="text-sm font-bold text-slate-100 font-mono uppercase tracking-wide">Shield Vault Protocol</h3>
-                </div>
-                <button onclick="closeVaultModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5 transition-colors">
-                    <i data-lucide="x" class="w-4 h-4"></i>
-                </button>
-            </div>
-            <div class="py-4 space-y-3 text-xs leading-relaxed text-slate-300">
-                <div class="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-cyan-200">
-                    <p class="font-semibold mb-1 flex items-center gap-1.5">
-                        <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-cyan-400"></i>
-                        Bảo Mật Air-Gapped Kích Hoạt
-                    </p>
-                    <p class="text-[11px] text-slate-300">
-                        Toàn bộ 72 liên kết Drive được cách ly trên Cloudflare Edge KV và bảo vệ bằng thuật toán PoW + Vé hủy 1 lần (Burn-on-read).
-                    </p>
-                </div>
-                <p>
-                    Để kết nối trực tiếp, hãy triển khai Cloudflare Worker trong thư mục <code class="text-cyan-300 bg-white/5 px-1 py-0.5 rounded font-mono">backend-cloudflare</code> theo hướng dẫn trong README.md.
-                </p>
-                <div class="pt-2">
-                    <label class="block text-[11px] font-mono text-slate-400 mb-1">Cấu hình URL Worker Edge của bạn:</label>
-                    <input id="customWorkerInput" type="text" placeholder="https://studio-vault-api.<user>.workers.dev" 
-                           class="w-full px-3 py-2 text-xs rounded-lg bg-[#040711] border border-cyan-500/30 text-white focus:outline-none focus:border-cyan-400 font-mono">
-                </div>
-            </div>
-            <div class="flex items-center justify-end gap-2 pt-3 border-t border-white/10">
-                <button onclick="closeVaultModal()" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors">
-                    Đóng
-                </button>
-                <button onclick="saveCustomWorkerUrl()" class="px-4 py-1.5 text-xs font-bold rounded-lg bg-cyan-500 hover:bg-cyan-400 text-[#040711] transition-all">
-                    Lưu Kết Nối
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- 1. 3D LANDSCAPE HERO (DEEP DARK NAVY, ICE BLUE & MOON ARCHITECTURE) -->
     <section id="landscape3d-wrapper">
         <canvas id="landscape3d-canvas"></canvas>
@@ -444,10 +407,6 @@ def build():
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <button onclick="showVaultConfigModal()" class="px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-cyan-950/40 hover:bg-cyan-900/50 backdrop-blur-md border border-cyan-400/30 text-[10px] sm:text-xs font-mono text-cyan-300 flex items-center gap-1.5 transition-all" title="Cấu hình kết nối Cloudflare Vault Edge">
-                        <i data-lucide="shield" class="w-3.5 h-3.5 text-cyan-400"></i>
-                        <span id="navVaultStatus">Vault API</span>
-                    </button>
                     <div class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl bg-[#040711]/70 backdrop-blur-md border border-cyan-400/30 text-[11px] sm:text-xs font-mono text-slate-200 flex items-center gap-1.5 sm:gap-2">
                         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                         <span class="font-bold text-white" id="navCounter">{total_count}</span> <span class="hidden xs:inline">Resources</span>
@@ -1048,280 +1007,40 @@ def build():
             }}, 3200);
         }}
 
-        function getVaultEndpoint() {{
-            const stored = localStorage.getItem('vault_worker_url');
-            if (stored && stored.startsWith('http')) return stored.trim().replace(/\/+$/, '');
-            return '';
-        }}
-
-        function updateNavVaultStatus() {{
-            const statusEl = document.getElementById('navVaultStatus');
-            const ep = getVaultEndpoint();
-            if (statusEl) {{
-                if (ep) {{
-                    statusEl.textContent = 'Vault: Live';
-                    statusEl.parentElement.classList.remove('text-cyan-300', 'bg-cyan-950/40');
-                    statusEl.parentElement.classList.add('text-emerald-300', 'bg-emerald-950/40', 'border-emerald-500/30');
-                }} else {{
-                    statusEl.textContent = 'Cấu hình Vault';
-                    statusEl.parentElement.classList.remove('text-emerald-300', 'bg-emerald-950/40');
-                    statusEl.parentElement.classList.add('text-cyan-300', 'bg-cyan-950/40');
-                }}
-            }}
-        }}
-
-        function showVaultConfigModal(code, title) {{
-            const modal = document.getElementById('vaultModal');
-            const input = document.getElementById('customWorkerInput');
-            if (input) input.value = localStorage.getItem('vault_worker_url') || '';
-            if (modal) {{
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100', 'pointer-events-auto');
-            }}
-        }}
-
-        function closeVaultModal() {{
-            const modal = document.getElementById('vaultModal');
-            if (modal) {{
-                modal.classList.remove('opacity-100', 'pointer-events-auto');
-                modal.classList.add('opacity-0', 'pointer-events-none');
-            }}
-        }}
-
-        function saveCustomWorkerUrl() {{
-            const input = document.getElementById('customWorkerInput');
-            if (input && input.value.trim()) {{
-                const clean = input.value.trim().replace(/\/+$/, '');
-                localStorage.setItem('vault_worker_url', clean);
-                showHudToast('Đã lưu cấu hình Cloudflare Worker!', 'success');
-                updateNavVaultStatus();
-                closeVaultModal();
-            }}
-        }}
-
-        async function sha256Hex(str) {{
-            const encoder = new TextEncoder();
-            const data = encoder.encode(str);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }}
-
-        // Background Web Worker PoW Solver (Eliminates UI Thread Starvation)
-        function solvePoW(seed, difficulty) {{
-            return new Promise((resolve, reject) => {{
-                if (window.Worker) {{
-                    const workerCode = `
-                        async function h(s) {{
-                            const b = new TextEncoder().encode(s);
-                            const d = await crypto.subtle.digest('SHA-256', b);
-                            return Array.from(new Uint8Array(d)).map(x => x.toString(16).padStart(2, '0')).join('');
-                        }}
-                        self.onmessage = async (e) => {{
-                            const {{ seed, difficulty }} = e.data;
-                            const target = '0'.repeat(difficulty || 3);
-                            let nonce = 0;
-                            while (true) {{
-                                const hash = await h(seed + ':' + nonce);
-                                if (hash.startsWith(target)) {{
-                                    self.postMessage({{ success: true, nonce, hash }});
-                                    break;
-                                }}
-                                nonce++;
-                                if (nonce > 500000) {{
-                                    self.postMessage({{ success: false, nonce }});
-                                    break;
-                                }}
-                            }}
-                        }};
-                    `;
-                    try {{
-                        const blob = new Blob([workerCode], {{ type: 'application/javascript' }});
-                        const workerUrl = URL.createObjectURL(blob);
-                        const worker = new Worker(workerUrl);
-                        const timer = setTimeout(() => {{
-                            worker.terminate();
-                            URL.revokeObjectURL(workerUrl);
-                            reject(new Error('PoW solving timeout'));
-                        }}, 25000);
-
-                        worker.onmessage = (e) => {{
-                            clearTimeout(timer);
-                            worker.terminate();
-                            URL.revokeObjectURL(workerUrl);
-                            if (e.data.success) resolve(e.data);
-                            else reject(new Error('PoW maximum iterations reached'));
-                        }};
-                        worker.onerror = (err) => {{
-                            clearTimeout(timer);
-                            worker.terminate();
-                            URL.revokeObjectURL(workerUrl);
-                            reject(err);
-                        }};
-                        worker.postMessage({{ seed, difficulty }});
-                        return;
-                    }} catch (e) {{}}
-                }}
-
-                // Main thread fallback if Worker creation fails
-                (async () => {{
-                    const target = '0'.repeat(difficulty || 3);
-                    let nonce = 0;
-                    while (true) {{
-                        const hash = await sha256Hex(`${{seed}}:${{nonce}}`);
-                        if (hash.startsWith(target)) {{
-                            resolve({{ success: true, nonce, hash }});
-                            break;
-                        }}
-                        nonce++;
-                        if (nonce > 200000) {{
-                            reject(new Error('PoW limit reached'));
-                            break;
-                        }}
-                    }}
-                }})();
-            }});
-        }}
-
-        async function triggerSecureVault(code, title, mode) {{
-            const btnDl = document.getElementById(`btn-dl-${{code}}`);
-            const btnCopy = document.getElementById(`btn-copy-${{code}}`);
-            const activeBtn = (mode === 'download') ? btnDl : btnCopy;
-            const originalHtml = activeBtn ? activeBtn.innerHTML : '';
-
-            // Synchronous transient activation: open blank tab synchronously to prevent popup blocking
-            let targetTab = null;
-            if (mode === 'download') {{
-                targetTab = window.open('about:blank', '_blank');
-                if (targetTab) {{
-                    try {{
-                        targetTab.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Studio Vault · Đang Mở Khoá #${{code}}</title><style>body{{background:#040711;color:#f0f9ff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}}.box{{text-align:center;background:#091122;border:1px solid rgba(56,189,248,0.3);border-radius:16px;padding:36px 28px;box-shadow:0 0 50px rgba(56,189,248,0.15);max-width:400px;}}.spin{{width:32px;height:32px;border:3px solid rgba(56,189,248,0.2);border-top-color:#38bdf8;border-radius:50%;animation:sp 0.8s linear infinite;margin:0 auto 16px;}}@keyframes sp{{to{{transform:rotate(360deg);}}}}</style></head><body><div class="box"><div class="spin"></div><h3 style="margin:0 0 8px;font-size:16px;">Đang Xác Thực Bảo Mật</h3><p style="margin:0;font-size:13px;color:#94a3b8;">Đang giải mã Proof-of-Work và cấp vé tải cho #${{code}}...</p></div></body></html>`);
-                    }} catch (e) {{}}
-                }}
-            }}
-            
-            const endpoint = getVaultEndpoint();
-            if (!endpoint) {{
-                if (targetTab) targetTab.close();
-                showVaultConfigModal(code, title);
-                showHudToast('Cần kết nối Cloudflare Worker Edge để mở khóa link!', 'info');
+        async function copyResourceUrl(url, title) {{
+            if (!url) {{
+                showHudToast('Liên kết đang cập nhật...', 'info');
                 return;
             }}
-
+            let copied = false;
             try {{
-                if (activeBtn) {{
-                    activeBtn.innerHTML = `<span class="inline-block animate-spin mr-1">⟳</span><span class="truncate">Đang giải mã...</span>`;
-                    activeBtn.disabled = true;
+                if (navigator.clipboard && navigator.clipboard.writeText) {{
+                    await navigator.clipboard.writeText(url);
+                    copied = true;
                 }}
+            }} catch (e) {{}}
 
-                showHudToast(`Đang xác thực bảo mật tài nguyên #${{code}}...`, 'info');
-                
-                // 1. Request PoW Challenge cryptographically bound to resource code
-                let challengeRes;
+            if (!copied) {{
                 try {{
-                    challengeRes = await fetch(`${{endpoint}}/api/challenge?code=${{encodeURIComponent(code)}}`, {{
-                        headers: {{ 'Accept': 'application/json' }}
-                    }});
-                }} catch (netErr) {{
-                    if (targetTab) targetTab.close();
-                    showVaultConfigModal(code, title);
-                    showHudToast('Lỗi mạng: Không kết nối được URL Worker đã lưu.', 'error');
-                    return;
-                }}
+                    const ta = document.createElement('textarea');
+                    ta.value = url;
+                    ta.style.position = 'fixed';
+                    ta.style.left = '-9999px';
+                    ta.style.top = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    copied = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }} catch (e) {{}}
+            }}
 
-                if (!challengeRes.ok) {{
-                    if (targetTab) targetTab.close();
-                    showVaultConfigModal(code, title);
-                    showHudToast('Lỗi kết nối Vault Edge Backend.', 'error');
-                    return;
-                }}
-
-                const challenge = await challengeRes.json();
-
-                // 2. Solve Micro Proof-of-Work in background Web Worker (Thread-safe, 0 UI Lag)
-                const powResult = await solvePoW(challenge.seed, challenge.difficulty || 3);
-                const nonce = powResult.nonce;
-
-                // 3. Exchange for One-time Burn Ticket
-                const handshakeRes = await fetch(`${{endpoint}}/api/handshake`, {{
-                    method: 'POST',
-                    headers: {{ 'Content-Type': 'application/json' }},
-                    body: JSON.stringify({{
-                        code: code,
-                        seed: challenge.seed,
-                        timestamp: challenge.timestamp,
-                        nonce: nonce,
-                        signature: challenge.signature
-                    }})
-                }});
-
-                const handshakeData = await handshakeRes.json();
-
-                if (!handshakeRes.ok) {{
-                    if (targetTab) targetTab.close();
-                    if (handshakeRes.status === 429) {{
-                        showHudToast('Tốc độ tải quá nhanh! Vui lòng đợi 60 giây.', 'error');
-                    }} else {{
-                        showHudToast(handshakeData.error || 'Xác thực không thành công.', 'error');
-                    }}
-                    return;
-                }}
-
-                const downloadUrl = handshakeData.download_url;
-
-                // 4. Execute Action
-                if (mode === 'copy') {{
-                    let copied = false;
-                    try {{
-                        if (navigator.clipboard && navigator.clipboard.writeText) {{
-                            await navigator.clipboard.writeText(downloadUrl);
-                            copied = true;
-                        }}
-                    }} catch (clipErr) {{}}
-
-                    if (!copied) {{
-                        try {{
-                            const ta = document.createElement('textarea');
-                            ta.value = downloadUrl;
-                            ta.style.position = 'fixed';
-                            ta.style.left = '-9999px';
-                            ta.style.top = '0';
-                            document.body.appendChild(ta);
-                            ta.focus();
-                            ta.select();
-                            copied = document.execCommand('copy');
-                            document.body.removeChild(ta);
-                        }} catch (e) {{}}
-                    }}
-
-                    if (copied) {{
-                        showHudToast(`Đã sao chép vé tải 1 lần #${{code}} (hết hạn 45s)!`, 'success');
-                    }} else {{
-                        prompt(`Vé tải 1 lần cho #${{code}} (hết hạn 45s). Nhấn Ctrl+C để sao chép:`, downloadUrl);
-                    }}
-                }} else {{
-                    showHudToast(`Đã mở khoá #${{code}}! Đang chuyển hướng...`, 'success');
-                    if (targetTab) {{
-                        targetTab.location.href = downloadUrl;
-                    }} else {{
-                        window.open(downloadUrl, '_blank');
-                    }}
-                }}
-
-            }} catch (err) {{
-                if (targetTab) targetTab.close();
-                console.error('Vault error:', err);
-                showHudToast('Lỗi bảo mật hoặc timeout thuật toán. Vui lòng thử lại.', 'error');
-            }} finally {{
-                if (activeBtn) {{
-                    activeBtn.innerHTML = originalHtml;
-                    activeBtn.disabled = false;
-                }}
+            if (copied) {{
+                showHudToast(`Đã sao chép link Drive: ${{title}}`, 'success');
+            }} else {{
+                prompt(`Nhấn Ctrl+C để sao chép liên kết Drive cho "${{title}}":`, url);
             }}
         }}
-
-        // Initialize Vault status on load
-        updateNavVaultStatus();
     </script>
 </body>
 </html>
