@@ -154,7 +154,19 @@ export default {
           }), { status: 403, headers });
         }
 
-        // Verification B2: Anti-Replay / Seed Burning (Single-Use Challenge)
+        // Verification B2: Anti-Replay / Seed Burning (Strong Consistency via Cache API + KV)
+        const cache = caches.default;
+        const seedCacheUrl = new URL(`https://vault-cache.internal/seed/${seed}`);
+        const cachedSeed = await cache.match(seedCacheUrl);
+        if (cachedSeed) {
+          return new Response(JSON.stringify({
+            error: 'Thử thách PoW đã được sử dụng (Replay Attack Detected). Vui lòng yêu cầu thử thách mới.'
+          }), { status: 403, headers });
+        }
+        ctx.waitUntil(cache.put(seedCacheUrl, new Response('1', {
+          headers: { 'Cache-Control': 'max-age=120' }
+        })));
+
         if (env.STATS_KV) {
           const seedKey = `used_seed:${seed}`;
           const isReused = await env.STATS_KV.get(seedKey);
@@ -163,7 +175,6 @@ export default {
               error: 'Thử thách PoW đã được sử dụng (Replay Attack Detected). Vui lòng yêu cầu thử thách mới.'
             }), { status: 403, headers });
           }
-          // Burn seed for 120 seconds
           await env.STATS_KV.put(seedKey, '1', { expirationTtl: 120 });
         }
 
@@ -271,6 +282,18 @@ export default {
       // Check Expiration
       if (ticketData.expiresAt && Date.now() > ticketData.expiresAt) {
         return errorPage('Vé tải xuống đã hết hạn (chỉ có hiệu lực trong 45 giây).', 403);
+      }
+
+      // Verification D: Client IP & User-Agent Binding (Anti-Ticket Sharing / Anti-Hijacking)
+      const currentIp = getClientIp(request);
+      const currentUaHash = await sha256(request.headers.get('User-Agent') || 'unknown');
+
+      if (ticketData.ip && ticketData.ip !== '127.0.0.1' && ticketData.ip !== currentIp) {
+        return errorPage('Phiếu tải bị khóa theo địa chỉ IP thiết bị yêu cầu ban đầu (IP Binding Mismatched). Vui lòng tự tạo vé tải trên máy của bạn.', 403);
+      }
+
+      if (ticketData.uaHash && ticketData.uaHash !== currentUaHash) {
+        return errorPage('Trình duyệt truy cập không khớp với thiết bị đã giải mã thử thách PoW ban đầu.', 403);
       }
 
       // Retrieve Destination URL from Vault

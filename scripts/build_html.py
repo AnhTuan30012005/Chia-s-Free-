@@ -846,40 +846,76 @@ def build():
         function initCardMotion() {{
             const cards = document.querySelectorAll('.resource-card');
             cards.forEach(card => {{
+                let rect = null;
+                let ticking = false;
+
+                card.addEventListener('mouseenter', () => {{
+                    rect = card.getBoundingClientRect();
+                }});
+
                 card.addEventListener('mousemove', (e) => {{
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    card.style.setProperty('--card-x', `${{x}}px`);
-                    card.style.setProperty('--card-y', `${{y}}px`);
+                    if (!rect) rect = card.getBoundingClientRect();
+                    const clientX = e.clientX;
+                    const clientY = e.clientY;
 
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = ((y - centerY) / centerY) * -6.5;
-                    const rotateY = ((x - centerX) / centerX) * 6.5;
+                    if (!ticking) {{
+                        requestAnimationFrame(() => {{
+                            if (!rect) return;
+                            const x = clientX - rect.left;
+                            const y = clientY - rect.top;
+                            
+                            card.style.setProperty('--card-x', `${{x}}px`);
+                            card.style.setProperty('--card-y', `${{y}}px`);
 
-                    card.style.transform = `perspective(800px) rotateX(${{rotateX.toFixed(2)}}deg) rotateY(${{rotateY.toFixed(2)}}deg) translateY(-4px)`;
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+                            const rotateX = ((y - centerY) / centerY) * -6.5;
+                            const rotateY = ((x - centerX) / centerX) * 6.5;
+
+                            card.style.transform = `perspective(800px) rotateX(${{rotateX.toFixed(2)}}deg) rotateY(${{rotateY.toFixed(2)}}deg) translateY(-4px)`;
+                            ticking = false;
+                        }});
+                        ticking = true;
+                    }}
                 }});
 
                 card.addEventListener('mouseleave', () => {{
+                    rect = null;
                     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
                 }});
             }});
-        }}
-        initCardMotion();
 
-        document.querySelectorAll('.magnetic-btn').forEach(btn => {{
-            btn.addEventListener('mousemove', (e) => {{
-                const rect = btn.getBoundingClientRect();
-                const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
-                const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
-                btn.style.transform = `translate(${{x.toFixed(1)}}px, ${{y.toFixed(1)}}px)`;
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {{
+                let btnRect = null;
+                let btnTicking = false;
+
+                btn.addEventListener('mouseenter', () => {{
+                    btnRect = btn.getBoundingClientRect();
+                }});
+
+                btn.addEventListener('mousemove', (e) => {{
+                    if (!btnRect) btnRect = btn.getBoundingClientRect();
+                    const clientX = e.clientX;
+                    const clientY = e.clientY;
+
+                    if (!btnTicking) {{
+                        requestAnimationFrame(() => {{
+                            if (!btnRect) return;
+                            const x = (clientX - btnRect.left - btnRect.width / 2) * 0.28;
+                            const y = (clientY - btnRect.top - btnRect.height / 2) * 0.28;
+                            btn.style.transform = `translate(${{x.toFixed(1)}}px, ${{y.toFixed(1)}}px)`;
+                            btnTicking = false;
+                        }});
+                        btnTicking = true;
+                    }}
+                }});
+
+                btn.addEventListener('mouseleave', () => {{
+                    btnRect = null;
+                    btn.style.transform = 'translate(0px, 0px)';
+                }});
             }});
-            btn.addEventListener('mouseleave', () => {{
-                btn.style.transform = 'translate(0px, 0px)';
-            }});
-        }});
+        }}
 
         const revealObserver = new IntersectionObserver((entries) => {{
             entries.forEach(entry => {{
@@ -1071,14 +1107,102 @@ def build():
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }}
 
+        // Background Web Worker PoW Solver (Eliminates UI Thread Starvation)
+        function solvePoW(seed, difficulty) {{
+            return new Promise((resolve, reject) => {{
+                if (window.Worker) {{
+                    const workerCode = `
+                        async function h(s) {{
+                            const b = new TextEncoder().encode(s);
+                            const d = await crypto.subtle.digest('SHA-256', b);
+                            return Array.from(new Uint8Array(d)).map(x => x.toString(16).padStart(2, '0')).join('');
+                        }}
+                        self.onmessage = async (e) => {{
+                            const {{ seed, difficulty }} = e.data;
+                            const target = '0'.repeat(difficulty || 3);
+                            let nonce = 0;
+                            while (true) {{
+                                const hash = await h(seed + ':' + nonce);
+                                if (hash.startsWith(target)) {{
+                                    self.postMessage({{ success: true, nonce, hash }});
+                                    break;
+                                }}
+                                nonce++;
+                                if (nonce > 500000) {{
+                                    self.postMessage({{ success: false, nonce }});
+                                    break;
+                                }}
+                            }}
+                        }};
+                    `;
+                    try {{
+                        const blob = new Blob([workerCode], {{ type: 'application/javascript' }});
+                        const workerUrl = URL.createObjectURL(blob);
+                        const worker = new Worker(workerUrl);
+                        const timer = setTimeout(() => {{
+                            worker.terminate();
+                            URL.revokeObjectURL(workerUrl);
+                            reject(new Error('PoW solving timeout'));
+                        }}, 25000);
+
+                        worker.onmessage = (e) => {{
+                            clearTimeout(timer);
+                            worker.terminate();
+                            URL.revokeObjectURL(workerUrl);
+                            if (e.data.success) resolve(e.data);
+                            else reject(new Error('PoW maximum iterations reached'));
+                        }};
+                        worker.onerror = (err) => {{
+                            clearTimeout(timer);
+                            worker.terminate();
+                            URL.revokeObjectURL(workerUrl);
+                            reject(err);
+                        }};
+                        worker.postMessage({{ seed, difficulty }});
+                        return;
+                    }} catch (e) {{}}
+                }}
+
+                // Main thread fallback if Worker creation fails
+                (async () => {{
+                    const target = '0'.repeat(difficulty || 3);
+                    let nonce = 0;
+                    while (true) {{
+                        const hash = await sha256Hex(`${{seed}}:${{nonce}}`);
+                        if (hash.startsWith(target)) {{
+                            resolve({{ success: true, nonce, hash }});
+                            break;
+                        }}
+                        nonce++;
+                        if (nonce > 200000) {{
+                            reject(new Error('PoW limit reached'));
+                            break;
+                        }}
+                    }}
+                }})();
+            }});
+        }}
+
         async function triggerSecureVault(code, title, mode) {{
             const btnDl = document.getElementById(`btn-dl-${{code}}`);
             const btnCopy = document.getElementById(`btn-copy-${{code}}`);
             const activeBtn = (mode === 'download') ? btnDl : btnCopy;
             const originalHtml = activeBtn ? activeBtn.innerHTML : '';
+
+            // Synchronous transient activation: open blank tab synchronously to prevent popup blocking
+            let targetTab = null;
+            if (mode === 'download') {{
+                targetTab = window.open('about:blank', '_blank');
+                if (targetTab) {{
+                    try {{
+                        targetTab.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Studio Vault · Đang Mở Khoá #${{code}}</title><style>body{{background:#040711;color:#f0f9ff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}}.box{{text-align:center;background:#091122;border:1px solid rgba(56,189,248,0.3);border-radius:16px;padding:36px 28px;box-shadow:0 0 50px rgba(56,189,248,0.15);max-width:400px;}}.spin{{width:32px;height:32px;border:3px solid rgba(56,189,248,0.2);border-top-color:#38bdf8;border-radius:50%;animation:sp 0.8s linear infinite;margin:0 auto 16px;}}@keyframes sp{{to{{transform:rotate(360deg);}}}}</style></head><body><div class="box"><div class="spin"></div><h3 style="margin:0 0 8px;font-size:16px;">Đang Xác Thực Bảo Mật</h3><p style="margin:0;font-size:13px;color:#94a3b8;">Đang giải mã Proof-of-Work và cấp vé tải cho #${{code}}...</p></div></body></html>`);
+                    }} catch (e) {{}}
+                }}
+            }}
             
             const endpoint = getVaultEndpoint();
             if (!endpoint) {{
+                if (targetTab) targetTab.close();
                 showVaultConfigModal(code, title);
                 showHudToast('Cần kết nối Cloudflare Worker Edge để mở khóa link!', 'info');
                 return;
@@ -1099,12 +1223,14 @@ def build():
                         headers: {{ 'Accept': 'application/json' }}
                     }});
                 }} catch (netErr) {{
+                    if (targetTab) targetTab.close();
                     showVaultConfigModal(code, title);
                     showHudToast('Lỗi mạng: Không kết nối được URL Worker đã lưu.', 'error');
                     return;
                 }}
 
                 if (!challengeRes.ok) {{
+                    if (targetTab) targetTab.close();
                     showVaultConfigModal(code, title);
                     showHudToast('Lỗi kết nối Vault Edge Backend.', 'error');
                     return;
@@ -1112,18 +1238,9 @@ def build():
 
                 const challenge = await challengeRes.json();
 
-                // 2. Solve Micro Proof-of-Work (~10ms)
-                const seed = challenge.seed;
-                const target = '0'.repeat(challenge.difficulty || 3);
-                let nonce = 0;
-                let powHash = '';
-
-                while (true) {{
-                    powHash = await sha256Hex(`${{seed}}:${{nonce}}`);
-                    if (powHash.startsWith(target)) break;
-                    nonce++;
-                    if (nonce > 200000) break;
-                }}
+                // 2. Solve Micro Proof-of-Work in background Web Worker (Thread-safe, 0 UI Lag)
+                const powResult = await solvePoW(challenge.seed, challenge.difficulty || 3);
+                const nonce = powResult.nonce;
 
                 // 3. Exchange for One-time Burn Ticket
                 const handshakeRes = await fetch(`${{endpoint}}/api/handshake`, {{
@@ -1131,7 +1248,7 @@ def build():
                     headers: {{ 'Content-Type': 'application/json' }},
                     body: JSON.stringify({{
                         code: code,
-                        seed: seed,
+                        seed: challenge.seed,
                         timestamp: challenge.timestamp,
                         nonce: nonce,
                         signature: challenge.signature
@@ -1141,6 +1258,7 @@ def build():
                 const handshakeData = await handshakeRes.json();
 
                 if (!handshakeRes.ok) {{
+                    if (targetTab) targetTab.close();
                     if (handshakeRes.status === 429) {{
                         showHudToast('Tốc độ tải quá nhanh! Vui lòng đợi 60 giây.', 'error');
                     }} else {{
@@ -1153,16 +1271,47 @@ def build():
 
                 // 4. Execute Action
                 if (mode === 'copy') {{
-                    await navigator.clipboard.writeText(downloadUrl);
-                    showHudToast(`Đã sao chép vé tải 1 lần (hết hạn 45s)!`, 'success');
+                    let copied = false;
+                    try {{
+                        if (navigator.clipboard && navigator.clipboard.writeText) {{
+                            await navigator.clipboard.writeText(downloadUrl);
+                            copied = true;
+                        }}
+                    }} catch (clipErr) {{}}
+
+                    if (!copied) {{
+                        try {{
+                            const ta = document.createElement('textarea');
+                            ta.value = downloadUrl;
+                            ta.style.position = 'fixed';
+                            ta.style.left = '-9999px';
+                            ta.style.top = '0';
+                            document.body.appendChild(ta);
+                            ta.focus();
+                            ta.select();
+                            copied = document.execCommand('copy');
+                            document.body.removeChild(ta);
+                        }} catch (e) {{}}
+                    }}
+
+                    if (copied) {{
+                        showHudToast(`Đã sao chép vé tải 1 lần #${{code}} (hết hạn 45s)!`, 'success');
+                    }} else {{
+                        prompt(`Vé tải 1 lần cho #${{code}} (hết hạn 45s). Nhấn Ctrl+C để sao chép:`, downloadUrl);
+                    }}
                 }} else {{
                     showHudToast(`Đã mở khoá #${{code}}! Đang chuyển hướng...`, 'success');
-                    window.open(downloadUrl, '_blank');
+                    if (targetTab) {{
+                        targetTab.location.href = downloadUrl;
+                    }} else {{
+                        window.open(downloadUrl, '_blank');
+                    }}
                 }}
 
             }} catch (err) {{
+                if (targetTab) targetTab.close();
                 console.error('Vault error:', err);
-                showHudToast('Lỗi bảo mật. Vui lòng thử lại.', 'error');
+                showHudToast('Lỗi bảo mật hoặc timeout thuật toán. Vui lòng thử lại.', 'error');
             }} finally {{
                 if (activeBtn) {{
                     activeBtn.innerHTML = originalHtml;
