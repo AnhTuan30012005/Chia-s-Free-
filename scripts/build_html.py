@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 import json
 import os
 import html as html_escape
@@ -15,113 +15,146 @@ def build():
     studio_count = len([r for r in resources if r.get("series") == "studio"])
     lab_count = len([r for r in resources if r.get("series") == "lab"])
 
+    # Category color schemes for visual indicators (Part B: Design Tokens)
+    cat_themes = {
+        "preset": {
+            "name": "Preset & Picture Style",
+            "bar": "from-cyan-400 via-sky-500 to-blue-600",
+            "badge": "bg-cyan-500/10 text-cyan-300 border-cyan-400/20",
+            "icon": "sliders",
+            "dot": "bg-cyan-400"
+        },
+        "software": {
+            "name": "Phần Mềm & Panel",
+            "bar": "from-sky-400 via-indigo-500 to-purple-600",
+            "badge": "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
+            "icon": "cpu",
+            "dot": "bg-indigo-400"
+        },
+        "psd": {
+            "name": "Mẫu Layout PSD",
+            "bar": "from-purple-400 via-pink-500 to-rose-600",
+            "badge": "bg-purple-500/10 text-purple-300 border-purple-400/20",
+            "icon": "layers",
+            "dot": "bg-purple-400"
+        },
+        "raw": {
+            "name": "Stock RAW Gốc",
+            "bar": "from-emerald-400 via-teal-500 to-cyan-600",
+            "badge": "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
+            "icon": "image",
+            "dot": "bg-emerald-400"
+        },
+        "courses": {
+            "name": "Khóa Học",
+            "bar": "from-amber-400 via-orange-500 to-red-600",
+            "badge": "bg-amber-500/10 text-amber-300 border-amber-400/20",
+            "icon": "book-open",
+            "dot": "bg-amber-400"
+        }
+    }
+
     cards_html = ""
     for item in resources:
         code = item.get("code", "00")
         series = item.get("series", "lab")
         is_studio = (series == "studio")
-        
-        # Color Palette: Deep Dark Navy, Ice Blue & Pure White
-        series_badge = """<span class="px-1.5 sm:px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-cyan-500/15 text-cyan-300 border border-cyan-400/30 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span class="hidden xs:inline">Studio</span><span class="xs:hidden">S</span></span>""" if is_studio else """<span class="px-1.5 sm:px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-sky-500/10 text-sky-200 border border-sky-400/20 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-sky-300"></span><span class="hidden xs:inline">Lab</span><span class="xs:hidden">L</span></span>"""
-        
-        code_color = "text-cyan-300 group-hover:text-white" if is_studio else "text-sky-200 group-hover:text-cyan-200"
-        card_hover = "hover:border-cyan-400/50 hover:shadow-[0_12px_32px_-8px_rgba(56,189,248,0.25)]"
-        spotlight_color = "rgba(56, 189, 248, 0.15)" if is_studio else "rgba(14, 165, 233, 0.12)"
+        category = item.get("category", "preset")
+        theme = cat_themes.get(category, cat_themes["preset"])
 
-        category_badge = {
-            "software": "text-sky-300 bg-sky-500/10 border-sky-400/25",
-            "preset": "text-cyan-300 bg-cyan-500/10 border-cyan-400/25",
-            "raw": "text-teal-300 bg-teal-500/10 border-teal-400/25",
-            "psd": "text-indigo-300 bg-indigo-500/10 border-indigo-400/25",
-            "courses": "text-blue-300 bg-blue-500/10 border-blue-400/25"
-        }.get(item["category"], "text-slate-300 bg-slate-800 border-slate-700")
-
-        # Anti-XSS Sanitization (Strict HTML Escaping)
         safe_title = html_escape.escape(item.get("title", ""), quote=True)
         safe_desc = html_escape.escape(item.get("desc", ""), quote=True)
         safe_format = html_escape.escape(item.get("format", ""), quote=True)
         safe_tag = html_escape.escape(item.get("tag", ""), quote=True)
         safe_platform = html_escape.escape(item.get("platform", "Universal"), quote=True)
-        safe_cat_name = html_escape.escape(item.get("cat_name", ""), quote=True)
-        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')}"
-        safe_search = html_escape.escape(raw_search, quote=True)
-        js_title = item.get('title', '').replace('\\', '\\\\').replace("'", " ").replace('"', ' ')
         url = item.get("url", "")
         safe_url = html_escape.escape(url, quote=True)
         js_url = url.replace('\\', '\\\\').replace("'", "\\'")
+        js_title = safe_title.replace("'", "\\'")
 
-        # Responsive 2-column card architecture (p-3 sm:p-5, compact text and magnetic buttons)
+        series_label = "Studio Series" if is_studio else "Lab Tool"
+        series_pill = "text-sky-300 bg-sky-500/15 border-sky-400/30" if is_studio else "text-indigo-300 bg-indigo-500/15 border-indigo-400/30"
+        series_dot = "bg-sky-400" if is_studio else "bg-indigo-400"
+
+        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')} {series_label}"
+        safe_search = html_escape.escape(raw_search, quote=True)
+
         cards_html += f"""
-            <!-- Resource Card #{code} (Responsive 2-Col Mobile, Dark Navy & Ice White) -->
-            <div class="resource-card group bg-[#091122]/90 border border-cyan-500/15 {card_hover} rounded-xl sm:rounded-2xl p-3 sm:p-5 flex flex-col justify-between gap-2.5 sm:gap-4 select-none backdrop-blur-sm"
-                 style="--spotlight-color: {spotlight_color};"
+        <article class="resource-card group relative flex flex-col justify-between bg-zinc-900/60 hover:bg-zinc-900/90 border border-white/[0.08] hover:border-sky-500/40 rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-1 backdrop-blur-md overflow-hidden"
                  data-series="{series}"
-                 data-cat="{item['category']}"
+                 data-cat="{category}"
                  data-search="{safe_search}">
-                
-                <!-- Card Header with Z-Elevation -->
-                <div class="space-y-1.5 sm:space-y-3 card-inner-elevate relative z-10">
-                    <div class="flex items-center justify-between pb-2 sm:pb-3 border-b border-white/[0.08]">
-                        <div class="flex items-center gap-1.5 sm:gap-2">
-                            <span class="font-mono text-xs sm:text-base font-bold {code_color} transition-colors">
-                                #{code}
-                            </span>
-                            {series_badge}
-                        </div>
-                        <span class="px-1.5 sm:px-2 py-0.5 rounded text-[8px] sm:text-[10px] font-bold uppercase tracking-wider border {category_badge}">
-                            {safe_cat_name}
+            
+            <!-- Top Visual Accent Strip -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r {theme['bar']} opacity-75 group-hover:opacity-100 transition-opacity"></div>
+
+            <!-- Card Header -->
+            <div class="space-y-3 pt-1">
+                <div class="flex items-center justify-between gap-2 border-b border-white/[0.06] pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="font-mono text-sm sm:text-base font-bold text-white tracking-tight">#{code}</span>
+                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-medium border {series_pill}">
+                            <span class="w-1.5 h-1.5 rounded-full {series_dot}"></span>
+                            <span>{series_label}</span>
                         </span>
                     </div>
-
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-slate-400 truncate">
-                            <span class="truncate">{safe_format}</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-cyan-300 font-semibold truncate">{safe_tag}</span>
-                        </div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-100 transition-colors leading-snug line-clamp-2" title="{safe_title}">
-                            {safe_title}
-                        </h3>
-                        <p class="text-[10px] sm:text-xs text-slate-400 leading-relaxed line-clamp-1 sm:line-clamp-2">
-                            {safe_desc}
-                        </p>
-                    </div>
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-medium border {theme['badge']}">
+                        <i data-lucide="{theme['icon']}" class="w-3 h-3"></i>
+                        <span>{theme['name']}</span>
+                    </span>
                 </div>
 
-                <!-- Card Footer with Magnetic Actions -->
-                <div class="space-y-2 sm:space-y-3 pt-2 sm:pt-3 border-t border-white/[0.08] card-inner-elevate relative z-10">
-                    <div class="hidden sm:flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                        <span class="flex items-center gap-1"><i data-lucide="monitor" class="w-3 h-3 text-cyan-400/60"></i> Hệ thống:</span>
-                        <span class="text-slate-200">{safe_platform}</span>
-                    </div>
-                    
-                    <div class="flex items-center justify-between gap-1.5 sm:gap-2.5">
-                        <button onclick="copyResourceUrl('{js_url}', '{js_title}')"
-                                id="btn-copy-{code}"
-                                class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-[#0e182e] hover:bg-[#152342] text-[10px] sm:text-xs font-semibold text-slate-300 hover:text-white border border-cyan-500/20 hover:border-cyan-400/40 transition-all flex items-center justify-center gap-1 active:scale-95">
-                            <i data-lucide="copy" class="w-3 h-3 text-cyan-400"></i>
-                            <span class="truncate">Sao Chép</span>
-                        </button>
-                        
-                        <a href="{safe_url}"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           id="btn-dl-{code}"
-                           class="magnetic-btn flex-1 py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-lg sm:rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-[10px] sm:text-xs font-semibold border border-sky-400/40 transition-all flex items-center justify-center gap-1 active:scale-95 shadow-md shadow-sky-950">
-                            <i data-lucide="external-link" class="w-3 h-3 text-white"></i>
-                            <span class="truncate font-bold">Tải Drive</span>
-                        </a>
-                    </div>
+                <!-- Meta Pills -->
+                <div class="flex items-center gap-2 text-[11px] font-mono text-zinc-400">
+                    <span class="px-2 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 font-medium">{safe_format}</span>
+                    <span class="text-zinc-600">•</span>
+                    <span class="text-sky-300 font-semibold truncate max-w-[180px]">{safe_tag}</span>
+                </div>
+
+                <!-- Title & Description -->
+                <div class="space-y-1.5">
+                    <h3 class="text-sm sm:text-base font-bold text-zinc-100 group-hover:text-white transition-colors leading-snug line-clamp-2" title="{safe_title}">
+                        {safe_title}
+                    </h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                        {safe_desc}
+                    </p>
                 </div>
             </div>
-"""
+
+            <!-- Card Footer -->
+            <div class="pt-4 mt-4 border-t border-white/[0.06] space-y-3">
+                <div class="flex items-center justify-between text-[11px] text-zinc-400 font-mono">
+                    <span class="flex items-center gap-1 text-zinc-500">
+                        <i data-lucide="laptop" class="w-3.5 h-3.5 text-zinc-400"></i>
+                        <span>Hệ thống:</span>
+                    </span>
+                    <span class="text-zinc-200 font-medium">{safe_platform}</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                    <button onclick="copyResourceUrl('{js_url}', '{js_title}')"
+                            class="px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-xs font-semibold text-zinc-200 border border-white/[0.08] hover:border-white/20 transition-all flex items-center justify-center gap-1.5 active:scale-95">
+                        <i data-lucide="copy" class="w-3.5 h-3.5 text-zinc-400"></i>
+                        <span>Sao chép</span>
+                    </button>
+                    <a href="{safe_url}" target="_blank" rel="noopener noreferrer"
+                       class="px-3 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-zinc-950 font-bold text-xs shadow-lg shadow-sky-500/20 transition-all flex items-center justify-center gap-1.5 active:scale-95">
+                        <span>Tải Drive</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+        """
 
     html = f"""<!DOCTYPE html>
 <html lang="vi" class="dark scroll-smooth h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIO ARCHIVE · 3D Parallax & Motion Engine (72 Resources)</title>
+    <title>Studio Vault — 72 Bộ Tài Nguyên Hậu Kỳ & Màu Ảnh Chuyên Nghiệp</title>
+    <meta name="description" content="Hệ thống lưu trữ 72 tài nguyên số đồ họa & nhiếp ảnh: Preset Lightroom, Photoshop Panel, Stock RAW và PSD tải trực tiếp Google Drive tốc độ cao.">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -130,33 +163,37 @@ def build():
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Three.js (Engine 3D từ Landscape3D.jsx) -->
+    <!-- Three.js (Engine 3D Parallax) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <style>
-        :root {{
-            --bg-deep: #040711;
-            --surface-card: #091122;
-            --accent-cyan: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.25);
-        }}
         body {{
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-deep);
-            color: #f1f5f9;
+            background-color: #07090e;
+            color: #f4f4f5;
             overflow-x: hidden;
         }}
         .font-mono {{
             font-family: 'JetBrains Mono', monospace;
         }}
 
-        /* 1. 3D Landscape Canvas Container (Dark Blue & Ice White) */
+        /* Subtle Aurora Glow */
+        .aurora-bg {{
+            background: 
+                radial-gradient(circle at 15% 10%, rgba(14, 165, 233, 0.15), transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.12), transparent 40%),
+                radial-gradient(circle at 50% 60%, rgba(56, 189, 248, 0.08), transparent 50%),
+                #07090e;
+        }}
+
+        /* 3D Canvas Container */
         #landscape3d-wrapper {{
             position: relative;
             width: 100%;
-            height: 68vh;
-            min-height: 460px;
+            height: 52vh;
+            min-height: 420px;
             overflow: hidden;
-            background: #02040a;
+            background: #04060a;
         }}
         #landscape3d-canvas {{
             position: absolute;
@@ -166,100 +203,36 @@ def build():
             display: block;
         }}
 
-        /* Overlay Typography in 3D Depth */
-        .landscape-overlay {{
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 1.25rem 1.5rem;
-            z-index: 10;
+        /* Sticky Control Bar with Blur */
+        .sticky-dock {{
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background-color: rgba(7, 9, 14, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }}
 
-        .landscape-title {{
-            font-size: clamp(2.8rem, 8.5vw, 7.2rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            line-height: 0.9;
+        /* Active Filter Button */
+        .filter-btn.active {{
+            background-color: #0284c7;
             color: #ffffff;
-            text-transform: uppercase;
-            text-shadow: 0 10px 40px rgba(56, 189, 248, 0.35), 0 2px 10px rgba(0, 0, 0, 0.9);
+            font-weight: 600;
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.35);
         }}
 
-        /* 2. CARD 3D TILT & SPOTLIGHT PHYSICS */
-        .resource-card {{
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 800px;
-            transition: transform 0.16s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s, box-shadow 0.25s, opacity 0.4s ease;
-            will-change: transform;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(16px);
-        }}
-        .resource-card.revealed {{
-            opacity: 1;
-            transform: translateY(0);
-        }}
-
-        /* Spotlight radial glow on hover (Ice Blue) */
-        .resource-card::before {{
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background: radial-gradient(280px circle at var(--card-x, -500px) var(--card-y, -500px), var(--spotlight-color, rgba(56, 189, 248, 0.14)), transparent 70%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }}
-        .resource-card:hover::before {{
-            opacity: 1;
-        }}
-
-        /* Elevate elements in 3D depth inside the card */
-        .card-inner-elevate {{
-            transform: translateZ(14px);
-        }}
-
-        /* Magnetic button transition */
-        .magnetic-btn {{
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform;
-        }}
-
-        /* Active buttons (Dark Blue & Ice Cyan) */
-        .series-btn.active {{
-            background: #0e1d38;
+        .series-pill.active {{
+            background-color: rgba(255, 255, 255, 0.12);
             color: #ffffff;
-            border-color: rgba(56, 189, 248, 0.5);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-        }}
-        .series-btn[data-series="studio"].active {{
-            background: rgba(56, 189, 248, 0.2);
-            color: #7dd3fc;
-            border-color: rgba(56, 189, 248, 0.6);
-        }}
-        .series-btn[data-series="lab"].active {{
-            background: rgba(14, 165, 233, 0.2);
-            color: #bae6fd;
-            border-color: rgba(14, 165, 233, 0.6);
-        }}
-
-        .cat-tab.active {{
-            background-color: #0e1d38;
-            color: #ffffff;
-            border-color: rgba(56, 189, 248, 0.4);
             font-weight: 700;
         }}
 
         /* Toast HUD */
         #hudToast {{
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translate(-50%, -80px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translate(-50%, -60px) scale(0.95);
             opacity: 0;
             pointer-events: none;
         }}
@@ -269,778 +242,362 @@ def build():
             pointer-events: auto;
         }}
 
-        ::-webkit-scrollbar {{ width: 6px; }}
-        ::-webkit-scrollbar-track {{ background: #040711; }}
-        ::-webkit-scrollbar-thumb {{ background: #0e1d38; border-radius: 9999px; }}
+        /* Clean Scrollbar */
+        ::-webkit-scrollbar {{ width: 6px; height: 6px; }}
+        ::-webkit-scrollbar-track {{ background: #07090e; }}
+        ::-webkit-scrollbar-thumb {{ background: #27272a; border-radius: 9999px; }}
         ::-webkit-scrollbar-thumb:hover {{ background: #38bdf8; }}
-
-        /* ---------------- GALAXY COSMIC UNIVERSE BACKGROUND ---------------- */
-        .galaxy-universe-wrapper {{
-            position: relative;
-            background-color: #030611;
-            background-image: 
-                radial-gradient(ellipse 80% 50% at 20% 15%, rgba(14, 165, 233, 0.16) 0%, transparent 60%),
-                radial-gradient(ellipse 70% 45% at 85% 35%, rgba(99, 102, 241, 0.14) 0%, transparent 55%),
-                radial-gradient(circle at 50% 65%, rgba(56, 189, 248, 0.10) 0%, transparent 50%),
-                radial-gradient(circle at 20% 85%, rgba(30, 58, 138, 0.18) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 90%, rgba(168, 85, 247, 0.10) 0%, transparent 55%),
-                /* Starfield Layer 1: Fine white stars */
-                radial-gradient(1px 1px at 35px 45px, rgba(255, 255, 255, 0.85), transparent),
-                radial-gradient(1px 1px at 110px 170px, rgba(186, 230, 253, 0.9), transparent),
-                radial-gradient(1.5px 1.5px at 230px 85px, rgba(56, 189, 248, 0.95), transparent),
-                radial-gradient(1px 1px at 340px 220px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 470px 130px, rgba(165, 180, 252, 0.85), transparent),
-                /* Starfield Layer 2: Medium ice stars */
-                radial-gradient(1.5px 1.5px at 80px 290px, rgba(224, 242, 254, 0.9), transparent),
-                radial-gradient(2px 2px at 190px 380px, rgba(56, 189, 248, 0.8), transparent),
-                radial-gradient(1px 1px at 310px 420px, rgba(255, 255, 255, 0.75), transparent),
-                radial-gradient(1.5px 1.5px at 430px 360px, rgba(199, 210, 254, 0.85), transparent);
-            background-size: 
-                100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%,
-                420px 420px, 500px 500px, 380px 380px, 460px 460px, 520px 520px,
-                480px 480px, 540px 540px, 400px 400px, 490px 490px;
-        }}
-
-        /* Ambient Glowing Nebula Dust Clouds */
-        .nebula-cloud {{
-            position: absolute;
-            border-radius: 9999px;
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(80px);
-            opacity: 0.8;
-            mix-blend-mode: screen;
-            animation: nebulaDrift 24s ease-in-out infinite alternate;
-        }}
-        .nebula-1 {{
-            top: 5%;
-            left: -10%;
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
-            animation-duration: 20s;
-        }}
-        .nebula-2 {{
-            top: 35%;
-            right: -8%;
-            width: 620px;
-            height: 620px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(79, 70, 229, 0.06) 50%, transparent 70%);
-            animation-duration: 28s;
-            animation-delay: -5s;
-        }}
-        .nebula-3 {{
-            bottom: 10%;
-            left: 15%;
-            width: 680px;
-            height: 580px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(139, 92, 246, 0.07) 50%, transparent 70%);
-            animation-duration: 24s;
-            animation-delay: -10s;
-        }}
-
-        @keyframes nebulaDrift {{
-            0% {{
-                transform: translate(0, 0) scale(1);
-            }}
-            50% {{
-                transform: translate(25px, -30px) scale(1.08);
-            }}
-            100% {{
-                transform: translate(-20px, 20px) scale(0.95);
-            }}
-        }}
-
-        /* Subtle Starlight Shimmer */
-        .galaxy-stars-overlay {{
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            background-image: 
-                radial-gradient(1px 1px at 60px 80px, #ffffff, transparent),
-                radial-gradient(1.5px 1.5px at 170px 140px, #38bdf8, transparent),
-                radial-gradient(1px 1px at 290px 210px, #e0f2fe, transparent),
-                radial-gradient(2px 2px at 410px 120px, #bae6fd, transparent),
-                radial-gradient(1px 1px at 530px 280px, #c7d2fe, transparent);
-            background-size: 580px 580px;
-            animation: starsTwinkle 8s ease-in-out infinite alternate;
-        }}
-
-        @keyframes starsTwinkle {{
-            0% {{ opacity: 0.55; }}
-            50% {{ opacity: 0.95; }}
-            100% {{ opacity: 0.65; }}
-        }}
     </style>
 </head>
-<body class="min-h-full flex flex-col bg-[#040711]">
+<body class="min-h-full flex flex-col aurora-bg selection:bg-sky-500/30 selection:text-sky-200">
 
-    <!-- TOAST NOTIFICATION -->
-    <div id="hudToast" class="fixed top-6 left-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#091122]/95 backdrop-blur-xl border border-cyan-500/40 shadow-2xl shadow-cyan-950 text-white">
-        <i data-lucide="check" class="w-4 h-4 text-cyan-400" id="toastIcon"></i>
-        <span class="text-xs font-semibold text-slate-100" id="toastTitle">Đã xác thực</span>
+    <!-- FLOATING TOAST -->
+    <div id="hudToast" class="fixed top-5 left-1/2 z-50 flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-zinc-900/95 border border-sky-500/40 shadow-2xl shadow-sky-950 text-white backdrop-blur-xl">
+        <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i>
+        <span class="text-xs font-medium text-zinc-100" id="toastMsg">Đã sao chép link Google Drive</span>
     </div>
 
-    <!-- 1. 3D LANDSCAPE HERO (DEEP DARK NAVY, ICE BLUE & MOON ARCHITECTURE) -->
-    <section id="landscape3d-wrapper">
+    <!-- 1. HIGH-CONVERTING HERO (Design System Guided) -->
+    <header id="landscape3d-wrapper" class="border-b border-white/[0.06]">
         <canvas id="landscape3d-canvas"></canvas>
 
-        <!-- HTML OVERLAY LAYERED ACROSS 3D DEPTH -->
-        <div class="landscape-overlay max-w-7xl mx-auto w-full">
-            
-            <!-- Top Navigation -->
+        <div class="absolute inset-0 z-10 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pointer-events-none">
+            <!-- Top Nav -->
             <div class="flex items-center justify-between w-full pointer-events-auto">
-                <div class="flex items-center gap-2.5 sm:gap-3">
-                    <div class="w-8 sm:w-9 h-8 sm:h-9 rounded-xl bg-[#040711]/70 backdrop-blur-md border border-cyan-400/30 flex items-center justify-center text-white shadow-lg shadow-cyan-950">
-                        <i data-lucide="camera" class="w-4 h-4 text-cyan-300"></i>
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-white/[0.08] backdrop-blur-md border border-white/10 flex items-center justify-center text-sky-400 shadow-md">
+                        <i data-lucide="archive" class="w-4 h-4"></i>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold tracking-tight text-white uppercase font-mono">
-                        STUDIO <span class="text-cyan-400">VAULT</span>
+                    <div>
+                        <div class="text-xs font-mono font-bold tracking-wider uppercase text-zinc-300">STUDIO <span class="text-sky-400">VAULT</span></div>
+                        <div class="text-[10px] text-zinc-400 font-mono">Curated Asset Engine</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 font-mono text-xs">
+                    <span class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>{total_count} Tài nguyên sẵn sàng</span>
                     </span>
+                    <a href="https://github.com/AnhTuan30012005/Chia-s-Free-" target="_blank" rel="noopener noreferrer"
+                       class="px-3 py-1 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-zinc-200 transition-colors flex items-center gap-1.5">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                        <span class="hidden sm:inline">GitHub</span>
+                    </a>
                 </div>
+            </div>
 
-                <div class="hidden sm:flex items-center gap-6 text-xs font-mono text-slate-300">
-                    <span class="hover:text-cyan-300 cursor-pointer transition-colors" onclick="filterBySeries('studio')">Studio Series ({studio_count})</span>
-                    <span class="hover:text-cyan-300 cursor-pointer transition-colors" onclick="filterBySeries('lab')">Lab Tools ({lab_count})</span>
-                    <span class="hover:text-cyan-300 cursor-pointer transition-colors" onclick="scrollToCatalog()">Catalog (72)</span>
+            <!-- Hero Branding & Value Prop (Landing Page Rule A2: Headline Outcome + Audience) -->
+            <div class="space-y-4 max-w-3xl pointer-events-auto pb-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/20 text-xs font-mono text-sky-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                    <span>Tải trực tiếp Google Drive tốc độ tối đa</span>
                 </div>
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Kho Tài Nguyên Hậu Kỳ &amp; Màu Ảnh Chuyên Nghiệp
+                </h1>
+                
+                <p class="text-sm sm:text-base text-zinc-300 max-w-2xl leading-relaxed">
+                    Tuyển tập {total_count} bộ Preset Lightroom, Photoshop Panel, Stock RAW và PSD tuyển chọn dành riêng cho Photographer &amp; Retoucher. Không quảng cáo, không rút gọn link.
+                </p>
 
-                <div class="flex items-center gap-2">
-                    <div class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl bg-[#040711]/70 backdrop-blur-md border border-cyan-400/30 text-[11px] sm:text-xs font-mono text-slate-200 flex items-center gap-1.5 sm:gap-2">
-                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                        <span class="font-bold text-white" id="navCounter">{total_count}</span> <span class="hidden xs:inline">Resources</span>
+                <!-- Proof Signals -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-mono">
+                    <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                        <div class="text-base font-bold text-white font-sans">{total_count} Files</div>
+                        <div class="text-zinc-400 text-[11px]">Trọn bộ tài nguyên</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                        <div class="text-base font-bold text-sky-400 font-sans">100% Free</div>
+                        <div class="text-zinc-400 text-[11px]">Google Drive direct</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                        <div class="text-base font-bold text-emerald-400 font-sans">0 Ads</div>
+                        <div class="text-zinc-400 text-[11px]">Không rút gọn link</div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                        <div class="text-base font-bold text-indigo-400 font-sans">Mobile/PC</div>
+                        <div class="text-zinc-400 text-[11px]">Tối ưu 2 cột hiển thị</div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Center/Bottom 3D Typographic Branding -->
-            <div class="w-full flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 pb-2 pointer-events-auto">
-                <div class="space-y-1.5 sm:space-y-2 max-w-xl">
-                    <div class="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-[#040711]/75 backdrop-blur-md border border-cyan-400/30 text-[10px] sm:text-[11px] font-mono text-cyan-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-                        <span>Interactive 3D Moon Landscape</span>
-                    </div>
-                    <h1 class="landscape-title">
-                        ARCHIVE
-                    </h1>
-                    <p class="text-[11px] sm:text-sm text-slate-300 max-w-md leading-relaxed drop-shadow">
-                        Hệ sinh thái lưu trữ 72 tài nguyên số chuyên sâu: Tải trực tiếp Google Drive tốc độ tối đa, không quảng cáo, tối ưu 2 cột trên điện thoại.
-                    </p>
-                </div>
-
-                <!-- Fast Search Bar -->
-                <div class="w-full md:w-80 space-y-1.5 sm:space-y-2">
-                    <div class="relative">
-                        <i data-lucide="search" class="w-3.5 sm:w-4 h-3.5 sm:h-4 text-cyan-400 absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" id="searchInput" placeholder="Tìm theo mã (#S-01, #L-01), tên..." oninput="handleSearch()"
-                               class="w-full pl-9 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 rounded-xl bg-[#040711]/80 backdrop-blur-md border border-cyan-500/30 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(56,189,248,0.3)] transition-all">
-                        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">
-                            <i data-lucide="x" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-                    <div class="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400 px-1">
-                        <span>Lia chuột / vuốt để xoay 3D</span>
-                        <span class="text-cyan-400 font-bold">72 Files Online</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 2. GALAXY COSMIC UNIVERSE BACKDROP (SURROUNDING CATALOG GRID) -->
-    <div class="galaxy-universe-wrapper flex-1 flex flex-col relative w-full overflow-hidden">
-        <!-- Floating Ambient Nebula Glow Clouds -->
-        <div class="nebula-cloud nebula-1"></div>
-        <div class="nebula-cloud nebula-2"></div>
-        <div class="nebula-cloud nebula-3"></div>
-        <div class="galaxy-stars-overlay"></div>
-
-        <!-- CATALOG CONTROLS (SERIES & CATEGORY FILTERS) -->
-        <section id="catalogSection" class="relative z-10 pt-6 sm:pt-8 px-3 sm:px-8 max-w-7xl mx-auto w-full space-y-2.5 sm:space-y-3">
-            <!-- Series Switcher -->
-            <div class="p-1 sm:p-1.5 rounded-xl sm:rounded-2xl bg-[#070e1c]/90 border border-cyan-500/20 flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 shadow-xl backdrop-blur-md">
-                <div class="flex items-center gap-1 sm:gap-1.5 w-full sm:w-auto justify-between sm:justify-start">
-                    <button onclick="filterBySeries('all')" data-series="all"
-                            class="series-btn active flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold text-slate-300 hover:text-white transition-all border border-transparent">
-                        Tất Cả ({total_count})
-                    </button>
-                    <button onclick="filterBySeries('studio')" data-series="studio"
-                            class="series-btn flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold text-slate-300 hover:text-white transition-all border border-transparent flex items-center justify-center gap-1 sm:gap-1.5">
-                        <span>Studio</span>
-                        <span class="px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-mono font-bold">{studio_count}</span>
-                    </button>
-                    <button onclick="filterBySeries('lab')" data-series="lab"
-                            class="series-btn flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold text-slate-300 hover:text-white transition-all border border-transparent flex items-center justify-center gap-1 sm:gap-1.5">
-                        <span>Lab</span>
-                        <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-200 text-[10px] font-mono font-bold">{lab_count}</span>
-                    </button>
-                </div>
-
-                <div class="text-[11px] sm:text-xs text-slate-400 px-3 hidden sm:block font-mono">
-                    Hiển thị: <span id="visibleCount" class="font-bold text-cyan-300 text-sm">{total_count}</span> / {total_count}
-                </div>
-            </div>
-
-            <!-- Categories -->
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
-                <button onclick="filterByCategory('all')" data-cat="all"
-                        class="cat-tab active px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/90 border border-cyan-500/20 text-slate-300 whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Tất Cả Thể Loại
-                </button>
-                <button onclick="filterByCategory('preset')" data-cat="preset"
-                        class="cat-tab px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/60 border border-white/[0.08] text-slate-400 hover:text-white whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Màu & Preset
-                </button>
-                <button onclick="filterByCategory('software')" data-cat="software"
-                        class="cat-tab px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/60 border border-white/[0.08] text-slate-400 hover:text-white whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Phần Mềm & Panel
-                </button>
-                <button onclick="filterByCategory('psd')" data-cat="psd"
-                        class="cat-tab px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/60 border border-white/[0.08] text-slate-400 hover:text-white whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Mẫu Layout PSD
-                </button>
-                <button onclick="filterByCategory('raw')" data-cat="raw"
-                        class="cat-tab px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/60 border border-white/[0.08] text-slate-400 hover:text-white whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Stock RAW Gốc
-                </button>
-                <button onclick="filterByCategory('courses')" data-cat="courses"
-                        class="cat-tab px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#081226]/60 border border-white/[0.08] text-slate-400 hover:text-white whitespace-nowrap text-[11px] sm:text-xs transition-colors backdrop-blur-md">
-                    Khóa Học
-                </button>
-            </div>
-        </section>
-
-        <!-- 3. MAIN RESOURCE GRID (RESPONSIVE 2 COLUMNS ON MOBILE) -->
-        <main class="relative z-10 py-5 sm:py-6 px-3 sm:px-8 max-w-7xl mx-auto w-full flex-1">
-            <div id="resourceGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 md:gap-5">
-                {cards_html}
-            </div>
-
-            <!-- Empty State -->
-            <div id="noResults" class="hidden py-16 sm:py-20 text-center space-y-3">
-                <i data-lucide="inbox" class="w-8 h-8 mx-auto text-cyan-400/50"></i>
-                <h4 class="text-sm font-bold text-white">Không có kết quả phù hợp</h4>
-                <p class="text-xs text-slate-400">Vui lòng thử từ khóa tìm kiếm khác.</p>
-                <button onclick="resetFilters()" class="px-3.5 py-1.5 rounded-xl bg-[#0e1d38] hover:bg-[#162d59] text-xs font-semibold text-cyan-300 border border-cyan-400/30 transition-colors">
-                    Xóa Bộ Lọc
-                </button>
-            </div>
-        </main>
-    </div>
-
-    <!-- 4. FOOTER -->
-    <footer class="mt-auto border-t border-cyan-500/15 bg-[#03060f] py-6 sm:py-8 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 font-mono text-center sm:text-left">
-            <div class="flex items-center gap-2 text-slate-300">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"></span>
-                <span>72 Verified Google Drive Direct Links</span>
-            </div>
-            <div class="text-[11px] text-slate-500">
-                White-Blue Darkroom Architecture · Mobile 2-Column Responsive
             </div>
         </div>
+    </header>
+
+    <!-- 2. STICKY UNIFIED CONTROL DOCK -->
+    <nav class="sticky-dock px-4 sm:px-6 lg:px-8 py-3.5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+            
+            <!-- Search Input with Shortcut -->
+            <div class="relative flex-1 max-w-md">
+                <i data-lucide="search" class="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                <input type="text" id="searchInput" placeholder="Tìm theo mã (#S-01, #L-01), tên, thể loại..." oninput="handleSearch()"
+                       class="w-full pl-10 pr-10 py-2.5 rounded-xl bg-zinc-900/90 border border-white/10 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all">
+                <span class="hidden sm:inline-block absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-white/[0.06] border border-white/10 text-[10px] font-mono text-zinc-400">/</span>
+            </div>
+
+            <!-- Series Switcher (Segmented Control) -->
+            <div class="flex items-center gap-1 p-1 rounded-xl bg-zinc-900 border border-white/10 self-start md:self-auto">
+                <button onclick="filterBySeries('all')" data-series="all"
+                        class="series-pill active px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-300 hover:text-white transition-all">
+                    Tất Cả ({total_count})
+                </button>
+                <button onclick="filterBySeries('studio')" data-series="studio"
+                        class="series-pill px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-white transition-all flex items-center gap-1.5">
+                    <span>Studio</span>
+                    <span class="px-1.5 py-0.2 rounded-full bg-sky-500/20 text-sky-300 text-[10px] font-mono">{studio_count}</span>
+                </button>
+                <button onclick="filterBySeries('lab')" data-series="lab"
+                        class="series-pill px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-white transition-all flex items-center gap-1.5">
+                    <span>Lab</span>
+                    <span class="px-1.5 py-0.2 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-mono">{lab_count}</span>
+                </button>
+            </div>
+
+            <!-- Real-time Resource Counter -->
+            <div class="hidden lg:flex items-center gap-2 text-xs font-mono text-zinc-400">
+                <span>Đang hiển thị:</span>
+                <span id="visibleCount" class="font-bold text-sky-400 text-sm">{total_count}</span>
+                <span>/ {total_count}</span>
+            </div>
+        </div>
+
+        <!-- Category Horizontal Pills -->
+        <div class="max-w-7xl mx-auto flex items-center gap-1.5 overflow-x-auto pt-2.5 pb-1 no-scrollbar text-xs">
+            <button onclick="filterByCategory('all')" data-cat="all"
+                    class="filter-btn active px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-300 hover:text-white whitespace-nowrap transition-all">
+                Tất Cả Thể Loại
+            </button>
+            <button onclick="filterByCategory('preset')" data-cat="preset"
+                    class="filter-btn px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-400 hover:text-white whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i data-lucide="sliders" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Màu &amp; Preset</span>
+            </button>
+            <button onclick="filterByCategory('software')" data-cat="software"
+                    class="filter-btn px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-400 hover:text-white whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Phần Mềm &amp; Panel</span>
+            </button>
+            <button onclick="filterByCategory('psd')" data-cat="psd"
+                    class="filter-btn px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-400 hover:text-white whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-purple-400"></i>
+                <span>Mẫu Layout PSD</span>
+            </button>
+            <button onclick="filterByCategory('raw')" data-cat="raw"
+                    class="filter-btn px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-400 hover:text-white whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i data-lucide="image" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Stock RAW Gốc</span>
+            </button>
+            <button onclick="filterByCategory('courses')" data-cat="courses"
+                    class="filter-btn px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-400 hover:text-white whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Khóa Học</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 3. RESOURCE CATALOG GRID -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+        <div id="resourceGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {cards_html}
+        </div>
+
+        <!-- Empty State -->
+        <div id="noResults" class="hidden py-24 text-center space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mx-auto text-zinc-500">
+                <i data-lucide="inbox" class="w-6 h-6"></i>
+            </div>
+            <div class="text-base font-bold text-white">Không tìm thấy tài nguyên phù hợp</div>
+            <p class="text-xs text-zinc-400 max-w-sm mx-auto">Thử tìm theo từ khóa khác hoặc xóa bộ lọc để hiển thị toàn bộ 72 tài nguyên.</p>
+            <button onclick="resetFilters()" class="px-4 py-2 rounded-xl bg-sky-500/10 text-sky-300 border border-sky-400/20 text-xs font-semibold hover:bg-sky-500/20 transition-colors">
+                Xóa bộ lọc
+            </button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/[0.06] py-8 px-4 text-center text-xs font-mono text-zinc-500 space-y-2">
+        <div>STUDIO ARCHIVE • CURATED GRAPHICS &amp; RETOUCHING VAULT</div>
+        <div class="text-zinc-600">Built with 100% Direct Google Drive Links • No Ads • No Trackers</div>
     </footer>
 
-    <!-- 5. THREE.JS 3D LANDSCAPE ENGINE (DARK NAVY & ICE BLUE / WHITE PALETTE) -->
+    <!-- INTERACTIVITY & 3D PARALLAX ENGINE -->
     <script>
-        (function initLandscape3D() {{
-            const container = document.getElementById('landscape3d-wrapper');
-            const canvas = document.getElementById('landscape3d-canvas');
-            if (!container || !canvas || !window.THREE) return;
+        lucide.createIcons();
 
-            try {{
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-                camera.position.set(0, 0, 18);
+        // 1. Filtering & Search Engine
+        let currentSeries = 'all';
+        let currentCategory = 'all';
+        let searchQuery = '';
 
-                const renderer = new THREE.WebGLRenderer({{ canvas: canvas, antialias: true, alpha: true, powerPreference: 'high-performance' }});
-                renderer.setSize(container.clientWidth, container.clientHeight);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        function updateCatalog() {{
+            const cards = document.querySelectorAll('.resource-card');
+            let visible = 0;
 
-                const group = new THREE.Group();
-                scene.add(group);
+            cards.forEach(card => {{
+                const cardSeries = card.getAttribute('data-series');
+                const cardCat = card.getAttribute('data-cat');
+                const cardSearch = (card.getAttribute('data-search') || '').toLowerCase();
 
-            // Canvas Gradient Texture for Sky: Deep Space Navy -> Dark Blue -> Ocean Cyan -> Ice Horizon Glow
-            function createSkyTexture() {{
-                const c = document.createElement('canvas');
-                c.width = 512;
-                c.height = 1024;
-                const ctx = c.getContext('2d');
-                const grad = ctx.createLinearGradient(0, 0, 0, c.height);
-                grad.addColorStop(0.00, '#020409'); // Midnight Space
-                grad.addColorStop(0.35, '#07152d'); // Deep Navy Blue
-                grad.addColorStop(0.70, '#0284c7'); // Electric Ocean Blue
-                grad.addColorStop(1.00, '#bae6fd'); // Ice White Horizon Glow
-                ctx.fillStyle = grad;
-                ctx.fillRect(0, 0, c.width, c.height);
-                const tex = new THREE.CanvasTexture(c);
-                tex.minFilter = THREE.LinearFilter;
-                return tex;
-            }}
+                const matchSeries = (currentSeries === 'all' || cardSeries === currentSeries);
+                const matchCategory = (currentCategory === 'all' || cardCat === currentCategory);
+                const matchSearch = (!searchQuery || cardSearch.includes(searchQuery));
 
-            // LAYER 1: Background Sky (z = -25)
-            const skyGeo = new THREE.PlaneGeometry(120, 80);
-            const skyMat = new THREE.MeshBasicMaterial({{ map: createSkyTexture(), depthWrite: false }});
-            const skyMesh = new THREE.Mesh(skyGeo, skyMat);
-            skyMesh.position.set(0, 0, -25);
-            group.add(skyMesh);
-
-            // LAYER 2: Ice Moon / Glowing Orb (z = -20)
-            const moonGroup = new THREE.Group();
-            moonGroup.position.set(7, 9, -20);
-
-            // Pure White / Ice Core
-            const moonGeo = new THREE.CircleGeometry(4.8, 64);
-            const moonMat = new THREE.MeshBasicMaterial({{ color: 0xf0f9ff, transparent: true, opacity: 0.95 }});
-            const moonMesh = new THREE.Mesh(moonGeo, moonMat);
-            moonGroup.add(moonMesh);
-
-            // Ice Blue Halo
-            function createMoonHaloTexture() {{
-                const c = document.createElement('canvas');
-                c.width = 256;
-                c.height = 256;
-                const ctx = c.getContext('2d');
-                const rad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-                rad.addColorStop(0, 'rgba(240, 249, 255, 0.8)');
-                rad.addColorStop(0.35, 'rgba(56, 189, 248, 0.45)');
-                rad.addColorStop(0.75, 'rgba(14, 165, 233, 0.15)');
-                rad.addColorStop(1, 'rgba(14, 165, 233, 0)');
-                ctx.fillStyle = rad;
-                ctx.fillRect(0, 0, 256, 256);
-                return new THREE.CanvasTexture(c);
-            }}
-            const haloGeo = new THREE.PlaneGeometry(26, 26);
-            const haloMat = new THREE.MeshBasicMaterial({{ map: createMoonHaloTexture(), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }});
-            const haloMesh = new THREE.Mesh(haloGeo, haloMat);
-            moonGroup.add(haloMesh);
-            group.add(moonGroup);
-
-            // Mountain Silhouettes (Dark Navy & Ice Blue Highlights)
-            function createMountainTexture(color, highlightColor, peaks) {{
-                const c = document.createElement('canvas');
-                c.width = 2048;
-                c.height = 1024;
-                const ctx = c.getContext('2d');
-                ctx.fillStyle = color;
-                ctx.beginPath();
-                ctx.moveTo(0, c.height);
-                for (let i = 0; i < peaks.length; i++) {{
-                    const [px, py] = peaks[i];
-                    ctx.lineTo(px * c.width, (1 - py) * c.height);
+                if (matchSeries && matchCategory && matchSearch) {{
+                    card.style.display = 'flex';
+                    visible++;
+                }} else {{
+                    card.style.display = 'none';
                 }}
-                ctx.lineTo(c.width, c.height);
-                ctx.closePath();
-                ctx.fill();
-
-                if (highlightColor) {{
-                    ctx.strokeStyle = highlightColor;
-                    ctx.lineWidth = 6;
-                    ctx.stroke();
-                }}
-                const tex = new THREE.CanvasTexture(c);
-                tex.minFilter = THREE.LinearFilter;
-                return tex;
-            }}
-
-            // LAYER 3: Back Mountains (z = -15, Deep Navy with Ice Rim Light)
-            const m1Peaks = [
-                [0.0, 0.20], [0.12, 0.45], [0.22, 0.28], [0.35, 0.62], 
-                [0.48, 0.35], [0.60, 0.52], [0.75, 0.38], [0.88, 0.48], [1.0, 0.25]
-            ];
-            const m1Tex = createMountainTexture('#06142a', '#e0f2fe88', m1Peaks);
-            const m1Geo = new THREE.PlaneGeometry(90, 45);
-            const m1Mat = new THREE.MeshBasicMaterial({{ map: m1Tex, transparent: true, depthWrite: false }});
-            const m1Mesh = new THREE.Mesh(m1Geo, m1Mat);
-            m1Mesh.position.set(0, -6, -15);
-            group.add(m1Mesh);
-
-            // LAYER 4: Mid Mountains (z = -8, Ocean Midnight Blue with Cyan Edge)
-            const m2Peaks = [
-                [0.0, 0.15], [0.18, 0.36], [0.30, 0.22], [0.45, 0.48], 
-                [0.55, 0.30], [0.70, 0.42], [0.85, 0.20], [1.0, 0.12]
-            ];
-            const m2Tex = createMountainTexture('#0a1d38', '#38bdf866', m2Peaks);
-            const m2Geo = new THREE.PlaneGeometry(60, 30);
-            const m2Mat = new THREE.MeshBasicMaterial({{ map: m2Tex, transparent: true, depthWrite: false }});
-            const m2Mesh = new THREE.Mesh(m2Geo, m2Mat);
-            m2Mesh.position.set(0, -7, -8);
-            group.add(m2Mesh);
-
-            // LAYER 5: Near Mountains (z = -4, Cold Indigo Blue)
-            const m3Peaks = [
-                [0.0, 0.10], [0.25, 0.28], [0.50, 0.15], [0.75, 0.32], [1.0, 0.08]
-            ];
-            const m3Tex = createMountainTexture('#0f2b52', '#7dd3fc55', m3Peaks);
-            const m3Geo = new THREE.PlaneGeometry(45, 20);
-            const m3Mat = new THREE.MeshBasicMaterial({{ map: m3Tex, transparent: true, depthWrite: false }});
-            const m3Mesh = new THREE.Mesh(m3Geo, m3Mat);
-            m3Mesh.position.set(0, -7, -4);
-            group.add(m3Mesh);
-
-            // LAYER 6: Foreground Base & Traveler Silhouette (z = 0.5, Deep Obsidian #040711)
-            function createForegroundTexture() {{
-                const c = document.createElement('canvas');
-                c.width = 2048;
-                c.height = 1024;
-                const ctx = c.getContext('2d');
-                ctx.fillStyle = '#040711';
-
-                ctx.beginPath();
-                ctx.moveTo(0, c.height);
-                ctx.lineTo(0, c.height * 0.65);
-                ctx.quadraticCurveTo(c.width * 0.35, c.height * 0.58, c.width * 0.70, c.height * 0.75);
-                ctx.lineTo(c.width, c.height * 0.55);
-                ctx.lineTo(c.width, c.height);
-                ctx.closePath();
-                ctx.fill();
-
-                // Traveler Silhouette
-                const tx = c.width * 0.82;
-                const ty = c.height * 0.60;
-                ctx.fillStyle = '#040711';
-                
-                ctx.beginPath();
-                ctx.moveTo(tx - 38, ty);
-                ctx.lineTo(tx, ty - 22);
-                ctx.lineTo(tx + 38, ty);
-                ctx.closePath();
-                ctx.fill();
-
-                ctx.beginPath();
-                ctx.arc(tx, ty + 8, 14, 0, Math.PI * 2);
-                ctx.rect(tx - 18, ty + 16, 36, 60);
-                ctx.fill();
-
-                return new THREE.CanvasTexture(c);
-            }}
-            const fgTex = createForegroundTexture();
-            const fgGeo = new THREE.PlaneGeometry(32, 16);
-            const fgMat = new THREE.MeshBasicMaterial({{ map: fgTex, transparent: true }});
-            const fgMesh = new THREE.Mesh(fgGeo, fgMat);
-            fgMesh.position.set(0, -6, 0.5);
-            group.add(fgMesh);
-
-            // LAYER 7: Atmospheric Ice Dust (White & Cyan Sparkles)
-            const dustCount = 130;
-            const dustGeo = new THREE.BufferGeometry();
-            const dustPositions = new Float32Array(dustCount * 3);
-            for (let i = 0; i < dustCount; i++) {{
-                dustPositions[i * 3 + 0] = (Math.random() - 0.5) * 50;
-                dustPositions[i * 3 + 1] = (Math.random() - 0.5) * 30;
-                dustPositions[i * 3 + 2] = (Math.random() - 0.5) * 20 - 5;
-            }}
-            dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
-            const dustMat = new THREE.PointsMaterial({{
-                color: 0xe0f2fe, // Pure Ice Sparkle
-                size: 0.18,
-                transparent: true,
-                opacity: 0.85,
-                blending: THREE.AdditiveBlending
             }});
-            const dustPoints = new THREE.Points(dustGeo, dustMat);
-            group.add(dustPoints);
 
-            // MOUSE & TOUCH TRACKING WITH LERP
-            const mouse = {{ x: 0, y: 0, targetX: 0, targetY: 0 }};
-            function updateCoordinates(clientX, clientY) {{
-                const rect = container.getBoundingClientRect();
-                mouse.targetX = ((clientX - rect.left) / rect.width) * 2 - 1;
-                mouse.targetY = -(((clientY - rect.top) / rect.height) * 2 - 1);
+            const countEl = document.getElementById('visibleCount');
+            if (countEl) countEl.textContent = visible;
+
+            const noRes = document.getElementById('noResults');
+            if (noRes) noRes.classList.toggle('hidden', visible > 0);
+        }}
+
+        function filterBySeries(series) {{
+            currentSeries = series;
+            document.querySelectorAll('.series-pill').forEach(btn => {{
+                btn.classList.toggle('active', btn.getAttribute('data-series') === series);
+            }});
+            updateCatalog();
+        }}
+
+        function filterByCategory(cat) {{
+            currentCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {{
+                btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+            }});
+            updateCatalog();
+        }}
+
+        function handleSearch() {{
+            const input = document.getElementById('searchInput');
+            searchQuery = (input.value || '').trim().toLowerCase();
+            updateCatalog();
+        }}
+
+        function resetFilters() {{
+            document.getElementById('searchInput').value = '';
+            searchQuery = '';
+            currentSeries = 'all';
+            currentCategory = 'all';
+            filterBySeries('all');
+            filterByCategory('all');
+        }}
+
+        // Keyboard Shortcut '/' to focus search
+        window.addEventListener('keydown', (e) => {{
+            if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {{
+                e.preventDefault();
+                const input = document.getElementById('searchInput');
+                if (input) input.focus();
             }}
+        }});
 
-            window.addEventListener('mousemove', (e) => updateCoordinates(e.clientX, e.clientY));
-            window.addEventListener('touchmove', (e) => {{
-                if (e.touches.length > 0) {{
-                    updateCoordinates(e.touches[0].clientX, e.touches[0].clientY);
+        // Copy Link Action + HUD Toast
+        function copyResourceUrl(url, title) {{
+            navigator.clipboard.writeText(url).then(() => {{
+                const toast = document.getElementById('hudToast');
+                const msg = document.getElementById('toastMsg');
+                if (msg) msg.textContent = `Đã sao chép link #${{title.slice(0, 28)}}...`;
+                if (toast) {{
+                    toast.classList.add('active');
+                    setTimeout(() => toast.classList.remove('active'), 2500);
                 }}
-            }}, {{ passive: true }});
+            }}).catch(() => {{
+                prompt('Link Google Drive:', url);
+            }});
+        }}
 
-            let clock = new THREE.Clock();
+        // 2. High-Performance Three.js Interactive Moon & Starfield Engine
+        (function initThreeEngine() {{
+            const wrapper = document.getElementById('landscape3d-wrapper');
+            const canvas = document.getElementById('landscape3d-canvas');
+            if (!wrapper || !canvas || typeof THREE === 'undefined') return;
+
+            const scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x04060a, 0.002);
+
+            const camera = new THREE.PerspectiveCamera(45, wrapper.clientWidth / wrapper.clientHeight, 1, 1000);
+            camera.position.set(0, 5, 40);
+
+            const renderer = new THREE.WebGLRenderer({{ canvas, alpha: true, antialias: true }});
+            renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Moon Mesh with Soft Glow
+            const moonGeo = new THREE.SphereGeometry(6, 32, 32);
+            const moonMat = new THREE.MeshBasicMaterial({{ color: 0xffffff }});
+            const moon = new THREE.Mesh(moonGeo, moonMat);
+            moon.position.set(18, 12, -40);
+            scene.add(moon);
+
+            // Mountain Grid Geometry (Low poly wireframe / frosted silhouette)
+            const mountainGeo = new THREE.PlaneGeometry(120, 60, 40, 20);
+            const pos = mountainGeo.attributes.position;
+            for (let i = 0; i < pos.count; i++) {{
+                const x = pos.getX(i);
+                const y = pos.getY(i);
+                const dist = Math.abs(x);
+                pos.setZ(i, Math.sin(x * 0.1) * Math.cos(y * 0.1) * 8 - (dist * 0.1));
+            }}
+            mountainGeo.computeVertexNormals();
+
+            const mountainMat = new THREE.MeshBasicMaterial({{
+                color: 0x0e172a,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.35
+            }});
+            const mountain = new THREE.Mesh(mountainGeo, mountainMat);
+            mountain.rotation.x = -Math.PI / 2.5;
+            mountain.position.set(0, -10, -20);
+            scene.add(mountain);
+
+            // Floating Star Particles
+            const starGeo = new THREE.BufferGeometry();
+            const starCount = 300;
+            const starPos = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i += 3) {{
+                starPos[i] = (Math.random() - 0.5) * 120;
+                starPos[i + 1] = Math.random() * 50 - 10;
+                starPos[i + 2] = (Math.random() - 0.5) * 80;
+            }}
+            starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+            const starMat = new THREE.PointsMaterial({{ color: 0x38bdf8, size: 0.6, transparent: true, opacity: 0.7 }});
+            const starField = new THREE.Points(starGeo, starMat);
+            scene.add(starField);
+
+            // Mouse Parallax Interaction
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => {{
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            }});
+
             function animate() {{
                 requestAnimationFrame(animate);
-                const elapsedTime = clock.getElapsedTime();
-
-                mouse.x += (mouse.targetX - mouse.x) * 0.05;
-                mouse.y += (mouse.targetY - mouse.y) * 0.05;
-
-                group.rotation.y = mouse.x * 0.14;
-                group.rotation.x = -mouse.y * 0.10;
-
-                moonGroup.position.y = 9 + Math.sin(elapsedTime * 1.5) * 0.35;
-
-                const pos = dustGeo.attributes.position.array;
-                for (let i = 0; i < dustCount; i++) {{
-                    pos[i * 3 + 1] += 0.015;
-                    if (pos[i * 3 + 1] > 15) pos[i * 3 + 1] = -15;
-                }}
-                dustGeo.attributes.position.needsUpdate = true;
-
+                camera.position.x += (mouseX * 4 - camera.position.x) * 0.05;
+                camera.position.y += (-mouseY * 2 + 5 - camera.position.y) * 0.05;
+                camera.lookAt(0, 0, -20);
+                moon.position.x += 0.002;
+                mountain.rotation.z += 0.0003;
                 renderer.render(scene, camera);
             }}
             animate();
 
             window.addEventListener('resize', () => {{
-                if (!container) return;
-                const w = container.clientWidth;
-                const h = container.clientHeight;
-                camera.aspect = w / h;
+                if (!wrapper) return;
+                camera.aspect = wrapper.clientWidth / wrapper.clientHeight;
                 camera.updateProjectionMatrix();
-                renderer.setSize(w, h);
+                renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
             }});
-            }} catch (webglErr) {{
-                console.warn('WebGL context failed or unsupported. Fallback activated:', webglErr);
-                if (canvas) canvas.style.display = 'none';
-                if (container) {{
-                    container.style.background = 'radial-gradient(circle at 75% 20%, rgba(56, 189, 248, 0.22) 0%, rgba(7, 21, 45, 0.9) 45%, #040711 100%)';
-                }}
-            }}
         }})();
-
-        // 6. INTERACTIVE MOTION FOR LOWER SECTIONS (3D Tilt, Spotlight, Magnetic, Stagger Reveal)
-        lucide.createIcons();
-
-        function initCardMotion() {{
-            const cards = document.querySelectorAll('.resource-card');
-            cards.forEach(card => {{
-                let rect = null;
-                let ticking = false;
-
-                card.addEventListener('mouseenter', () => {{
-                    rect = card.getBoundingClientRect();
-                }});
-
-                card.addEventListener('mousemove', (e) => {{
-                    if (!rect) rect = card.getBoundingClientRect();
-                    const clientX = e.clientX;
-                    const clientY = e.clientY;
-
-                    if (!ticking) {{
-                        requestAnimationFrame(() => {{
-                            if (!rect) return;
-                            const x = clientX - rect.left;
-                            const y = clientY - rect.top;
-                            
-                            card.style.setProperty('--card-x', `${{x}}px`);
-                            card.style.setProperty('--card-y', `${{y}}px`);
-
-                            const centerX = rect.width / 2;
-                            const centerY = rect.height / 2;
-                            const rotateX = ((y - centerY) / centerY) * -6.5;
-                            const rotateY = ((x - centerX) / centerX) * 6.5;
-
-                            card.style.transform = `perspective(800px) rotateX(${{rotateX.toFixed(2)}}deg) rotateY(${{rotateY.toFixed(2)}}deg) translateY(-4px)`;
-                            ticking = false;
-                        }});
-                        ticking = true;
-                    }}
-                }});
-
-                card.addEventListener('mouseleave', () => {{
-                    rect = null;
-                    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-                }});
-            }});
-
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {{
-                let btnRect = null;
-                let btnTicking = false;
-
-                btn.addEventListener('mouseenter', () => {{
-                    btnRect = btn.getBoundingClientRect();
-                }});
-
-                btn.addEventListener('mousemove', (e) => {{
-                    if (!btnRect) btnRect = btn.getBoundingClientRect();
-                    const clientX = e.clientX;
-                    const clientY = e.clientY;
-
-                    if (!btnTicking) {{
-                        requestAnimationFrame(() => {{
-                            if (!btnRect) return;
-                            const x = (clientX - btnRect.left - btnRect.width / 2) * 0.28;
-                            const y = (clientY - btnRect.top - btnRect.height / 2) * 0.28;
-                            btn.style.transform = `translate(${{x.toFixed(1)}}px, ${{y.toFixed(1)}}px)`;
-                            btnTicking = false;
-                        }});
-                        btnTicking = true;
-                    }}
-                }});
-
-                btn.addEventListener('mouseleave', () => {{
-                    btnRect = null;
-                    btn.style.transform = 'translate(0px, 0px)';
-                }});
-            }});
-        }}
-
-        const revealObserver = new IntersectionObserver((entries) => {{
-            entries.forEach(entry => {{
-                if (entry.isIntersecting) {{
-                    entry.target.classList.add('revealed');
-                    revealObserver.unobserve(entry.target);
-                }}
-            }});
-        }}, {{ threshold: 0.05 }});
-
-        document.querySelectorAll('.resource-card').forEach((card, idx) => {{
-            card.style.transitionDelay = `${{(idx % 6) * 0.04}}s`;
-            revealObserver.observe(card);
-        }});
-
-        let currentSeries = 'all';
-        let currentCategory = 'all';
-        let currentSearchQuery = '';
-
-        function scrollToCatalog() {{
-            document.getElementById('catalogSection').scrollIntoView({{ behavior: 'smooth' }});
-        }}
-
-        function filterBySeries(series) {{
-            currentSeries = series;
-            document.querySelectorAll('.series-btn').forEach(btn => {{
-                if (btn.getAttribute('data-series') === series) {{
-                    btn.classList.add('active');
-                }} else {{
-                    btn.classList.remove('active');
-                }}
-            }});
-            applyFilters();
-        }}
-
-        function filterByCategory(cat) {{
-            currentCategory = cat;
-            document.querySelectorAll('.cat-tab').forEach(btn => {{
-                if (btn.getAttribute('data-cat') === cat) {{
-                    btn.classList.add('active');
-                }} else {{
-                    btn.classList.remove('active');
-                }}
-            }});
-            applyFilters();
-        }}
-
-        function handleSearch() {{
-            const input = document.getElementById('searchInput');
-            currentSearchQuery = input.value.trim().toLowerCase();
-            const clearBtn = document.getElementById('clearSearchBtn');
-            if (currentSearchQuery) {{
-                clearBtn.classList.remove('hidden');
-            }} else {{
-                clearBtn.classList.add('hidden');
-            }}
-            applyFilters();
-        }}
-
-        function clearSearch() {{
-            document.getElementById('searchInput').value = '';
-            document.getElementById('clearSearchBtn').classList.add('hidden');
-            currentSearchQuery = '';
-            applyFilters();
-        }}
-
-        function resetFilters() {{
-            filterBySeries('all');
-            filterByCategory('all');
-            clearSearch();
-        }}
-
-        function applyFilters() {{
-            const cards = document.querySelectorAll('.resource-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {{
-                const series = card.getAttribute('data-series');
-                const cat = card.getAttribute('data-cat');
-                const searchData = card.getAttribute('data-search').toLowerCase();
-
-                const seriesMatch = (currentSeries === 'all') || (series === currentSeries);
-                const catMatch = (currentCategory === 'all') || (cat === currentCategory);
-                const searchMatch = !currentSearchQuery || searchData.includes(currentSearchQuery);
-
-                if (seriesMatch && catMatch && searchMatch) {{
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                }} else {{
-                    card.classList.add('hidden');
-                }}
-            }});
-
-            const visibleCountEl = document.getElementById('visibleCount');
-            if (visibleCountEl) visibleCountEl.textContent = visibleCount;
-
-            const noResults = document.getElementById('noResults');
-            if (visibleCount === 0) {{
-                noResults.classList.remove('hidden');
-            }} else {{
-                noResults.classList.add('hidden');
-            }}
-        }}
-
-        let toastTimeout;
-        function showHudToast(message, type = 'success') {{
-            const toast = document.getElementById('hudToast');
-            const titleEl = document.getElementById('toastTitle');
-            const iconEl = document.getElementById('toastIcon');
-            
-            if (titleEl) titleEl.textContent = message;
-            if (iconEl) {{
-                if (type === 'error') {{
-                    iconEl.setAttribute('data-lucide', 'alert-circle');
-                    iconEl.className = 'w-4 h-4 text-rose-400';
-                }} else if (type === 'info') {{
-                    iconEl.setAttribute('data-lucide', 'shield');
-                    iconEl.className = 'w-4 h-4 text-cyan-400';
-                }} else {{
-                    iconEl.setAttribute('data-lucide', 'check');
-                    iconEl.className = 'w-4 h-4 text-emerald-400';
-                }}
-                if (window.lucide) lucide.createIcons();
-            }}
-            
-            toast.classList.add('active');
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {{
-                toast.classList.remove('active');
-            }}, 3200);
-        }}
-
-        async function copyResourceUrl(url, title) {{
-            if (!url) {{
-                showHudToast('Liên kết đang cập nhật...', 'info');
-                return;
-            }}
-            let copied = false;
-            try {{
-                if (navigator.clipboard && navigator.clipboard.writeText) {{
-                    await navigator.clipboard.writeText(url);
-                    copied = true;
-                }}
-            }} catch (e) {{}}
-
-            if (!copied) {{
-                try {{
-                    const ta = document.createElement('textarea');
-                    ta.value = url;
-                    ta.style.position = 'fixed';
-                    ta.style.left = '-9999px';
-                    ta.style.top = '0';
-                    document.body.appendChild(ta);
-                    ta.focus();
-                    ta.select();
-                    copied = document.execCommand('copy');
-                    document.body.removeChild(ta);
-                }} catch (e) {{}}
-            }}
-
-            if (copied) {{
-                showHudToast(`Đã sao chép link Drive: ${{title}}`, 'success');
-            }} else {{
-                prompt(`Nhấn Ctrl+C để sao chép liên kết Drive cho "${{title}}":`, url);
-            }}
-        }}
     </script>
 </body>
 </html>
@@ -1048,7 +605,9 @@ def build():
 
     with open(output_index, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"Generated 2-Col Mobile & Dark White-Blue index.html at: {output_index}")
+
+    print(f"[build] Successfully built {output_index} ({len(html)} bytes).")
 
 if __name__ == "__main__":
     build()
+
