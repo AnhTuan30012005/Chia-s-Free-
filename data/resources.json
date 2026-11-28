@@ -645,8 +645,38 @@
     "desc": "Gói quà tặng miễn phí: LehungPhotography_Free_Film_Pack.zip tải trực tiếp từ Google Drive."
   },
   {
+    "code": "S-44",
+    "stt": 44,
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
+    "title": "Bộ 20 Màu Hot Kỷ Yếu & Chân Dung Studio",
+    "url": "https://drive.google.com/drive/folders/1dlZ22UadO-v3ZoExhwinUjVD8dur64Rj?usp=sharing",
+    "category": "preset",
+    "cat_name": "Preset & Picture Style",
+    "format": "DNG / XMP Preset",
+    "platform": "Lightroom Mobile & PC",
+    "tag": "ZunPhoto VIP Preset",
+    "desc": "Trọn bộ 20 tone màu kỷ yếu và chân dung hot nhất của ZunPhoto, tối ưu skintone trong trẻo và màu áo dài, định dạng DNG/XMP chuẩn."
+  },
+  {
+    "code": "S-45",
+    "stt": 45,
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
+    "title": "Bộ Màu Kỷ Yếu File DNG Chuẩn Chuyên Nghiệp",
+    "url": "https://drive.google.com/drive/folders/1ISolAa5vJtMdrcQJM2mn6zXCJ8cpQBr3?usp=sharing",
+    "category": "preset",
+    "cat_name": "Preset & Picture Style",
+    "format": "DNG Mobile / PC",
+    "platform": "Lightroom & Photoshop",
+    "tag": "DNG Preset Kỷ Yếu",
+    "desc": "Bộ preset màu kỷ yếu file DNG chuẩn kéo trực tiếp trên Lightroom Mobile và PC, giữ trọn chi tiết khối và màu trắng áo dài tự nhiên."
+  },
+  {
     "code": "L-01",
-    "stt": 1,
+    "stt": 46,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -661,7 +691,7 @@
   },
   {
     "code": "L-02",
-    "stt": 2,
+    "stt": 47,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -676,7 +706,7 @@
   },
   {
     "code": "L-03",
-    "stt": 3,
+    "stt": 48,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -691,7 +721,7 @@
   },
   {
     "code": "L-04",
-    "stt": 4,
+    "stt": 49,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -706,7 +736,7 @@
   },
   {
     "code": "L-05",
-    "stt": 5,
+    "stt": 50,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -721,7 +751,7 @@
   },
   {
     "code": "L-06",
-    "stt": 6,
+    "stt": 51,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -736,7 +766,7 @@
   },
   {
     "code": "L-07",
-    "stt": 7,
+    "stt": 52,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -751,7 +781,7 @@
   },
   {
     "code": "L-08",
-    "stt": 8,
+    "stt": 53,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -766,7 +796,7 @@
   },
   {
     "code": "L-09",
-    "stt": 9,
+    "stt": 54,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -781,7 +811,7 @@
   },
   {
     "code": "L-10",
-    "stt": 10,
+    "stt": 55,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -796,7 +826,7 @@
   },
   {
     "code": "L-11",
-    "stt": 11,
+    "stt": 56,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -811,7 +841,7 @@
   },
   {
     "code": "L-12",
-    "stt": 12,
+    "stt": 57,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -826,7 +856,7 @@
   },
   {
     "code": "L-13",
-    "stt": 13,
+    "stt": 58,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -841,7 +871,7 @@
   },
   {
     "code": "L-14",
-    "stt": 14,
+    "stt": 59,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -856,7 +886,7 @@
   },
   {
     "code": "L-15",
-    "stt": 15,
+    "stt": 60,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -871,7 +901,7 @@
   },
   {
     "code": "L-16",
-    "stt": 16,
+    "stt": 61,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -886,7 +916,7 @@
   },
   {
     "code": "L-17",
-    "stt": 17,
+    "stt": 62,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -901,7 +931,7 @@
   },
   {
     "code": "L-18",
-    "stt": 18,
+    "stt": 63,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -916,7 +946,7 @@
   },
   {
     "code": "L-19",
-    "stt": 19,
+    "stt": 64,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -931,7 +961,7 @@
   },
   {
     "code": "L-20",
-    "stt": 20,
+    "stt": 65,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -946,7 +976,7 @@
   },
   {
     "code": "L-21",
-    "stt": 21,
+    "stt": 66,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -961,7 +991,7 @@
   },
   {
     "code": "L-22",
-    "stt": 22,
+    "stt": 67,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -976,7 +1006,7 @@
   },
   {
     "code": "L-23",
-    "stt": 23,
+    "stt": 68,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -991,7 +1021,7 @@
   },
   {
     "code": "L-24",
-    "stt": 24,
+    "stt": 69,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1006,7 +1036,7 @@
   },
   {
     "code": "L-25",
-    "stt": 25,
+    "stt": 70,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1021,7 +1051,7 @@
   },
   {
     "code": "L-26",
-    "stt": 26,
+    "stt": 71,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1036,7 +1066,7 @@
   },
   {
     "code": "L-27",
-    "stt": 27,
+    "stt": 72,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1051,7 +1081,7 @@
   },
   {
     "code": "L-28",
-    "stt": 28,
+    "stt": 73,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1066,7 +1096,7 @@
   },
   {
     "code": "L-29",
-    "stt": 29,
+    "stt": 74,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1081,7 +1111,7 @@
   },
   {
     "code": "L-30",
-    "stt": 30,
+    "stt": 75,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1096,7 +1126,7 @@
   },
   {
     "code": "L-31",
-    "stt": 31,
+    "stt": 76,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1111,7 +1141,7 @@
   },
   {
     "code": "L-32",
-    "stt": 32,
+    "stt": 77,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1126,7 +1156,7 @@
   },
   {
     "code": "L-33",
-    "stt": 33,
+    "stt": 78,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1141,7 +1171,7 @@
   },
   {
     "code": "L-34",
-    "stt": 34,
+    "stt": 79,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1156,7 +1186,7 @@
   },
   {
     "code": "L-35",
-    "stt": 35,
+    "stt": 80,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1171,7 +1201,7 @@
   },
   {
     "code": "L-36",
-    "stt": 36,
+    "stt": 81,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1186,7 +1216,7 @@
   },
   {
     "code": "L-37",
-    "stt": 37,
+    "stt": 82,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1201,7 +1231,7 @@
   },
   {
     "code": "L-38",
-    "stt": 38,
+    "stt": 83,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1216,7 +1246,7 @@
   },
   {
     "code": "L-39",
-    "stt": 39,
+    "stt": 84,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1231,7 +1261,7 @@
   },
   {
     "code": "L-40",
-    "stt": 40,
+    "stt": 85,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1246,7 +1276,7 @@
   },
   {
     "code": "L-41",
-    "stt": 41,
+    "stt": 86,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1261,7 +1291,7 @@
   },
   {
     "code": "L-42",
-    "stt": 42,
+    "stt": 87,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1276,7 +1306,7 @@
   },
   {
     "code": "L-43",
-    "stt": 43,
+    "stt": 88,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1291,7 +1321,7 @@
   },
   {
     "code": "L-44",
-    "stt": 44,
+    "stt": 89,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1306,7 +1336,7 @@
   },
   {
     "code": "L-45",
-    "stt": 45,
+    "stt": 90,
     "series": "lab",
     "series_name": "Lab Suite",
     "series_badge": "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
@@ -1321,7 +1351,7 @@
   },
   {
     "code": "L-46",
-    "stt": 89,
+    "stt": 91,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
@@ -1336,7 +1366,7 @@
   },
   {
     "code": "L-47",
-    "stt": 90,
+    "stt": 92,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
@@ -1351,7 +1381,7 @@
   },
   {
     "code": "L-48",
-    "stt": 91,
+    "stt": 93,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
@@ -1366,7 +1396,7 @@
   },
   {
     "code": "L-49",
-    "stt": 92,
+    "stt": 94,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1381,7 +1411,7 @@
   },
   {
     "code": "L-50",
-    "stt": 93,
+    "stt": 95,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1396,7 +1426,7 @@
   },
   {
     "code": "L-51",
-    "stt": 94,
+    "stt": 96,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1411,7 +1441,7 @@
   },
   {
     "code": "L-52",
-    "stt": 95,
+    "stt": 97,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1426,7 +1456,7 @@
   },
   {
     "code": "L-53",
-    "stt": 96,
+    "stt": 98,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1441,7 +1471,7 @@
   },
   {
     "code": "L-54",
-    "stt": 97,
+    "stt": 99,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1456,7 +1486,7 @@
   },
   {
     "code": "L-55",
-    "stt": 98,
+    "stt": 100,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1471,7 +1501,7 @@
   },
   {
     "code": "L-56",
-    "stt": 99,
+    "stt": 101,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1486,7 +1516,7 @@
   },
   {
     "code": "L-57",
-    "stt": 100,
+    "stt": 102,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1501,7 +1531,7 @@
   },
   {
     "code": "L-58",
-    "stt": 101,
+    "stt": 103,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1516,7 +1546,7 @@
   },
   {
     "code": "L-59",
-    "stt": 102,
+    "stt": 104,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -1531,7 +1561,7 @@
   },
   {
     "code": "L-60",
-    "stt": 103,
+    "stt": 105,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1546,7 +1576,7 @@
   },
   {
     "code": "L-61",
-    "stt": 104,
+    "stt": 106,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1561,7 +1591,7 @@
   },
   {
     "code": "L-62",
-    "stt": 105,
+    "stt": 107,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -1576,7 +1606,7 @@
   },
   {
     "code": "L-63",
-    "stt": 106,
+    "stt": 108,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1591,7 +1621,7 @@
   },
   {
     "code": "L-64",
-    "stt": 107,
+    "stt": 109,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1606,7 +1636,7 @@
   },
   {
     "code": "L-65",
-    "stt": 108,
+    "stt": 110,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1621,7 +1651,7 @@
   },
   {
     "code": "L-66",
-    "stt": 109,
+    "stt": 111,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -1636,7 +1666,7 @@
   },
   {
     "code": "L-67",
-    "stt": 110,
+    "stt": 112,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -1651,7 +1681,7 @@
   },
   {
     "code": "L-68",
-    "stt": 111,
+    "stt": 113,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1666,7 +1696,7 @@
   },
   {
     "code": "L-69",
-    "stt": 112,
+    "stt": 114,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1681,7 +1711,7 @@
   },
   {
     "code": "L-70",
-    "stt": 113,
+    "stt": 115,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -1696,7 +1726,7 @@
   },
   {
     "code": "L-71",
-    "stt": 114,
+    "stt": 116,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1711,7 +1741,7 @@
   },
   {
     "code": "L-72",
-    "stt": 115,
+    "stt": 117,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1726,7 +1756,7 @@
   },
   {
     "code": "L-73",
-    "stt": 116,
+    "stt": 118,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1741,7 +1771,7 @@
   },
   {
     "code": "L-74",
-    "stt": 117,
+    "stt": 119,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1756,7 +1786,7 @@
   },
   {
     "code": "L-75",
-    "stt": 118,
+    "stt": 120,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1771,7 +1801,7 @@
   },
   {
     "code": "L-76",
-    "stt": 119,
+    "stt": 121,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1786,7 +1816,7 @@
   },
   {
     "code": "L-77",
-    "stt": 120,
+    "stt": 122,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1801,7 +1831,7 @@
   },
   {
     "code": "L-78",
-    "stt": 121,
+    "stt": 123,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1816,7 +1846,7 @@
   },
   {
     "code": "L-79",
-    "stt": 122,
+    "stt": 124,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1831,7 +1861,7 @@
   },
   {
     "code": "L-80",
-    "stt": 123,
+    "stt": 125,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1846,7 +1876,7 @@
   },
   {
     "code": "L-81",
-    "stt": 124,
+    "stt": 126,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1861,7 +1891,7 @@
   },
   {
     "code": "L-82",
-    "stt": 125,
+    "stt": 127,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1876,7 +1906,7 @@
   },
   {
     "code": "L-83",
-    "stt": 126,
+    "stt": 128,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1891,7 +1921,7 @@
   },
   {
     "code": "L-84",
-    "stt": 127,
+    "stt": 129,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1906,7 +1936,7 @@
   },
   {
     "code": "L-85",
-    "stt": 128,
+    "stt": 130,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1921,7 +1951,7 @@
   },
   {
     "code": "L-86",
-    "stt": 129,
+    "stt": 131,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1936,7 +1966,7 @@
   },
   {
     "code": "L-87",
-    "stt": 130,
+    "stt": 132,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1951,7 +1981,7 @@
   },
   {
     "code": "L-88",
-    "stt": 131,
+    "stt": 133,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1966,7 +1996,7 @@
   },
   {
     "code": "L-89",
-    "stt": 132,
+    "stt": 134,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1981,7 +2011,7 @@
   },
   {
     "code": "L-90",
-    "stt": 133,
+    "stt": 135,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -1996,7 +2026,7 @@
   },
   {
     "code": "L-91",
-    "stt": 134,
+    "stt": 136,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2011,7 +2041,7 @@
   },
   {
     "code": "L-92",
-    "stt": 135,
+    "stt": 137,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2026,7 +2056,7 @@
   },
   {
     "code": "L-93",
-    "stt": 136,
+    "stt": 138,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2041,7 +2071,7 @@
   },
   {
     "code": "L-94",
-    "stt": 137,
+    "stt": 139,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2056,7 +2086,7 @@
   },
   {
     "code": "L-95",
-    "stt": 138,
+    "stt": 140,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2071,7 +2101,7 @@
   },
   {
     "code": "L-96",
-    "stt": 139,
+    "stt": 141,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2086,7 +2116,7 @@
   },
   {
     "code": "L-97",
-    "stt": 140,
+    "stt": 142,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2101,7 +2131,7 @@
   },
   {
     "code": "L-98",
-    "stt": 141,
+    "stt": 143,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2116,7 +2146,7 @@
   },
   {
     "code": "L-99",
-    "stt": 142,
+    "stt": 144,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2131,7 +2161,7 @@
   },
   {
     "code": "L-100",
-    "stt": 143,
+    "stt": 145,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2146,7 +2176,7 @@
   },
   {
     "code": "L-101",
-    "stt": 144,
+    "stt": 146,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2161,7 +2191,7 @@
   },
   {
     "code": "L-102",
-    "stt": 145,
+    "stt": 147,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2176,7 +2206,7 @@
   },
   {
     "code": "L-103",
-    "stt": 146,
+    "stt": 148,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2191,7 +2221,7 @@
   },
   {
     "code": "L-104",
-    "stt": 147,
+    "stt": 149,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2206,7 +2236,7 @@
   },
   {
     "code": "L-105",
-    "stt": 148,
+    "stt": 150,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2221,7 +2251,7 @@
   },
   {
     "code": "L-106",
-    "stt": 149,
+    "stt": 151,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2236,7 +2266,7 @@
   },
   {
     "code": "L-107",
-    "stt": 150,
+    "stt": 152,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2251,7 +2281,7 @@
   },
   {
     "code": "L-108",
-    "stt": 151,
+    "stt": 153,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2266,7 +2296,7 @@
   },
   {
     "code": "L-109",
-    "stt": 152,
+    "stt": 154,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2281,7 +2311,7 @@
   },
   {
     "code": "L-110",
-    "stt": 153,
+    "stt": 155,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2296,7 +2326,7 @@
   },
   {
     "code": "L-111",
-    "stt": 154,
+    "stt": 156,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2311,7 +2341,7 @@
   },
   {
     "code": "L-112",
-    "stt": 155,
+    "stt": 157,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2326,7 +2356,7 @@
   },
   {
     "code": "L-113",
-    "stt": 156,
+    "stt": 158,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2341,7 +2371,7 @@
   },
   {
     "code": "L-114",
-    "stt": 157,
+    "stt": 159,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2356,7 +2386,7 @@
   },
   {
     "code": "L-115",
-    "stt": 158,
+    "stt": 160,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2371,7 +2401,7 @@
   },
   {
     "code": "L-116",
-    "stt": 159,
+    "stt": 161,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2386,7 +2416,7 @@
   },
   {
     "code": "L-117",
-    "stt": 160,
+    "stt": 162,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2401,7 +2431,7 @@
   },
   {
     "code": "L-118",
-    "stt": 161,
+    "stt": 163,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2416,7 +2446,7 @@
   },
   {
     "code": "L-119",
-    "stt": 162,
+    "stt": 164,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2431,7 +2461,7 @@
   },
   {
     "code": "L-120",
-    "stt": 163,
+    "stt": 165,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2446,7 +2476,7 @@
   },
   {
     "code": "L-121",
-    "stt": 164,
+    "stt": 166,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2461,7 +2491,7 @@
   },
   {
     "code": "L-122",
-    "stt": 165,
+    "stt": 167,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2476,7 +2506,7 @@
   },
   {
     "code": "L-123",
-    "stt": 166,
+    "stt": 168,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2491,7 +2521,7 @@
   },
   {
     "code": "L-124",
-    "stt": 167,
+    "stt": 169,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2506,7 +2536,7 @@
   },
   {
     "code": "L-125",
-    "stt": 168,
+    "stt": 170,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2521,7 +2551,7 @@
   },
   {
     "code": "L-126",
-    "stt": 169,
+    "stt": 171,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2536,7 +2566,7 @@
   },
   {
     "code": "L-127",
-    "stt": 170,
+    "stt": 172,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2551,7 +2581,7 @@
   },
   {
     "code": "L-128",
-    "stt": 171,
+    "stt": 173,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2566,7 +2596,7 @@
   },
   {
     "code": "L-129",
-    "stt": 172,
+    "stt": 174,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2581,7 +2611,7 @@
   },
   {
     "code": "L-130",
-    "stt": 173,
+    "stt": 175,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2596,7 +2626,7 @@
   },
   {
     "code": "L-131",
-    "stt": 174,
+    "stt": 176,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2611,7 +2641,7 @@
   },
   {
     "code": "L-132",
-    "stt": 175,
+    "stt": 177,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2626,7 +2656,7 @@
   },
   {
     "code": "L-133",
-    "stt": 176,
+    "stt": 178,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2641,7 +2671,7 @@
   },
   {
     "code": "L-134",
-    "stt": 177,
+    "stt": 179,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2656,7 +2686,7 @@
   },
   {
     "code": "L-135",
-    "stt": 178,
+    "stt": 180,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2671,7 +2701,7 @@
   },
   {
     "code": "L-136",
-    "stt": 179,
+    "stt": 181,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2686,7 +2716,7 @@
   },
   {
     "code": "L-137",
-    "stt": 180,
+    "stt": 182,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2701,7 +2731,7 @@
   },
   {
     "code": "L-138",
-    "stt": 181,
+    "stt": 183,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2716,7 +2746,7 @@
   },
   {
     "code": "L-139",
-    "stt": 182,
+    "stt": 184,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2731,7 +2761,7 @@
   },
   {
     "code": "L-140",
-    "stt": 183,
+    "stt": 185,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2746,7 +2776,7 @@
   },
   {
     "code": "L-141",
-    "stt": 184,
+    "stt": 186,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2761,7 +2791,7 @@
   },
   {
     "code": "L-142",
-    "stt": 185,
+    "stt": 187,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2776,7 +2806,7 @@
   },
   {
     "code": "L-143",
-    "stt": 186,
+    "stt": 188,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2791,7 +2821,7 @@
   },
   {
     "code": "L-144",
-    "stt": 187,
+    "stt": 189,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2806,7 +2836,7 @@
   },
   {
     "code": "L-145",
-    "stt": 188,
+    "stt": 190,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2821,7 +2851,7 @@
   },
   {
     "code": "L-146",
-    "stt": 189,
+    "stt": 191,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
@@ -2836,7 +2866,7 @@
   },
   {
     "code": "L-147",
-    "stt": 190,
+    "stt": 192,
     "series": "studio",
     "series_name": "Studio VIP",
     "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
@@ -2851,7 +2881,7 @@
   },
   {
     "code": "L-148",
-    "stt": 191,
+    "stt": 193,
     "series": "lab",
     "series_name": "Community Lab",
     "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
