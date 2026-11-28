@@ -12,7 +12,8 @@
     "format": "DNG / XMP",
     "platform": "Mobile & PC",
     "tag": "Color 2025 Pack",
-    "desc": "Tone màu trong trẻo phong cách hiện đại 2025, tối ưu màu da châu Á và tương thích Lightroom Mobile/PC."
+    "desc": "Tone màu trong trẻo phong cách hiện đại 2025, tối ưu màu da châu Á và tương thích Lightroom Mobile/PC.",
+    "is_vip": false
   },
   {
     "code": "S-02",
@@ -27,7 +28,8 @@
     "format": "15 Presets + 5 Profiles",
     "platform": "Lightroom & ACR",
     "tag": "Kỷ Yếu Hàn Quốc",
-    "desc": "Trọn bộ công thức chỉnh màu kỷ yếu: nâng sáng da học đường, khử ám vàng nắng gắt, giữ xanh bầu trời."
+    "desc": "Trọn bộ công thức chỉnh màu kỷ yếu: nâng sáng da học đường, khử ám vàng nắng gắt, giữ xanh bầu trời.",
+    "is_vip": true
   },
   {
     "code": "S-03",
@@ -42,7 +44,8 @@
     "format": "DNG Master",
     "platform": "Lightroom & Mobile",
     "tag": "Cinematic Romance",
-    "desc": "Tone màu cưới sang trọng phong cách cinematic phương Tây, kiểm soát sắc trắng váy cưới và tương phản mềm."
+    "desc": "Tone màu cưới sang trọng phong cách cinematic phương Tây, kiểm soát sắc trắng váy cưới và tương phản mềm.",
+    "is_vip": true
   },
   {
     "code": "S-04",
@@ -57,7 +60,8 @@
     "format": "Pro Neg / Chrome / Eterna",
     "platform": "Lightroom & ACR",
     "tag": "Fuji Color Science",
-    "desc": "Mô phỏng chân thực dải màu film Fujifilm Pro danh tiếng: Pro Neg High/Std, hạt grain analog hoài cổ."
+    "desc": "Mô phỏng chân thực dải màu film Fujifilm Pro danh tiếng: Pro Neg High/Std, hạt grain analog hoài cổ.",
+    "is_vip": true
   },
   {
     "code": "S-05",
@@ -72,7 +76,8 @@
     "format": "Skintone Master XMP",
     "platform": "Lightroom & ACR",
     "tag": "Da Trắng Hồng",
-    "desc": "Công thức skintone mới nhất cho studio và ngoại cảnh: làm mịn highlight da, giữ khối mũi sâu và sắc hồng tự nhiên."
+    "desc": "Công thức skintone mới nhất cho studio và ngoại cảnh: làm mịn highlight da, giữ khối mũi sâu và sắc hồng tự nhiên.",
+    "is_vip": true
   },
   {
     "code": "S-06",
@@ -87,7 +92,8 @@
     "format": "Classic Chrome & Neg",
     "platform": "Lightroom & ACR",
     "tag": "Màu Phim Nhật",
-    "desc": "Hai profile màu film huyền thoại của Fujifilm: màu trời lam dịu mát của Chrome Classic và độ bão hòa Classic Negative."
+    "desc": "Hai profile màu film huyền thoại của Fujifilm: màu trời lam dịu mát của Chrome Classic và độ bão hòa Classic Negative.",
+    "is_vip": true
   },
   {
     "code": "S-07",
@@ -102,7 +108,8 @@
     "format": "1200+ DCP / XMP Profiles",
     "platform": "Sony / Canon / Nikon / Fuji",
     "tag": "Mega Profiles Pack",
-    "desc": "Kho tàng profile máy ảnh chính hãng đồ sộ nhất: biến file RAW của mọi dòng máy ảnh thành màu sắc nguyên bản của các hãng lớn."
+    "desc": "Kho tàng profile máy ảnh chính hãng đồ sộ nhất: biến file RAW của mọi dòng máy ảnh thành màu sắc nguyên bản của các hãng lớn.",
+    "is_vip": true
   },
   {
     "code": "S-08",
@@ -117,7 +124,8 @@
     "format": "CCD & CMOS Emulation",
     "platform": "Lightroom & ACR",
     "tag": "Leica Look",
-    "desc": "Đẳng cấp quang học Leica: tái hiện chất ảnh đượm đà của cảm biến Kodak CCD trên Leica M9 và độ nét siêu thực của Leica Q3."
+    "desc": "Đẳng cấp quang học Leica: tái hiện chất ảnh đượm đà của cảm biến Kodak CCD trên Leica M9 và độ nét siêu thực của Leica Q3.",
+    "is_vip": true
   },
   {
     "code": "S-09",
@@ -132,7 +140,8 @@
     "format": "Sony A7IV RAW (ARW)",
     "platform": "33 Megapixels",
     "tag": "Sony Alpha A7M4",
-    "desc": "File RAW gốc chụp mẫu áo dài tốt nghiệp: độ nét cực cao, dải dynamic range rộng mở để luyện skintone và retouch thương mại."
+    "desc": "File RAW gốc chụp mẫu áo dài tốt nghiệp: độ nét cực cao, dải dynamic range rộng mở để luyện skintone và retouch thương mại.",
+    "is_vip": true
   },
   {
     "code": "S-10",
@@ -147,7 +156,8 @@
     "format": "Canon EOS R5 RAW (CR3)",
     "platform": "45 Megapixels",
     "tag": "Canon EOS R5",
-    "desc": "Bộ ảnh ngược sáng chụp hoàng hôn: ánh ven tóc vàng óng, flare nắng tự nhiên thích hợp test khả năng kéo vùng tối shadow."
+    "desc": "Bộ ảnh ngược sáng chụp hoàng hôn: ánh ven tóc vàng óng, flare nắng tự nhiên thích hợp test khả năng kéo vùng tối shadow.",
+    "is_vip": true
   },
   {
     "code": "S-11",
@@ -162,7 +172,8 @@
     "format": "Flash High-End RAW",
     "platform": "Universal",
     "tag": "Trạm Tỷ Trend",
-    "desc": "Concept chụp trạm tỷ đình đám mạng xã hội: góc máy cận mặt bắt trọn thần thái, ánh sáng flash sắc nét cùng lớp makeup lung linh."
+    "desc": "Concept chụp trạm tỷ đình đám mạng xã hội: góc máy cận mặt bắt trọn thần thái, ánh sáng flash sắc nét cùng lớp makeup lung linh.",
+    "is_vip": true
   },
   {
     "code": "S-12",
@@ -177,7 +188,8 @@
     "format": "Nikon Z7II NEF RAW",
     "platform": "45.7 Megapixels",
     "tag": "Nikon Z Series",
-    "desc": "Chụp mẫu khuôn viên đại học: bối cảnh giảng đường và hàng cây xanh, ánh sáng ban ngày trong vắt cho ảnh kỷ yếu thanh xuân."
+    "desc": "Chụp mẫu khuôn viên đại học: bối cảnh giảng đường và hàng cây xanh, ánh sáng ban ngày trong vắt cho ảnh kỷ yếu thanh xuân.",
+    "is_vip": true
   },
   {
     "code": "S-13",
@@ -192,7 +204,8 @@
     "format": "Multi-Camera RAW",
     "platform": "Universal",
     "tag": "Commercial License",
-    "desc": "Bộ sưu tập ảnh kỷ yếu tập thể và cá nhân đầy đủ quyền khai thác thương mại, làm banner quảng cáo hoặc dựng portfolio ảnh viện."
+    "desc": "Bộ sưu tập ảnh kỷ yếu tập thể và cá nhân đầy đủ quyền khai thác thương mại, làm banner quảng cáo hoặc dựng portfolio ảnh viện.",
+    "is_vip": true
   },
   {
     "code": "S-14",
@@ -207,7 +220,8 @@
     "format": "Sony Full-Frame RAW",
     "platform": "Universal",
     "tag": "Áo Dài Truyền Thống",
-    "desc": "Sắc đỏ áo dài truyền thống hòa quyện cùng tường vàng rêu phong ngày lễ hội: tương phản màu sắc mạnh mẽ, độ nét chi tiết sợi vải xuất sắc."
+    "desc": "Sắc đỏ áo dài truyền thống hòa quyện cùng tường vàng rêu phong ngày lễ hội: tương phản màu sắc mạnh mẽ, độ nét chi tiết sợi vải xuất sắc.",
+    "is_vip": true
   },
   {
     "code": "S-15",
@@ -222,7 +236,8 @@
     "format": "Fujifilm GFX 100 RAW",
     "platform": "102 Megapixels",
     "tag": "GFX 100 Medium Format",
-    "desc": "Concept nàng thơ mơ màng giữa thiên nhiên: độ chuyển màu mượt như nhung, màu da sáng trong veo lý tưởng để luyện các bộ màu pastel."
+    "desc": "Concept nàng thơ mơ màng giữa thiên nhiên: độ chuyển màu mượt như nhung, màu da sáng trong veo lý tưởng để luyện các bộ màu pastel.",
+    "is_vip": true
   },
   {
     "code": "S-16",
@@ -237,7 +252,8 @@
     "format": "RAW Ambient Light",
     "platform": "Universal",
     "tag": "Cafe Seoul Vibe",
-    "desc": "Không gian cafe tone hồng hiện đại tại trung tâm: ánh sáng tản đều, màu sắc ngọt ngào làm nổi bật trang phục nữ tính và làn da trắng."
+    "desc": "Không gian cafe tone hồng hiện đại tại trung tâm: ánh sáng tản đều, màu sắc ngọt ngào làm nổi bật trang phục nữ tính và làn da trắng.",
+    "is_vip": true
   },
   {
     "code": "S-17",
@@ -252,7 +268,8 @@
     "format": "Sony ARW RAW",
     "platform": "Universal",
     "tag": "Cozy Retro Cafe",
-    "desc": "Quán cafe phong cách hoài niệm thập niên 90 với ánh đèn vàng ấm, kệ sách cũ và bàn gỗ mộc: test màu film ấm và tương phản cổ điển."
+    "desc": "Quán cafe phong cách hoài niệm thập niên 90 với ánh đèn vàng ấm, kệ sách cũ và bàn gỗ mộc: test màu film ấm và tương phản cổ điển.",
+    "is_vip": true
   },
   {
     "code": "S-18",
@@ -267,7 +284,8 @@
     "format": "Sony A7R IV 61MP RAW",
     "platform": "61 Megapixels",
     "tag": "Picnic Nature",
-    "desc": "Bãi cỏ xanh mát và rừng thông buổi chiều lộng gió: concept picnic trong sáng với váy hoa và đạo cụ giỏ trái cây, nón cói."
+    "desc": "Bãi cỏ xanh mát và rừng thông buổi chiều lộng gió: concept picnic trong sáng với váy hoa và đạo cụ giỏ trái cây, nón cói.",
+    "is_vip": true
   },
   {
     "code": "S-19",
@@ -282,7 +300,8 @@
     "format": "Canon Full-Frame CR3",
     "platform": "Universal",
     "tag": "Santorini Vibes",
-    "desc": "Kiến trúc vòm trắng và biển xanh Địa Trung Hải đặc trưng: ánh nắng gắt nhiệt đới thử thách khả năng cứu cháy vùng trời highlight."
+    "desc": "Kiến trúc vòm trắng và biển xanh Địa Trung Hải đặc trưng: ánh nắng gắt nhiệt đới thử thách khả năng cứu cháy vùng trời highlight.",
+    "is_vip": true
   },
   {
     "code": "S-20",
@@ -297,7 +316,8 @@
     "format": "Sony ARW RAW",
     "platform": "Universal",
     "tag": "Phố Cổ Hoài Niệm",
-    "desc": "Mẫu nữ thướt tha áo dài dạo bước trên phố cổ Hà Nội sớm mai: bối cảnh phố rêu phong đầy chất thơ và ánh sáng dịu êm."
+    "desc": "Mẫu nữ thướt tha áo dài dạo bước trên phố cổ Hà Nội sớm mai: bối cảnh phố rêu phong đầy chất thơ và ánh sáng dịu êm.",
+    "is_vip": false
   },
   {
     "code": "S-21",
@@ -312,7 +332,8 @@
     "format": "Nikon Z RAW (NEF)",
     "platform": "Universal",
     "tag": "Cổ Phục Việt Nam",
-    "desc": "Trang phục cung đình truyền thống: hoa văn thêu tinh xảo, chất liệu vải gấm đỏ thắm và ánh sáng tự nhiên trên kiến trúc gỗ cổ."
+    "desc": "Trang phục cung đình truyền thống: hoa văn thêu tinh xảo, chất liệu vải gấm đỏ thắm và ánh sáng tự nhiên trên kiến trúc gỗ cổ.",
+    "is_vip": false
   },
   {
     "code": "S-22",
@@ -327,7 +348,8 @@
     "format": "Canon CR3 RAW",
     "platform": "Universal",
     "tag": "Thanh Tịnh Cổ Kính",
-    "desc": "Vẻ đẹp trang nghiêm thanh tao của tà áo dài giữa sân chùa cổ: gam màu nâu gỗ cổ kính, mái ngói rêu phong và làn khói hương u tịch."
+    "desc": "Vẻ đẹp trang nghiêm thanh tao của tà áo dài giữa sân chùa cổ: gam màu nâu gỗ cổ kính, mái ngói rêu phong và làn khói hương u tịch.",
+    "is_vip": false
   },
   {
     "code": "S-23",
@@ -342,7 +364,8 @@
     "format": "Sony ARW RAW",
     "platform": "Universal",
     "tag": "Creative Neon Light",
-    "desc": "Bộ ảnh hóa thân nhân vật anime: tóc bạc cá tính, hiệu ứng ánh sáng đèn LED tia chớp và phong cách visual ấn tượng."
+    "desc": "Bộ ảnh hóa thân nhân vật anime: tóc bạc cá tính, hiệu ứng ánh sáng đèn LED tia chớp và phong cách visual ấn tượng.",
+    "is_vip": false
   },
   {
     "code": "S-24",
@@ -357,7 +380,8 @@
     "format": "Studio Flash RAW",
     "platform": "Universal",
     "tag": "Fashion Studio Look",
-    "desc": "Phong cách thời trang quý cô hiện đại với bộ vest trắng quyền lực: chụp nền studio trung tính, ánh sáng key light định hình khối sắc sảo."
+    "desc": "Phong cách thời trang quý cô hiện đại với bộ vest trắng quyền lực: chụp nền studio trung tính, ánh sáng key light định hình khối sắc sảo.",
+    "is_vip": false
   },
   {
     "code": "S-25",
@@ -372,7 +396,8 @@
     "format": "Canon EOS RAW",
     "platform": "Universal",
     "tag": "Bokeh Xoáy Cổ Điển",
-    "desc": "Nắng chiều xiên qua vòm lá công viên rọi lên suối tóc người mẫu: hiệu ứng bokeh bong bóng tròn trịa từ ống kính khẩu lớn f/1.4."
+    "desc": "Nắng chiều xiên qua vòm lá công viên rọi lên suối tóc người mẫu: hiệu ứng bokeh bong bóng tròn trịa từ ống kính khẩu lớn f/1.4.",
+    "is_vip": false
   },
   {
     "code": "S-26",
@@ -387,7 +412,8 @@
     "format": "Sony Full-Frame RAW",
     "platform": "Universal",
     "tag": "Lễ Hội Đèn Lồng",
-    "desc": "Không khí lễ hội truyền thống ngập tràn màu sắc: đèn lồng lung linh, câu đối đỏ và tà áo dài cách tân rạng ngời tươi vui đón mùa mới."
+    "desc": "Không khí lễ hội truyền thống ngập tràn màu sắc: đèn lồng lung linh, câu đối đỏ và tà áo dài cách tân rạng ngời tươi vui đón mùa mới.",
+    "is_vip": false
   },
   {
     "code": "S-27",
@@ -402,7 +428,8 @@
     "format": "Mega RAW Archive",
     "platform": "Universal",
     "tag": "Cosplay Community",
-    "desc": "Kho tổng hợp các bộ ảnh hóa trang cosplay nhân vật game và anime nổi tiếng: đa dạng góc chụp, màu tóc nổi bật và hậu cảnh kỹ xảo phong phú."
+    "desc": "Kho tổng hợp các bộ ảnh hóa trang cosplay nhân vật game và anime nổi tiếng: đa dạng góc chụp, màu tóc nổi bật và hậu cảnh kỹ xảo phong phú.",
+    "is_vip": false
   },
   {
     "code": "S-28",
@@ -417,7 +444,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Film Looks Bundle",
-    "desc": "Bộ sưu tập 6 tone màu film kinh điển (Kodachrome, Portra, Cinestill, Fuji Pro) cài trực tiếp vào máy ảnh Canon."
+    "desc": "Bộ sưu tập 6 tone màu film kinh điển (Kodachrome, Portra, Cinestill, Fuji Pro) cài trực tiếp vào máy ảnh Canon.",
+    "is_vip": true
   },
   {
     "code": "S-29",
@@ -432,7 +460,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Studio Master Pack",
-    "desc": "Gói màu studio thương mại cao cấp: da chân dung mịn màng, ảnh tiệc phóng sự và cân bằng đèn flash ăn liền."
+    "desc": "Gói màu studio thương mại cao cấp: da chân dung mịn màng, ảnh tiệc phóng sự và cân bằng đèn flash ăn liền.",
+    "is_vip": true
   },
   {
     "code": "S-30",
@@ -447,7 +476,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Portrait Soft Skin",
-    "desc": "Tối ưu làn da châu Á: làm dịu cháy sáng vùng gò má, khử ám đỏ ám vàng, chụp ra da hồng hào tự nhiên."
+    "desc": "Tối ưu làn da châu Á: làm dịu cháy sáng vùng gò má, khử ám đỏ ám vàng, chụp ra da hồng hào tự nhiên.",
+    "is_vip": true
   },
   {
     "code": "S-31",
@@ -462,7 +492,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Golden Hour Glow",
-    "desc": "Tone màu ấm áp hổ phách cho ảnh cưới và ngoại cảnh chiều tà, giữ êm dịu ánh nắng gắt."
+    "desc": "Tone màu ấm áp hổ phách cho ảnh cưới và ngoại cảnh chiều tà, giữ êm dịu ánh nắng gắt.",
+    "is_vip": true
   },
   {
     "code": "S-32",
@@ -477,7 +508,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Editorial Fashion",
-    "desc": "Nước ảnh sang trọng phong cách bìa tạp chí, tương phản sâu, làm nổi bật trang phục và khối cơ mặt."
+    "desc": "Nước ảnh sang trọng phong cách bìa tạp chí, tương phản sâu, làm nổi bật trang phục và khối cơ mặt.",
+    "is_vip": true
   },
   {
     "code": "S-33",
@@ -492,7 +524,8 @@
     "format": ".PF3 Canon Mirrorless",
     "platform": "Canon EOS R Series",
     "tag": "Cine Teal & Orange",
-    "desc": "Dành riêng cho quay video trên EOS R: tách màu xanh ngọc vùng tối và vàng cam da người chuẩn điện ảnh."
+    "desc": "Dành riêng cho quay video trên EOS R: tách màu xanh ngọc vùng tối và vàng cam da người chuẩn điện ảnh.",
+    "is_vip": true
   },
   {
     "code": "S-34",
@@ -507,7 +540,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Vintage 90s Film",
-    "desc": "Gợi nhớ chất ảnh in màu cổ điển đầu thập niên 90, nước ảnh ấm áp cho cafe, du lịch và đời thường."
+    "desc": "Gợi nhớ chất ảnh in màu cổ điển đầu thập niên 90, nước ảnh ấm áp cho cafe, du lịch và đời thường.",
+    "is_vip": true
   },
   {
     "code": "S-35",
@@ -522,7 +556,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Fuji Green Aesthetic",
-    "desc": "Phong cách thanh xuân Nhật Bản: xanh lá tươi mát kết hợp làn da trắng mịn tạo cảm giác nhẹ nhàng, bình yên."
+    "desc": "Phong cách thanh xuân Nhật Bản: xanh lá tươi mát kết hợp làn da trắng mịn tạo cảm giác nhẹ nhàng, bình yên.",
+    "is_vip": true
   },
   {
     "code": "S-36",
@@ -537,7 +572,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Kodak Daylight 400",
-    "desc": "Cân bằng ánh nắng ban ngày: nước ảnh trong veo, bầu trời xanh ngắt và da người khỏe khoắn."
+    "desc": "Cân bằng ánh nắng ban ngày: nước ảnh trong veo, bầu trời xanh ngắt và da người khỏe khoắn.",
+    "is_vip": true
   },
   {
     "code": "S-37",
@@ -552,7 +588,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Moody Desaturated",
-    "desc": "Hạ độ bão hòa màu sắc tạo không khí tĩnh lặng, hợp với những góc phố vắng và ngày mưa ướt."
+    "desc": "Hạ độ bão hòa màu sắc tạo không khí tĩnh lặng, hợp với những góc phố vắng và ngày mưa ướt.",
+    "is_vip": true
   },
   {
     "code": "S-38",
@@ -567,7 +604,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Hong Kong Neon 80s",
-    "desc": "Chất điện ảnh Hong Kong: ánh đèn neon rực rỡ tương phản với bóng đêm huyền ảo, tạo cảm giác điện ảnh sâu sắc."
+    "desc": "Chất điện ảnh Hong Kong: ánh đèn neon rực rỡ tương phản với bóng đêm huyền ảo, tạo cảm giác điện ảnh sâu sắc.",
+    "is_vip": true
   },
   {
     "code": "S-39",
@@ -582,7 +620,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Reversible Slide Chrome",
-    "desc": "Mô phỏng cuộn phim slide đảo chiều danh tiếng: sắc đỏ thẫm và xanh thẫm cực kỳ no màu cho phong cảnh và xe cộ."
+    "desc": "Mô phỏng cuộn phim slide đảo chiều danh tiếng: sắc đỏ thẫm và xanh thẫm cực kỳ no màu cho phong cảnh và xe cộ.",
+    "is_vip": true
   },
   {
     "code": "S-40",
@@ -597,7 +636,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Documentary Street",
-    "desc": "Độ tương phản mạnh mẽ, nhấn mạnh khối cơ bắp và biểu cảm chân thật của những khoảnh khắc đường phố."
+    "desc": "Độ tương phản mạnh mẽ, nhấn mạnh khối cơ bắp và biểu cảm chân thật của những khoảnh khắc đường phố.",
+    "is_vip": true
   },
   {
     "code": "S-41",
@@ -612,7 +652,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Sunset Street Rays",
-    "desc": "Bắt trọn những vệt nắng dài cuối ngày xuyên qua tán cây, góc nhà, làm dịu vùng cháy sáng."
+    "desc": "Bắt trọn những vệt nắng dài cuối ngày xuyên qua tán cây, góc nhà, làm dịu vùng cháy sáng.",
+    "is_vip": true
   },
   {
     "code": "S-42",
@@ -627,7 +668,8 @@
     "format": ".PF2 / .PF3 Canon Profile",
     "platform": "Canon EOS R & DSLR",
     "tag": "Urban Geometry",
-    "desc": "Sắc lạnh của kim loại, kính và bê tông, chi tiết vi mô cực sắc nét cho các tòa nhà và nội thất hiện đại."
+    "desc": "Sắc lạnh của kim loại, kính và bê tông, chi tiết vi mô cực sắc nét cho các tòa nhà và nội thất hiện đại.",
+    "is_vip": true
   },
   {
     "code": "S-43",
@@ -642,7 +684,8 @@
     "format": "ZIP Archive (.PF2 / .PF3 / Styles)",
     "platform": "Canon EOS R & DSLR",
     "tag": "Free Leica Monochrome",
-    "desc": "Gói quà tặng miễn phí: LehungPhotography_Free_Film_Pack.zip tải trực tiếp từ Google Drive."
+    "desc": "Gói quà tặng miễn phí: LehungPhotography_Free_Film_Pack.zip tải trực tiếp từ Google Drive.",
+    "is_vip": false
   },
   {
     "code": "S-44",
@@ -657,7 +700,8 @@
     "format": "DNG / XMP Preset",
     "platform": "Lightroom Mobile & PC",
     "tag": "ZunPhoto VIP Preset",
-    "desc": "Trọn bộ 20 tone màu kỷ yếu và chân dung hot nhất của ZunPhoto, tối ưu skintone trong trẻo và màu áo dài, định dạng DNG/XMP chuẩn."
+    "desc": "Trọn bộ 20 tone màu kỷ yếu và chân dung hot nhất của ZunPhoto, tối ưu skintone trong trẻo và màu áo dài, định dạng DNG/XMP chuẩn.",
+    "is_vip": true
   },
   {
     "code": "S-45",
@@ -672,7 +716,8 @@
     "format": "DNG Mobile / PC",
     "platform": "Lightroom & Photoshop",
     "tag": "DNG Preset Kỷ Yếu",
-    "desc": "Bộ preset màu kỷ yếu file DNG chuẩn kéo trực tiếp trên Lightroom Mobile và PC, giữ trọn chi tiết khối và màu trắng áo dài tự nhiên."
+    "desc": "Bộ preset màu kỷ yếu file DNG chuẩn kéo trực tiếp trên Lightroom Mobile và PC, giữ trọn chi tiết khối và màu trắng áo dài tự nhiên.",
+    "is_vip": true
   },
   {
     "code": "L-01",
@@ -687,7 +732,8 @@
     "format": "Folder / Preset + PSD",
     "platform": "Win & Mac",
     "tag": "Studio Master Pack",
-    "desc": "Kho tài nguyên quà tặng chuyên nghiệp: hơn 500+ mẫu Layout PSD album cưới và bộ sưu tập màu XMP cao cấp."
+    "desc": "Kho tài nguyên quà tặng chuyên nghiệp: hơn 500+ mẫu Layout PSD album cưới và bộ sưu tập màu XMP cao cấp.",
+    "is_vip": false
   },
   {
     "code": "L-02",
@@ -702,7 +748,8 @@
     "format": "EXE / DMG Installer",
     "platform": "Win & Mac",
     "tag": "Legacy Stable Version",
-    "desc": "Lưu trữ các phiên bản cài đặt ổn định cho cả Windows và macOS, tối ưu mượt mà cho các máy cấu hình vừa và thấp."
+    "desc": "Lưu trữ các phiên bản cài đặt ổn định cho cả Windows và macOS, tối ưu mượt mà cho các máy cấu hình vừa và thấp.",
+    "is_vip": false
   },
   {
     "code": "L-03",
@@ -717,7 +764,8 @@
     "format": "Patch / Script",
     "platform": "Win & Mac",
     "tag": "Network Bug Fix",
-    "desc": "File vá lỗi kết nối máy chủ và khắc phục triệt để tình trạng không tải được hiệu ứng AI trên ứng dụng đồ họa."
+    "desc": "File vá lỗi kết nối máy chủ và khắc phục triệt để tình trạng không tải được hiệu ứng AI trên ứng dụng đồ họa.",
+    "is_vip": false
   },
   {
     "code": "L-04",
@@ -732,7 +780,8 @@
     "format": "MP4 Video HD",
     "platform": "All Devices",
     "tag": "Master Class Video",
-    "desc": "Giáo trình video hướng dẫn làm chủ các thanh công cụ Lightroom: Curve, HSL, Color Grading, Masking từ cơ bản đến chuyên sâu."
+    "desc": "Giáo trình video hướng dẫn làm chủ các thanh công cụ Lightroom: Curve, HSL, Color Grading, Masking từ cơ bản đến chuyên sâu.",
+    "is_vip": false
   },
   {
     "code": "L-05",
@@ -747,7 +796,8 @@
     "format": "TTF / OTF / PSD",
     "platform": "Universal",
     "tag": "Vintage Font Pack",
-    "desc": "Tuyển tập các font chữ phong cách Sài Gòn xưa, biển hiệu thời bao cấp và typo hoài cổ Việt Nam chuẩn dấu tiếng Việt."
+    "desc": "Tuyển tập các font chữ phong cách Sài Gòn xưa, biển hiệu thời bao cấp và typo hoài cổ Việt Nam chuẩn dấu tiếng Việt.",
+    "is_vip": false
   },
   {
     "code": "L-06",
@@ -762,7 +812,8 @@
     "format": "PSD Multi-layer",
     "platform": "Photoshop",
     "tag": "Wedding Mega Pack",
-    "desc": "170 file PSD mẫu thiết kế dàn trang album cưới hiện đại, phân lớp riêng biệt dễ dàng thay thế ảnh và xuất in phóng lớn."
+    "desc": "170 file PSD mẫu thiết kế dàn trang album cưới hiện đại, phân lớp riêng biệt dễ dàng thay thế ảnh và xuất in phóng lớn.",
+    "is_vip": false
   },
   {
     "code": "L-07",
@@ -777,7 +828,8 @@
     "format": "PNG / PSD Vector",
     "platform": "Photoshop",
     "tag": "Wedding Typo",
-    "desc": "Bộ chữ nghệ thuật thiết kế sẵn cho ảnh tiệc cưới và phóng sự cưới: nét chữ thanh mảnh, bay bổng, tạo điểm nhấn nghệ thuật."
+    "desc": "Bộ chữ nghệ thuật thiết kế sẵn cho ảnh tiệc cưới và phóng sự cưới: nét chữ thanh mảnh, bay bổng, tạo điểm nhấn nghệ thuật.",
+    "is_vip": false
   },
   {
     "code": "L-08",
@@ -792,7 +844,8 @@
     "format": "XMP / DNG",
     "platform": "Lightroom & ACR",
     "tag": "Xe Hoa Romance",
-    "desc": "Tone màu trong vắt chuyên trị bối cảnh chụp cô dâu chú rể trong xe hoa: khử ám vàng, giữ sáng tự nhiên cho da và hoa cưới."
+    "desc": "Tone màu trong vắt chuyên trị bối cảnh chụp cô dâu chú rể trong xe hoa: khử ám vàng, giữ sáng tự nhiên cho da và hoa cưới.",
+    "is_vip": false
   },
   {
     "code": "L-09",
@@ -807,7 +860,8 @@
     "format": "XMP / DNG",
     "platform": "Lightroom & ACR",
     "tag": "Sáng Mặt Ăn Tiền",
-    "desc": "Công thức màu phóng sự cưới studio: kéo sáng vùng mặt tự động, tôn da trắng hồng, cân bằng ánh sáng đèn flash tiệc nhà."
+    "desc": "Công thức màu phóng sự cưới studio: kéo sáng vùng mặt tự động, tôn da trắng hồng, cân bằng ánh sáng đèn flash tiệc nhà.",
+    "is_vip": false
   },
   {
     "code": "L-10",
@@ -822,7 +876,8 @@
     "format": "PNG High-Res / PSD",
     "platform": "Photoshop",
     "tag": "Baby Chibi",
-    "desc": "Tổng hợp nhân vật chibi ngộ nghĩnh, file thiết kế sẵn khuôn mặt để thợ ảnh ghép mặt bé in standee sinh nhật thôi nôi."
+    "desc": "Tổng hợp nhân vật chibi ngộ nghĩnh, file thiết kế sẵn khuôn mặt để thợ ảnh ghép mặt bé in standee sinh nhật thôi nôi.",
+    "is_vip": false
   },
   {
     "code": "L-11",
@@ -837,7 +892,8 @@
     "format": "PSD + JPG Template",
     "platform": "Photoshop",
     "tag": "Kỷ Yếu Studio",
-    "desc": "Bộ khung dàn trang ảnh photobook kỷ yếu học sinh, sinh viên với bố cục hiện đại, dễ dàng tinh chỉnh nội dung và hình ảnh."
+    "desc": "Bộ khung dàn trang ảnh photobook kỷ yếu học sinh, sinh viên với bố cục hiện đại, dễ dàng tinh chỉnh nội dung và hình ảnh.",
+    "is_vip": false
   },
   {
     "code": "L-12",
@@ -852,7 +908,8 @@
     "format": "Video MP4 Series",
     "platform": "All Devices",
     "tag": "Camera Fundamentals",
-    "desc": "Toàn tập kỹ thuật nhiếp ảnh: khẩu độ, tốc độ, ISO, tiêu cự lens, bố cục khung hình và kiểm soát ánh sáng thực tế."
+    "desc": "Toàn tập kỹ thuật nhiếp ảnh: khẩu độ, tốc độ, ISO, tiêu cự lens, bố cục khung hình và kiểm soát ánh sáng thực tế.",
+    "is_vip": false
   },
   {
     "code": "L-13",
@@ -867,7 +924,8 @@
     "format": "EXE Utility",
     "platform": "Windows 10/11",
     "tag": "PSD Thumbnail Viewer",
-    "desc": "Công cụ tích hợp vào Windows File Explorer giúp hiển thị trực tiếp hình ảnh xem trước của file PSD mà không cần mở Photoshop."
+    "desc": "Công cụ tích hợp vào Windows File Explorer giúp hiển thị trực tiếp hình ảnh xem trước của file PSD mà không cần mở Photoshop.",
+    "is_vip": false
   },
   {
     "code": "L-14",
@@ -882,7 +940,8 @@
     "format": "XMP / DNG",
     "platform": "Lightroom & ACR",
     "tag": "Cinema Look",
-    "desc": "Bộ 10 tone màu phong cách điện ảnh đa dạng: từ ảnh cưới lãng mạn, kỷ yếu trong trẻo đến chân dung ngoại cảnh hoàng hôn."
+    "desc": "Bộ 10 tone màu phong cách điện ảnh đa dạng: từ ảnh cưới lãng mạn, kỷ yếu trong trẻo đến chân dung ngoại cảnh hoàng hôn.",
+    "is_vip": false
   },
   {
     "code": "L-15",
@@ -897,7 +956,8 @@
     "format": "Folder Presets",
     "platform": "Lightroom & ACR",
     "tag": "Thanh Xuân Trong Trẻo",
-    "desc": "Bộ preset màu thanh xuân học trò: màu cỏ cây tươi sáng, da trắng sáng hồng hào, phù hợp đồng phục và áo dài trắng."
+    "desc": "Bộ preset màu thanh xuân học trò: màu cỏ cây tươi sáng, da trắng sáng hồng hào, phù hợp đồng phục và áo dài trắng.",
+    "is_vip": false
   },
   {
     "code": "L-16",
@@ -912,7 +972,8 @@
     "format": "PSD High Resolution",
     "platform": "Photoshop",
     "tag": "Magazine Layout",
-    "desc": "Mẫu thiết kế bìa và ruột photobook kỷ yếu phong cách tạp chí thời trang, đầy đủ khung ảnh cá nhân và tập thể lớp."
+    "desc": "Mẫu thiết kế bìa và ruột photobook kỷ yếu phong cách tạp chí thời trang, đầy đủ khung ảnh cá nhân và tập thể lớp.",
+    "is_vip": false
   },
   {
     "code": "L-17",
@@ -927,7 +988,8 @@
     "format": "ZIP Extension",
     "platform": "Photoshop Win/Mac",
     "tag": "Panel Free Pack 1",
-    "desc": "Gói tổng hợp các tiện ích mở rộng CEP: hỗ trợ mịn da nhanh, tạo khối sáng tối Dodge & Burn và tách phông nền tự động."
+    "desc": "Gói tổng hợp các tiện ích mở rộng CEP: hỗ trợ mịn da nhanh, tạo khối sáng tối Dodge & Burn và tách phông nền tự động.",
+    "is_vip": false
   },
   {
     "code": "L-18",
@@ -942,7 +1004,8 @@
     "format": "ZIP Extension",
     "platform": "Photoshop Win/Mac",
     "tag": "Panel Free Pack 2",
-    "desc": "Bộ sưu tập thứ hai các panel miễn phí cho thợ Photoshop: xuất ảnh hàng loạt, đóng dấu logo watermark và cân chỉnh màu sắc."
+    "desc": "Bộ sưu tập thứ hai các panel miễn phí cho thợ Photoshop: xuất ảnh hàng loạt, đóng dấu logo watermark và cân chỉnh màu sắc.",
+    "is_vip": false
   },
   {
     "code": "L-19",
@@ -957,7 +1020,8 @@
     "format": "ZIP Panel",
     "platform": "Windows Only",
     "tag": "Studio Color Win",
-    "desc": "Công cụ panel blend màu tích hợp sẵn trong Photoshop cho Windows: hỗ trợ chọn màu 1-click theo chủ đề tiệc cưới, dã ngoại."
+    "desc": "Công cụ panel blend màu tích hợp sẵn trong Photoshop cho Windows: hỗ trợ chọn màu 1-click theo chủ đề tiệc cưới, dã ngoại.",
+    "is_vip": false
   },
   {
     "code": "L-20",
@@ -972,7 +1036,8 @@
     "format": "ZIP Panel",
     "platform": "macOS Only",
     "tag": "Studio Color Mac",
-    "desc": "Phiên bản tương thích hoàn hảo cho macOS (hỗ trợ cả chip Intel lẫn Apple Silicon M1/M2/M3) của Panel Color Master."
+    "desc": "Phiên bản tương thích hoàn hảo cho macOS (hỗ trợ cả chip Intel lẫn Apple Silicon M1/M2/M3) của Panel Color Master.",
+    "is_vip": false
   },
   {
     "code": "L-21",
@@ -987,7 +1052,8 @@
     "format": "RAW (ARW/CR3) + XMP",
     "platform": "Universal",
     "tag": "Stock + Preset",
-    "desc": "Bộ file ảnh chụp gốc định dạng RAW dung lượng cao chụp áo dài kỷ yếu kèm sẵn file preset màu tương ứng để đối chiếu."
+    "desc": "Bộ file ảnh chụp gốc định dạng RAW dung lượng cao chụp áo dài kỷ yếu kèm sẵn file preset màu tương ứng để đối chiếu.",
+    "is_vip": false
   },
   {
     "code": "L-22",
@@ -1002,7 +1068,8 @@
     "format": "RAW + Preset XMP",
     "platform": "Universal",
     "tag": "Wedding RAW",
-    "desc": "Các file RAW chụp phóng sự cưới thực tế tại nhà riêng và sảnh tiệc: kiểm tra khả năng xử lý ánh sáng phức tạp và noise."
+    "desc": "Các file RAW chụp phóng sự cưới thực tế tại nhà riêng và sảnh tiệc: kiểm tra khả năng xử lý ánh sáng phức tạp và noise.",
+    "is_vip": false
   },
   {
     "code": "L-23",
@@ -1017,7 +1084,8 @@
     "format": "EXE / Script",
     "platform": "Windows Only",
     "tag": "Auto ID Photo",
-    "desc": "Công cụ tự động cắt chân dung tỉ lệ 3x4, 4x6, thay phông nền xanh/trắng và tự động dàn trang in hàng loạt trong nháy mắt."
+    "desc": "Công cụ tự động cắt chân dung tỉ lệ 3x4, 4x6, thay phông nền xanh/trắng và tự động dàn trang in hàng loạt trong nháy mắt.",
+    "is_vip": false
   },
   {
     "code": "L-24",
@@ -1032,7 +1100,8 @@
     "format": "Installer Package",
     "platform": "Windows / Mac",
     "tag": "AI Retouch Standalone",
-    "desc": "Bộ cài phần mềm ứng dụng thuật toán trí tuệ nhân tạo nhận diện gương mặt: làm sạch mụn, làm trắng răng và mịn da tự động."
+    "desc": "Bộ cài phần mềm ứng dụng thuật toán trí tuệ nhân tạo nhận diện gương mặt: làm sạch mụn, làm trắng răng và mịn da tự động.",
+    "is_vip": false
   },
   {
     "code": "L-25",
@@ -1047,7 +1116,8 @@
     "format": "RAW Archive",
     "platform": "Universal",
     "tag": "PSC Full Pack",
-    "desc": "File ảnh RAW ngày ăn hỏi và đón dâu chọn lọc, kèm preset màu ấm cúng cho thợ ảnh thực hành blend màu cưới."
+    "desc": "File ảnh RAW ngày ăn hỏi và đón dâu chọn lọc, kèm preset màu ấm cúng cho thợ ảnh thực hành blend màu cưới.",
+    "is_vip": false
   },
   {
     "code": "L-26",
@@ -1062,7 +1132,8 @@
     "format": "PSD Layered",
     "platform": "Photoshop",
     "tag": "Confetti Overlay",
-    "desc": "Hiệu ứng pháo giấy kim tuyến bắn tung tóe trong tiệc cưới: tách sẵn nền trong suốt (Transparency) chỉ cần kéo thả vào ảnh."
+    "desc": "Hiệu ứng pháo giấy kim tuyến bắn tung tóe trong tiệc cưới: tách sẵn nền trong suốt (Transparency) chỉ cần kéo thả vào ảnh.",
+    "is_vip": false
   },
   {
     "code": "L-27",
@@ -1077,7 +1148,8 @@
     "format": "Plugin Installer",
     "platform": "Windows",
     "tag": "Oniric Glow Win",
-    "desc": "Plugin Oniric cho Photoshop bản Windows: tạo hiệu ứng quầng sáng phát quang (Bloom / Glow) điện ảnh siêu thực."
+    "desc": "Plugin Oniric cho Photoshop bản Windows: tạo hiệu ứng quầng sáng phát quang (Bloom / Glow) điện ảnh siêu thực.",
+    "is_vip": false
   },
   {
     "code": "L-28",
@@ -1092,7 +1164,8 @@
     "format": "Plugin PKG",
     "platform": "macOS",
     "tag": "Oniric Glow Mac",
-    "desc": "Bản cài đặt plugin Oniric tối ưu cho hệ điều hành macOS, hỗ trợ tăng cường độ sáng ven tóc và bóng đèn nghệ thuật."
+    "desc": "Bản cài đặt plugin Oniric tối ưu cho hệ điều hành macOS, hỗ trợ tăng cường độ sáng ven tóc và bóng đèn nghệ thuật.",
+    "is_vip": false
   },
   {
     "code": "L-29",
@@ -1107,7 +1180,8 @@
     "format": "ABR Brush File",
     "platform": "Photoshop",
     "tag": "Light Brushes",
-    "desc": "Bộ cọ vẽ tia sáng mặt trời, đốm sáng bokeh, luồng sáng cửa sổ và bụi sáng lấp lánh nạp trực tiếp vào công cụ Brush (B)."
+    "desc": "Bộ cọ vẽ tia sáng mặt trời, đốm sáng bokeh, luồng sáng cửa sổ và bụi sáng lấp lánh nạp trực tiếp vào công cụ Brush (B).",
+    "is_vip": false
   },
   {
     "code": "L-30",
@@ -1122,7 +1196,8 @@
     "format": "Mega Collection",
     "platform": "Win & Mac",
     "tag": "Panel Mega Pack",
-    "desc": "Kho tổng hợp đồ sộ các tiện ích mở rộng danh tiếng: làm mịn da tự nhiên, tăng độ sắc nét và cân chỉnh tone màu ảnh cưới."
+    "desc": "Kho tổng hợp đồ sộ các tiện ích mở rộng danh tiếng: làm mịn da tự nhiên, tăng độ sắc nét và cân chỉnh tone màu ảnh cưới.",
+    "is_vip": false
   },
   {
     "code": "L-31",
@@ -1137,7 +1212,8 @@
     "format": "PSD Archive",
     "platform": "Photoshop",
     "tag": "Dual Layout Pack",
-    "desc": "Mẫu dàn layout hai trong một: vừa có khung ảnh kỷ yếu thanh xuân vừa có khuôn mẫu photobook tiệc cưới sang trọng."
+    "desc": "Mẫu dàn layout hai trong một: vừa có khung ảnh kỷ yếu thanh xuân vừa có khuôn mẫu photobook tiệc cưới sang trọng.",
+    "is_vip": false
   },
   {
     "code": "L-32",
@@ -1152,7 +1228,8 @@
     "format": "EXE / Script Utility",
     "platform": "Windows Only",
     "tag": "Preset Auto Importer",
-    "desc": "Công cụ nhỏ gọn 1-click tự động copy hàng trăm file preset XMP vào đúng thư mục ẩn của Adobe Camera Raw trên ổ C."
+    "desc": "Công cụ nhỏ gọn 1-click tự động copy hàng trăm file preset XMP vào đúng thư mục ẩn của Adobe Camera Raw trên ổ C.",
+    "is_vip": false
   },
   {
     "code": "L-33",
@@ -1167,7 +1244,8 @@
     "format": "Script Batch Runner",
     "platform": "Photoshop Win/Mac",
     "tag": "Action Batch Process",
-    "desc": "Kịch bản tự động hóa áp dụng một hoặc nhiều Action Photoshop lên hàng trăm bức ảnh trong một thư mục mà không cần ngồi bấm tay."
+    "desc": "Kịch bản tự động hóa áp dụng một hoặc nhiều Action Photoshop lên hàng trăm bức ảnh trong một thư mục mà không cần ngồi bấm tay.",
+    "is_vip": false
   },
   {
     "code": "L-34",
@@ -1182,7 +1260,8 @@
     "format": "PSD Poster High-End",
     "platform": "Photoshop",
     "tag": "Poster Trend",
-    "desc": "Template poster chương trình hot trend: hiệu ứng typography kim loại bóng bẩy, phông nền neon hiện đại phân lớp chi tiết."
+    "desc": "Template poster chương trình hot trend: hiệu ứng typography kim loại bóng bẩy, phông nền neon hiện đại phân lớp chi tiết.",
+    "is_vip": false
   },
   {
     "code": "L-35",
@@ -1197,7 +1276,8 @@
     "format": "Extension ZIP",
     "platform": "Photoshop Win/Mac",
     "tag": "Skin Pro Server 1",
-    "desc": "Bản cài đặt Panel Retouch Pro máy chủ 1: đầy đủ tính năng làm da tự nhiên, tăng độ nét chân dung và khử ám màu da."
+    "desc": "Bản cài đặt Panel Retouch Pro máy chủ 1: đầy đủ tính năng làm da tự nhiên, tăng độ nét chân dung và khử ám màu da.",
+    "is_vip": false
   },
   {
     "code": "L-36",
@@ -1212,7 +1292,8 @@
     "format": "Extension ZIP",
     "platform": "Photoshop Win/Mac",
     "tag": "Skin Pro Server 2",
-    "desc": "Máy chủ tải phụ phòng khi link 1 bị giới hạn lượt tải: phiên bản Panel hoàn chỉnh, cài đặt dùng ngay không cần kích hoạt key."
+    "desc": "Máy chủ tải phụ phòng khi link 1 bị giới hạn lượt tải: phiên bản Panel hoàn chỉnh, cài đặt dùng ngay không cần kích hoạt key.",
+    "is_vip": false
   },
   {
     "code": "L-37",
@@ -1227,7 +1308,8 @@
     "format": "Picture Style (.PF3 / .PF2)",
     "platform": "Canon EOS Cameras",
     "tag": "Canon Picture Style",
-    "desc": "Tập tin profile màu nạp trực tiếp vào thẻ nhớ hoặc phần mềm EOS Utility để máy ảnh Canon chụp ra ảnh JPEG có màu ngay."
+    "desc": "Tập tin profile màu nạp trực tiếp vào thẻ nhớ hoặc phần mềm EOS Utility để máy ảnh Canon chụp ra ảnh JPEG có màu ngay.",
+    "is_vip": false
   },
   {
     "code": "L-38",
@@ -1242,7 +1324,8 @@
     "format": "PDF Ebook Color",
     "platform": "All Devices",
     "tag": "Full Photography Ebook",
-    "desc": "Tài liệu cẩm nang toàn diện định dạng PDF: minh họa chi tiết về tam giác phơi sáng, kỹ thuật chụp ảnh cưới và cách set đèn studio."
+    "desc": "Tài liệu cẩm nang toàn diện định dạng PDF: minh họa chi tiết về tam giác phơi sáng, kỹ thuật chụp ảnh cưới và cách set đèn studio.",
+    "is_vip": false
   },
   {
     "code": "L-39",
@@ -1257,7 +1340,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia Sẻ Script Xếp Ảnh Thẻ Tự Động Hàng Loạt được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia Sẻ Script Xếp Ảnh Thẻ Tự Động Hàng Loạt được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-40",
@@ -1272,7 +1356,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia Sẻ File Preset Picture Style Cho Máy Ảnh Canon được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia Sẻ File Preset Picture Style Cho Máy Ảnh Canon được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-41",
@@ -1287,7 +1372,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia Sẻ PSD Pháo Giấy được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia Sẻ PSD Pháo Giấy được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-42",
@@ -1302,7 +1388,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Share Stock PSC Kèm Preset được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Share Stock PSC Kèm Preset được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-43",
@@ -1317,7 +1404,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia Sẻ Khoá Học Kiến Thức Về Máy Ảnh được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia Sẻ Khoá Học Kiến Thức Về Máy Ảnh được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-44",
@@ -1332,7 +1420,8 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia sẻ bộ font và typo hoài cổ VN được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia sẻ bộ font và typo hoài cổ VN được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-45",
@@ -1347,14 +1436,15 @@
     "format": "Google Drive Cloud",
     "platform": "Universal",
     "tag": "Auto Synced",
-    "desc": "Tài nguyên Chia Sẻ Bộ Typo Chữ Chèn Ảnh Cưới - PSC Siêu Đẹp được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp."
+    "desc": "Tài nguyên Chia Sẻ Bộ Typo Chữ Chèn Ảnh Cưới - PSC Siêu Đẹp được đồng bộ tự động từ đám mây, sẵn sàng tải trực tiếp.",
+    "is_vip": false
   },
   {
     "code": "L-46",
     "stt": 91,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Plugin CEP: CR Composer",
     "url": "https://editornghiepdu.vn/store/plugins/cr-composer",
     "category": "software",
@@ -1362,14 +1452,15 @@
     "format": "Adobe CEP Panel (.zxp)",
     "platform": "Premiere / After Effects",
     "tag": "Video AI Automation",
-    "desc": "<h1>CR Composer</h1><blockquote><p>CR Composer giúp editor Premiere Pro tìm, xem thử, tải và chèn nhanh asset, MOGRT, preset và nội dung theo Pack ngay trong phần mềm dựng.</p><..."
+    "desc": "<h1>CR Composer</h1><blockquote><p>CR Composer giúp editor Premiere Pro tìm, xem thử, tải và chèn nhanh asset, MOGRT, preset và nội dung theo Pack ngay trong phần mềm dựng.</p><...",
+    "is_vip": true
   },
   {
     "code": "L-47",
     "stt": 92,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Plugin CEP: CR CUT V2",
     "url": "https://editornghiepdu.vn/store/plugins/cr-cut-v2",
     "category": "software",
@@ -1377,14 +1468,15 @@
     "format": "Adobe CEP Panel (.zxp)",
     "platform": "Premiere / After Effects",
     "tag": "Video AI Automation",
-    "desc": "<h1>CR Cut</h1><blockquote><p>CR Cut là bộ công cụ tăng tốc dựng phim toàn diện dành cho Video Editor trên Adobe Premiere Pro, giúp tự động cắt khoảng lặng âm thanh, nhận diện v..."
+    "desc": "<h1>CR Cut</h1><blockquote><p>CR Cut là bộ công cụ tăng tốc dựng phim toàn diện dành cho Video Editor trên Adobe Premiere Pro, giúp tự động cắt khoảng lặng âm thanh, nhận diện v...",
+    "is_vip": true
   },
   {
     "code": "L-48",
     "stt": 93,
     "series": "lab",
     "series_name": "Community Lab",
-    "series_badge": "text-purple-400 bg-purple-500/10 border-purple-500/25",
+    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
     "title": "Plugin CEP: CR SHOOT",
     "url": "https://editornghiepdu.vn/store/plugins/cr-shoot",
     "category": "software",
@@ -1392,14 +1484,15 @@
     "format": "Adobe CEP Panel (.zxp)",
     "platform": "Premiere / After Effects",
     "tag": "Video AI Automation",
-    "desc": "<h1>Cr-Shoot</h1><blockquote><p>Dán ảnh từ clipboard thẳng vào timeline Adobe Premiere Pro, giúp editor chèn screenshot, ảnh tham khảo và tư liệu hình ảnh ngay tại playhead mà k..."
+    "desc": "<h1>Cr-Shoot</h1><blockquote><p>Dán ảnh từ clipboard thẳng vào timeline Adobe Premiere Pro, giúp editor chèn screenshot, ảnh tham khảo và tư liệu hình ảnh ngay tại playhead mà k...",
+    "is_vip": false
   },
   {
     "code": "L-49",
     "stt": 94,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "SKill edit ngành thẩm mỹ viện",
     "url": "https://editornghiepdu.vn/store/skills/skill-edit-nganh-tham-my-vien",
     "category": "software",
@@ -1407,14 +1500,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Skill edit-tham-my — Edit video thẩm mỹ viện Mô tả  Skill dựng video dọc 9:16 (1080×1920) quảng cáo cho thẩm mỹ viện / phòng khám da liễu theo phong cách sang trọng, vàng gold, ..."
+    "desc": "Skill edit-tham-my — Edit video thẩm mỹ viện Mô tả  Skill dựng video dọc 9:16 (1080×1920) quảng cáo cho thẩm mỹ viện / phòng khám da liễu theo phong cách sang trọng, vàng gold, ...",
+    "is_vip": true
   },
   {
     "code": "L-50",
     "stt": 95,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Key Lịch Sử Youtube",
     "url": "https://editornghiepdu.vn/store/skills/key-lich-su-youtube",
     "category": "software",
@@ -1422,14 +1516,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Phim Tài Liệu Lịch Sử: dựng trọn một phần phim lịch sử 5 phút bằng Claude  Đây là bộ khung mình đã dùng để dựng ba phần đầu của loạt Lịch sử Việt Nam. Bạn đưa vào một chủ đề hoặ..."
+    "desc": "Phim Tài Liệu Lịch Sử: dựng trọn một phần phim lịch sử 5 phút bằng Claude  Đây là bộ khung mình đã dùng để dựng ba phần đầu của loạt Lịch sử Việt Nam. Bạn đưa vào một chủ đề hoặ...",
+    "is_vip": true
   },
   {
     "code": "L-51",
     "stt": 96,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Người Que 2D + 3D — Video Shorts hoạt hình giải thích",
     "url": "https://editornghiepdu.vn/store/skills/nguoi-que-2d-3d",
     "category": "software",
@@ -1437,14 +1532,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Skill giúp Claude Code làm video dọc 9:16 dài khoảng 60 giây theo phong cách \"người que 2D đứng trong cảnh 3D\", chuyên kể chuyện lạ có thật hoặc giải thích hiện tượng. Không cần..."
+    "desc": "Skill giúp Claude Code làm video dọc 9:16 dài khoảng 60 giây theo phong cách \"người que 2D đứng trong cảnh 3D\", chuyên kể chuyện lạ có thật hoặc giải thích hiện tượng. Không cần...",
+    "is_vip": true
   },
   {
     "code": "L-52",
     "stt": 97,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Skill edit F&B style basic",
     "url": "https://editornghiepdu.vn/store/skills/skill-edit-fb-style-basic",
     "category": "software",
@@ -1452,14 +1548,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "F&B text basic: mô tả chức năng  F&B text basic là skill để Claude tự dựng video dọc 9:16 (1080×1920) cho quán ăn, nhà hàng, xưởng sản xuất đồ ăn, dạng người dẫn nói thẳng vào m..."
+    "desc": "F&B text basic: mô tả chức năng  F&B text basic là skill để Claude tự dựng video dọc 9:16 (1080×1920) cho quán ăn, nhà hàng, xưởng sản xuất đồ ăn, dạng người dẫn nói thẳng vào m...",
+    "is_vip": true
   },
   {
     "code": "L-53",
     "stt": 98,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "SKill edit F&B style cute part 2",
     "url": "https://editornghiepdu.vn/store/skills/skill-edit-fb-style-cute-part-2",
     "category": "software",
@@ -1467,14 +1564,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "F&B text viền vàng  Skill tự động dựng video review quán ăn, đồ ăn, sản phẩm F&B dạng dọc 9:16 (1080x1920) cho TikTok, Reels, Shorts, với phong cách chữ viền vàng của các kênh r..."
+    "desc": "F&B text viền vàng  Skill tự động dựng video review quán ăn, đồ ăn, sản phẩm F&B dạng dọc 9:16 (1080x1920) cho TikTok, Reels, Shorts, với phong cách chữ viền vàng của các kênh r...",
+    "is_vip": true
   },
   {
     "code": "L-54",
     "stt": 99,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Edit video F&B style cute",
     "url": "https://editornghiepdu.vn/store/skills/edit-video-fb-style-cute",
     "category": "software",
@@ -1482,14 +1580,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "F&B text cute là skill dựng video dọc 9:16 (1080×1920) review quán ăn, món ăn và sản phẩm F&B, theo phong cách TikTok dễ thương. Skill dựng tự động từ footage thô ra MP4 bằng Hy..."
+    "desc": "F&B text cute là skill dựng video dọc 9:16 (1080×1920) review quán ăn, món ăn và sản phẩm F&B, theo phong cách TikTok dễ thương. Skill dựng tự động từ footage thô ra MP4 bằng Hy...",
+    "is_vip": true
   },
   {
     "code": "L-55",
     "stt": 100,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "App chỉnh màu tự động hàng loạt dành cho Android",
     "url": "https://editornghiepdu.vn/store/skills/auto-color-for-android",
     "category": "software",
@@ -1497,14 +1596,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha..."
+    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha...",
+    "is_vip": true
   },
   {
     "code": "L-56",
     "stt": 101,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "App chỉnh màu tự động hàng loạt dành cho masOS",
     "url": "https://editornghiepdu.vn/store/skills/auto-color-for-masos",
     "category": "software",
@@ -1512,14 +1612,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha..."
+    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha...",
+    "is_vip": true
   },
   {
     "code": "L-57",
     "stt": 102,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "App chỉnh màu tự động hàng loạt dành cho Windows",
     "url": "https://editornghiepdu.vn/store/skills/auto-color-for-windows",
     "category": "software",
@@ -1527,14 +1628,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha..."
+    "desc": "AutoColor là ứng dụng chỉnh màu và tối ưu hình ảnh thông minh, được thiết kế để giúp nhiếp ảnh gia, studio và những người yêu nhiếp ảnh nâng cao chất lượng hình ảnh một cách nha...",
+    "is_vip": true
   },
   {
     "code": "L-58",
     "stt": 103,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "History Map Animation — Video lịch sử bản đồ chiến dịch",
     "url": "https://editornghiepdu.vn/store/skills/history-map-animation",
     "category": "software",
@@ -1542,7 +1644,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Skill cho Claude Code để dựng video lịch sử, trận đánh, chiến dịch theo phong cách bản đồ chiến dịch: bản đồ 3D làm xương sống, cờ và lính chuyển động, mũi tên tiến quân, máy ba..."
+    "desc": "Skill cho Claude Code để dựng video lịch sử, trận đánh, chiến dịch theo phong cách bản đồ chiến dịch: bản đồ 3D làm xương sống, cờ và lính chuyển động, mũi tên tiến quân, máy ba...",
+    "is_vip": true
   },
   {
     "code": "L-59",
@@ -1557,14 +1660,15 @@
     "format": "Motion Code / HyperFrames",
     "platform": "Claude / Node.js / HTML5",
     "tag": "HyperFrames Animation",
-    "desc": "Skill dẫn bạn từ lúc chưa có gì tới một video SaaS (quảng cáo / giới thiệu phần mềm, UI là nhân vật chính) đã render và chỉnh theo góp ý. Claude dựng trực tiếp bằng HyperFrames ..."
+    "desc": "Skill dẫn bạn từ lúc chưa có gì tới một video SaaS (quảng cáo / giới thiệu phần mềm, UI là nhân vật chính) đã render và chỉnh theo góp ý. Claude dựng trực tiếp bằng HyperFrames ...",
+    "is_vip": true
   },
   {
     "code": "L-60",
     "stt": 105,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Edit Talking Head Chrome",
     "url": "https://editornghiepdu.vn/store/skills/edit-talking-head-chrome",
     "category": "software",
@@ -1572,14 +1676,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và chỉnh sửa video talking head trên HyperFrames, kết hợp typography, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi bạn muốn áp style talking head đã học vào fo..."
+    "desc": "Dựng và chỉnh sửa video talking head trên HyperFrames, kết hợp typography, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi bạn muốn áp style talking head đã học vào fo...",
+    "is_vip": true
   },
   {
     "code": "L-61",
     "stt": 106,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "SaaS Motion Graphic trong After Effects",
     "url": "https://editornghiepdu.vn/store/skills/saas-animation-ae",
     "category": "software",
@@ -1587,7 +1692,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Skill dẫn bạn đi trọn quy trình làm video SaaS motion graphic (quảng cáo / giới thiệu phần mềm, UI là nhân vật chính) với Adobe After Effects qua MCP. Chủ đề do bạn tự chọn.  6 ..."
+    "desc": "Skill dẫn bạn đi trọn quy trình làm video SaaS motion graphic (quảng cáo / giới thiệu phần mềm, UI là nhân vật chính) với Adobe After Effects qua MCP. Chủ đề do bạn tự chọn.  6 ...",
+    "is_vip": true
   },
   {
     "code": "L-62",
@@ -1602,14 +1708,15 @@
     "format": "MCP Server (stdio / Agent)",
     "platform": "Claude Code / Cursor / Adobe",
     "tag": "Model Context Protocol",
-    "desc": "MCP for After Effects nối agent AI với After Effects đang mở trên máy bạn. Bạn nói việc cần làm, agent gọi đúng lệnh, After Effects thực thi, rồi agent tự chụp lại khung hình để..."
+    "desc": "MCP for After Effects nối agent AI với After Effects đang mở trên máy bạn. Bạn nói việc cần làm, agent gọi đúng lệnh, After Effects thực thi, rồi agent tự chụp lại khung hình để...",
+    "is_vip": true
   },
   {
     "code": "L-63",
     "stt": 108,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Edit Video Tin Tức",
     "url": "https://editornghiepdu.vn/store/skills/edit-video-tin-tuc",
     "category": "software",
@@ -1617,14 +1724,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng video tin tức với voice bạn cung cấp, b-roll source skill tự cho AI tìm."
+    "desc": "Dựng video tin tức với voice bạn cung cấp, b-roll source skill tự cho AI tìm.",
+    "is_vip": true
   },
   {
     "code": "L-64",
     "stt": 109,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Talking Head Motion UI",
     "url": "https://editornghiepdu.vn/store/skills/talking-head-motion-ui",
     "category": "software",
@@ -1632,14 +1740,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và chỉnh talking head trên HyperFrames, kết hợp typography, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi bạn muốn áp style talking head đã học vào footage của ..."
+    "desc": "Dựng và chỉnh talking head trên HyperFrames, kết hợp typography, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi bạn muốn áp style talking head đã học vào footage của ...",
+    "is_vip": true
   },
   {
     "code": "L-65",
     "stt": 110,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "AutoSub Typo CapCut for macOS - App",
     "url": "https://editornghiepdu.vn/store/skills/autosub-typo-capcut-for-macos-app",
     "category": "software",
@@ -1647,7 +1756,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "AutoSub Typo for CapCut là app desktop của EDITORNGHIEPDU: nghe video trong project CapCut, nhận dạng giọng nói thành phụ đề tiếng Việt, rồi tự dàn typography động (từng cụm chữ..."
+    "desc": "AutoSub Typo for CapCut là app desktop của EDITORNGHIEPDU: nghe video trong project CapCut, nhận dạng giọng nói thành phụ đề tiếng Việt, rồi tự dàn typography động (từng cụm chữ...",
+    "is_vip": true
   },
   {
     "code": "L-66",
@@ -1662,7 +1772,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "H3 Studio tạo ảnh AI chất lượng cao ngay trên máy Windows dùng card NVIDIA, không cần internet và không upload ảnh đi đâu. App chạy model MiniMax-H3-Image qua ComfyUI, tự cài en..."
+    "desc": "H3 Studio tạo ảnh AI chất lượng cao ngay trên máy Windows dùng card NVIDIA, không cần internet và không upload ảnh đi đâu. App chạy model MiniMax-H3-Image qua ComfyUI, tự cài en...",
+    "is_vip": true
   },
   {
     "code": "L-67",
@@ -1677,14 +1788,15 @@
     "format": "MCP Server (stdio / Agent)",
     "platform": "Claude Code / Cursor / Adobe",
     "tag": "Model Context Protocol",
-    "desc": "Điều khiển Adobe Premiere Pro bằng AI qua MCP: MCP server (stdio) + panel CEP chạy trong Premiere. Dùng khi người dùng muốn AI thao tác trực tiếp trên Premiere — mở project, imp..."
+    "desc": "Điều khiển Adobe Premiere Pro bằng AI qua MCP: MCP server (stdio) + panel CEP chạy trong Premiere. Dùng khi người dùng muốn AI thao tác trực tiếp trên Premiere — mở project, imp...",
+    "is_vip": true
   },
   {
     "code": "L-68",
     "stt": 113,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Poscard Edit",
     "url": "https://editornghiepdu.vn/store/skills/poscard-edit",
     "category": "software",
@@ -1692,14 +1804,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Poscard edit: dựng video dọc 9:16 talking-head truyền cảm hứng / tâm sự (podcast một người cầm mic hoặc ngồi bàn) kiểu 'chữ động theo giọng nói', học từ video mẫu 'BÀI TẬP 3' và..."
+    "desc": "Poscard edit: dựng video dọc 9:16 talking-head truyền cảm hứng / tâm sự (podcast một người cầm mic hoặc ngồi bàn) kiểu 'chữ động theo giọng nói', học từ video mẫu 'BÀI TẬP 3' và...",
+    "is_vip": true
   },
   {
     "code": "L-69",
     "stt": 114,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "AutoSub Typo for CapCut",
     "url": "https://editornghiepdu.vn/store/skills/autosub-typo-capcut",
     "category": "software",
@@ -1707,14 +1820,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "AutoSub Typo for CapCut là app desktop của EDITORNGHIEPDU: nghe video trong project CapCut, nhận dạng giọng nói thành phụ đề tiếng Việt, rồi tự dàn typography động (từng cụm chữ..."
+    "desc": "AutoSub Typo for CapCut là app desktop của EDITORNGHIEPDU: nghe video trong project CapCut, nhận dạng giọng nói thành phụ đề tiếng Việt, rồi tự dàn typography động (từng cụm chữ...",
+    "is_vip": true
   },
   {
     "code": "L-70",
     "stt": 115,
-    "series": "studio",
-    "series_name": "Studio VIP",
-    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
+    "series": "lab",
+    "series_name": "Community Lab",
+    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
     "title": "Claude motion style",
     "url": "https://editornghiepdu.vn/store/skills/claude-motion-style",
     "category": "software",
@@ -1722,14 +1836,15 @@
     "format": "Agent Skill (SKILL.md / Zip)",
     "platform": "Claude Code / Anthropic",
     "tag": "Claude Code Skill",
-    "desc": "Bộ 20 style motion graphics dựng sẵn cho Claude: Particles, Liquid Morph, Holographic, Neon Glow, Wireframe 3D, Glassmorphism, Kinetic Type, Isometric, Clay 3D, ASCII Art, Gradi..."
+    "desc": "Bộ 20 style motion graphics dựng sẵn cho Claude: Particles, Liquid Morph, Holographic, Neon Glow, Wireframe 3D, Glassmorphism, Kinetic Type, Isometric, Clay 3D, ASCII Art, Gradi...",
+    "is_vip": false
   },
   {
     "code": "L-71",
     "stt": 116,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Gbro Collage Broll",
     "url": "https://editornghiepdu.vn/store/skills/gbro-collage-broll",
     "category": "software",
@@ -1737,7 +1852,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Biến một câu lời dẫn khoảng 5 giây, một ý chính hoặc một khái niệm trừu tượng thành B-roll phong cách xé giấy (collage giấy, bán sắc halftone, chất editorial cao cấp). Skill làm..."
+    "desc": "Biến một câu lời dẫn khoảng 5 giây, một ý chính hoặc một khái niệm trừu tượng thành B-roll phong cách xé giấy (collage giấy, bán sắc halftone, chất editorial cao cấp). Skill làm...",
+    "is_vip": true
   },
   {
     "code": "L-72",
@@ -1752,7 +1868,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và chỉnh talking head trong Premiere Pro và After Effects theo style V06 cá nhân đã duyệt, kết hợp typography V05, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi..."
+    "desc": "Dựng và chỉnh talking head trong Premiere Pro và After Effects theo style V06 cá nhân đã duyệt, kết hợp typography V05, icon minh họa lời nói và motion nhiều giai đoạn. Dùng khi...",
+    "is_vip": false
   },
   {
     "code": "L-73",
@@ -1767,7 +1884,8 @@
     "format": "Motion Code / HyperFrames",
     "platform": "Claude / Node.js / HTML5",
     "tag": "HyperFrames Animation",
-    "desc": "Dựng và nâng cấp video hyper edit: speed ramp điện ảnh, chủ đề xe cộ, cắt theo nhịp nhạc, trong Premiere Pro và After Effects. Skill chọn footage sạch, phối hiệu ứng và SFX, rồi..."
+    "desc": "Dựng và nâng cấp video hyper edit: speed ramp điện ảnh, chủ đề xe cộ, cắt theo nhịp nhạc, trong Premiere Pro và After Effects. Skill chọn footage sạch, phối hiệu ứng và SFX, rồi...",
+    "is_vip": false
   },
   {
     "code": "L-74",
@@ -1782,7 +1900,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và sửa video giáo dục công nghệ: hướng dẫn phần mềm, quy trình làm việc với AI, talking head kết hợp quay màn hình. Áp dụng phong cách editviral đã học từ bộ video mẫu. Dùn..."
+    "desc": "Dựng và sửa video giáo dục công nghệ: hướng dẫn phần mềm, quy trình làm việc với AI, talking head kết hợp quay màn hình. Áp dụng phong cách editviral đã học từ bộ video mẫu. Dùn...",
+    "is_vip": false
   },
   {
     "code": "L-75",
@@ -1797,7 +1916,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Làm video ngắn giới thiệu sản phẩm hoặc skill (10 đến 30 giây, bản demo có thuyết minh tới khoảng 60 giây) theo cách của các clip ra mắt cao cấp: chữ chuyển động, giao diện thật..."
+    "desc": "Làm video ngắn giới thiệu sản phẩm hoặc skill (10 đến 30 giây, bản demo có thuyết minh tới khoảng 60 giây) theo cách của các clip ra mắt cao cấp: chữ chuyển động, giao diện thật...",
+    "is_vip": false
   },
   {
     "code": "L-76",
@@ -1812,7 +1932,8 @@
     "format": "Agent Skill (SKILL.md / Zip)",
     "platform": "Claude Code / Anthropic",
     "tag": "Claude Code Skill",
-    "desc": "Dựng phim hoạt hình 2D vẽ tay bằng p5.js và p5.brush với nhân vật Clawd, chạy bằng Claude. Dùng khi cần làm video hoạt hình ngắn kiểu tranh vẽ từng khung, có biểu cảm nhân vật, ..."
+    "desc": "Dựng phim hoạt hình 2D vẽ tay bằng p5.js và p5.brush với nhân vật Clawd, chạy bằng Claude. Dùng khi cần làm video hoạt hình ngắn kiểu tranh vẽ từng khung, có biểu cảm nhân vật, ...",
+    "is_vip": false
   },
   {
     "code": "L-77",
@@ -1827,7 +1948,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Để agent đạo diễn, vẽ, phối nhạc và mix một đoạn phim ngắn hoàn toàn bằng code, theo một trong hàng chục phong cách của thư viện Lemo-Opuscar, ví dụ sơn dầu dày, màu nước, tranh..."
+    "desc": "Để agent đạo diễn, vẽ, phối nhạc và mix một đoạn phim ngắn hoàn toàn bằng code, theo một trong hàng chục phong cách của thư viện Lemo-Opuscar, ví dụ sơn dầu dày, màu nước, tranh...",
+    "is_vip": false
   },
   {
     "code": "L-78",
@@ -1842,7 +1964,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Thư viện prompt làm video bằng Claude Opus 5.5, gồm hơn 700 prompt thật của các creator kèm liên kết bài đăng gốc. Dùng khi cần tham khảo cách viết prompt để agent tự sinh anima..."
+    "desc": "Thư viện prompt làm video bằng Claude Opus 5.5, gồm hơn 700 prompt thật của các creator kèm liên kết bài đăng gốc. Dùng khi cần tham khảo cách viết prompt để agent tự sinh anima...",
+    "is_vip": false
   },
   {
     "code": "L-79",
@@ -1857,7 +1980,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Điều khiển Adobe After Effects như một agent thông qua AfterEffects-MCP-IMT (ae_catalog, ae_do, ae_render_frame và các công cụ khác). Bao gồm vệ sinh project, những việc ExtendS..."
+    "desc": "Điều khiển Adobe After Effects như một agent thông qua AfterEffects-MCP-IMT (ae_catalog, ae_do, ae_render_frame và các công cụ khác). Bao gồm vệ sinh project, những việc ExtendS...",
+    "is_vip": false
   },
   {
     "code": "L-80",
@@ -1872,7 +1996,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Bộ skill cài được cho AI coding agent về nền tảng thiết kế chuyển động: timing, typography, màu sắc, bố cục, After Effects, Remotion, cùng các thành phần thương hiệu như logo và..."
+    "desc": "Bộ skill cài được cho AI coding agent về nền tảng thiết kế chuyển động: timing, typography, màu sắc, bố cục, After Effects, Remotion, cùng các thành phần thương hiệu như logo và...",
+    "is_vip": false
   },
   {
     "code": "L-81",
@@ -1887,7 +2012,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Tạo và chỉnh sửa animation After Effects có thể sửa tiếp được: dựng composition bằng script, lên kế hoạch chuyển động, xem lại bản phát và xuất file đã kiểm chứng. Dùng cho typo..."
+    "desc": "Tạo và chỉnh sửa animation After Effects có thể sửa tiếp được: dựng composition bằng script, lên kế hoạch chuyển động, xem lại bản phát và xuất file đã kiểm chứng. Dùng cho typo...",
+    "is_vip": false
   },
   {
     "code": "L-82",
@@ -1902,7 +2028,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Khởi chạy, kiểm thử và điều khiển máy chủ MCP ae-motion với After Effects thật, hoặc với cầu nối giả lập khi không có After Effects. Dùng khi cần chạy thử ae-motion, gọi một côn..."
+    "desc": "Khởi chạy, kiểm thử và điều khiển máy chủ MCP ae-motion với After Effects thật, hoặc với cầu nối giả lập khi không có After Effects. Dùng khi cần chạy thử ae-motion, gọi một côn...",
+    "is_vip": false
   },
   {
     "code": "L-83",
@@ -1917,7 +2044,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "56 skill motion graphics mã nguồn mở cho AI coding agent, gộp thành 19 pack: chữ chuyển động, biểu đồ theo dữ liệu, video giải thích, nội dung TikTok và Reels, 3D và WebGL, mani..."
+    "desc": "56 skill motion graphics mã nguồn mở cho AI coding agent, gộp thành 19 pack: chữ chuyển động, biểu đồ theo dữ liệu, video giải thích, nội dung TikTok và Reels, 3D và WebGL, mani...",
+    "is_vip": false
   },
   {
     "code": "L-84",
@@ -1932,7 +2060,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và sửa video từ footage, kịch bản hoặc giọng đọc. Skill tự chọn phong cách, điều phối 20 skill motion, rồi lo asset, animation, âm thanh và kiểm tra chất lượng. Dùng cho ta..."
+    "desc": "Dựng và sửa video từ footage, kịch bản hoặc giọng đọc. Skill tự chọn phong cách, điều phối 20 skill motion, rồi lo asset, animation, âm thanh và kiểm tra chất lượng. Dùng cho ta...",
+    "is_vip": false
   },
   {
     "code": "L-85",
@@ -1947,14 +2076,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng hook talking head bất động sản theo mẫu Ocean City cá nhân trong Premiere Pro và After Effects: chữ đậm phối chữ viết tay, bóng mềm không viền, zoom theo lời nói và khóa kh..."
+    "desc": "Dựng hook talking head bất động sản theo mẫu Ocean City cá nhân trong Premiere Pro và After Effects: chữ đậm phối chữ viết tay, bóng mềm không viền, zoom theo lời nói và khóa kh...",
+    "is_vip": false
   },
   {
     "code": "L-86",
     "stt": 131,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Edit BĐS kèm B-roll",
     "url": "https://editornghiepdu.vn/store/skills/edit-bds-broll",
     "category": "software",
@@ -1962,7 +2092,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng và chỉnh video bất động sản bằng HyperFrames theo phong cách talking head xen B-roll Ocean City: chữ viết tay phối chữ đậm, text nằm sau người nói tối đa hai từ, khóa khuôn..."
+    "desc": "Dựng và chỉnh video bất động sản bằng HyperFrames theo phong cách talking head xen B-roll Ocean City: chữ viết tay phối chữ đậm, text nằm sau người nói tối đa hai từ, khóa khuôn...",
+    "is_vip": true
   },
   {
     "code": "L-87",
@@ -1977,14 +2108,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng video flycam bất động sản có vẽ ranh giới và chia lô đất bằng HyperFrames: viền phát sáng kiểu Saber, bám theo mặt đất, tô vùng, ghi diện tích và nhãn vị trí. Dùng khi gọi ..."
+    "desc": "Dựng video flycam bất động sản có vẽ ranh giới và chia lô đất bằng HyperFrames: viền phát sáng kiểu Saber, bám theo mặt đất, tô vùng, ghi diện tích và nhãn vị trí. Dùng khi gọi ...",
+    "is_vip": false
   },
   {
     "code": "L-88",
     "stt": 133,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Claude Taking head",
     "url": "https://editornghiepdu.vn/store/skills/claude-taking-head",
     "category": "software",
@@ -1992,7 +2124,8 @@
     "format": "Agent Skill (SKILL.md / Zip)",
     "platform": "Claude Code / Anthropic",
     "tag": "Claude Code Skill",
-    "desc": "Dựng video talking head dọc 9:16 (Reels, TikTok, Shorts) thành bản \"retention edit\" hoàn chỉnh bằng HyperFrames: typography nhấn nhá có chủ đích (slam, light sweep, shatter), ca..."
+    "desc": "Dựng video talking head dọc 9:16 (Reels, TikTok, Shorts) thành bản \"retention edit\" hoàn chỉnh bằng HyperFrames: typography nhấn nhá có chủ đích (slam, light sweep, shatter), ca...",
+    "is_vip": true
   },
   {
     "code": "L-89",
@@ -2007,14 +2140,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Dựng video tài liệu giải thích theo Vox Style bằng HyperFrames, với bản đồ, tài liệu được highlight, ảnh cắt dán collage, typography và chất liệu giấy. Dùng khi bạn yêu cầu Vox ..."
+    "desc": "Dựng video tài liệu giải thích theo Vox Style bằng HyperFrames, với bản đồ, tài liệu được highlight, ảnh cắt dán collage, typography và chất liệu giấy. Dùng khi bạn yêu cầu Vox ...",
+    "is_vip": false
   },
   {
     "code": "L-90",
     "stt": 135,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Lồng Tiếng Việt",
     "url": "https://editornghiepdu.vn/store/skills/long-tieng-viet",
     "category": "software",
@@ -2022,14 +2156,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Lồng Tiếng Việt là ứng dụng cài trên máy, không phải skill cài vào agent. Bạn dán link hoặc thả video vào app: app tự nghe lời nói trong video, dịch sang tiếng Việt bằng AI, đọc..."
+    "desc": "Lồng Tiếng Việt là ứng dụng cài trên máy, không phải skill cài vào agent. Bạn dán link hoặc thả video vào app: app tự nghe lời nói trong video, dịch sang tiếng Việt bằng AI, đọc...",
+    "is_vip": true
   },
   {
     "code": "L-91",
     "stt": 136,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Crime Documentary",
     "url": "https://editornghiepdu.vn/store/skills/crime-documentary",
     "category": "software",
@@ -2037,14 +2172,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Crime Documentary giúp agent dựng video tài liệu về vụ án, điều tra, lừa đảo, tham nhũng theo phong cách \"một cú máy\" bằng HyperFrames. Một camera duy nhất bay liên tục qua mặt ..."
+    "desc": "Crime Documentary giúp agent dựng video tài liệu về vụ án, điều tra, lừa đảo, tham nhũng theo phong cách \"một cú máy\" bằng HyperFrames. Một camera duy nhất bay liên tục qua mặt ...",
+    "is_vip": true
   },
   {
     "code": "L-92",
     "stt": 137,
-    "series": "lab",
-    "series_name": "Community Lab",
-    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
+    "series": "studio",
+    "series_name": "Studio VIP",
+    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
     "title": "Map Animation BĐS",
     "url": "https://editornghiepdu.vn/store/skills/map-animation-bds",
     "category": "software",
@@ -2052,7 +2188,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Kết quả mục tiêu: MP4 dọc 9:16 mà người xem thấy camera bay trên ảnh vệ tinh thật, xen footage sản phẩm. Mở từ tỉnh, chiếu sáng đúng vùng voice đang nói, lao xuống tới lô đất, b..."
+    "desc": "Kết quả mục tiêu: MP4 dọc 9:16 mà người xem thấy camera bay trên ảnh vệ tinh thật, xen footage sản phẩm. Mở từ tỉnh, chiếu sáng đúng vùng voice đang nói, lao xuống tới lô đất, b...",
+    "is_vip": true
   },
   {
     "code": "L-93",
@@ -2067,7 +2204,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng hình ảnh theo phong cách Báo săn chạy bằng pixel art: Kimi so với Sonnet trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | hình ảnh ..."
+    "desc": "Gói hướng dẫn dựng hình ảnh theo phong cách Báo săn chạy bằng pixel art: Kimi so với Sonnet trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | hình ảnh ...",
+    "is_vip": false
   },
   {
     "code": "L-94",
@@ -2082,7 +2220,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Vũ trụ chùa voxel kiểu Nhật cổ trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | trang web | | Tác giả | L..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Vũ trụ chùa voxel kiểu Nhật cổ trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | trang web | | Tác giả | L...",
+    "is_vip": false
   },
   {
     "code": "L-95",
@@ -2097,7 +2236,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Explainer video cách tránh email giả mạo trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | video | | Tác giả |..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Explainer video cách tránh email giả mạo trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | video | | Tác giả |...",
+    "is_vip": false
   },
   {
     "code": "L-96",
@@ -2112,7 +2252,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Showroom xe đạp 3D: so sánh ba mô hình AI trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | trang web | | ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Showroom xe đạp 3D: so sánh ba mô hình AI trên Kimi K3.1.  | | | |---|---| | Model | Kimi K3.1 | | Định dạng đầu ra | trang web | | ...",
+    "is_vip": false
   },
   {
     "code": "L-97",
@@ -2127,7 +2268,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Game 3D lấy cảm hứng từ Terraria bằng Flutter trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | cô..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Game 3D lấy cảm hứng từ Terraria bằng Flutter trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | cô...",
+    "is_vip": false
   },
   {
     "code": "L-98",
@@ -2142,7 +2284,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Chim công 3D interactive phong cách tranh hạt sần trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu r..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Chim công 3D interactive phong cách tranh hạt sần trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu r...",
+    "is_vip": false
   },
   {
     "code": "L-99",
@@ -2157,7 +2300,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông đội mũ lưỡi trai đeo kính râm đạp xe trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | t..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông đội mũ lưỡi trai đeo kính râm đạp xe trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | t...",
+    "is_vip": false
   },
   {
     "code": "L-100",
@@ -2172,7 +2316,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông đạp xe bằng SVG nội tuyến trong một file HTML trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông đạp xe bằng SVG nội tuyến trong một file HTML trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đ...",
+    "is_vip": false
   },
   {
     "code": "L-101",
@@ -2187,7 +2332,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông 3D interactive đạp xe đạp trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | trang web | ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bồ nông 3D interactive đạp xe đạp trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | trang web | ...",
+    "is_vip": false
   },
   {
     "code": "L-102",
@@ -2202,7 +2348,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Đồng hồ cơ tự lên dây tháo rời được bằng Three.js trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra ..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Đồng hồ cơ tự lên dây tháo rời được bằng Three.js trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra ...",
+    "is_vip": false
   },
   {
     "code": "L-103",
@@ -2217,7 +2364,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Xưởng của Leonardo da Vinci: trải nghiệm web 3D nhập vai trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạn..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Xưởng của Leonardo da Vinci: trải nghiệm web 3D nhập vai trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạn...",
+    "is_vip": false
   },
   {
     "code": "L-104",
@@ -2232,7 +2380,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Chim bồ nông đạp xe SVG trong một file HTML trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | tr..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Chim bồ nông đạp xe SVG trong một file HTML trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | tr...",
+    "is_vip": false
   },
   {
     "code": "L-105",
@@ -2247,7 +2396,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Trạm không gian quay quanh Trái Đất trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | video | | Tác ..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Trạm không gian quay quanh Trái Đất trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | video | | Tác ...",
+    "is_vip": false
   },
   {
     "code": "L-106",
@@ -2262,7 +2412,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hòn đảo thu nhỏ trong khối nhựa resin trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | trang we..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hòn đảo thu nhỏ trong khối nhựa resin trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | trang we...",
+    "is_vip": false
   },
   {
     "code": "L-107",
@@ -2277,7 +2428,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Cờ vua 3D với hiệu ứng phá hủy quân bị ăn trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | công c..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Cờ vua 3D với hiệu ứng phá hủy quân bị ăn trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | công c...",
+    "is_vip": false
   },
   {
     "code": "L-108",
@@ -2292,7 +2444,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Fourier epicycle hé lộ chậm nàng Mona Lisa trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | video |..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Fourier epicycle hé lộ chậm nàng Mona Lisa trên Gemini 4 Argon.  | | | |---|---| | Model | Gemini 4 Argon | | Định dạng đầu ra | video |...",
+    "is_vip": false
   },
   {
     "code": "L-109",
@@ -2307,7 +2460,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Buổi biểu diễn piano hoạt hình phong cách tranh sáp màu trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Buổi biểu diễn piano hoạt hình phong cách tranh sáp màu trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr...",
+    "is_vip": false
   },
   {
     "code": "L-110",
@@ -2322,7 +2476,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Mô hình 3D tua bin phản lực tháo rời được trong trình duyệt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Mô hình 3D tua bin phản lực tháo rời được trong trình duyệt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra ...",
+    "is_vip": false
   },
   {
     "code": "L-111",
@@ -2337,7 +2492,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Trái tim người 3D interactive chân thực bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Trái tim người 3D interactive chân thực bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran...",
+    "is_vip": false
   },
   {
     "code": "L-112",
@@ -2352,7 +2508,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Ống kính máy ảnh 3D interactive bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web | ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Ống kính máy ảnh 3D interactive bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web | ...",
+    "is_vip": false
   },
   {
     "code": "L-113",
@@ -2367,7 +2524,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Đồng hồ cơ 3D interactive vỏ vàng bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Đồng hồ cơ 3D interactive vỏ vàng bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web ...",
+    "is_vip": false
   },
   {
     "code": "L-114",
@@ -2382,7 +2540,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Động cơ phản lực 3D interactive từ cửa hút đến ống xả trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công c..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Động cơ phản lực 3D interactive từ cửa hút đến ống xả trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công c...",
+    "is_vip": false
   },
   {
     "code": "L-115",
@@ -2397,7 +2556,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Động cơ V8 ô tô 3D interactive bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ | | Tác..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Động cơ V8 ô tô 3D interactive bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ | | Tác...",
+    "is_vip": false
   },
   {
     "code": "L-116",
@@ -2412,7 +2572,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Mô hình 3D interactive tên lửa Saturn V bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công c..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Mô hình 3D interactive tên lửa Saturn V bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công c...",
+    "is_vip": false
   },
   {
     "code": "L-117",
@@ -2427,7 +2588,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel motion graphics 15 giây của Opus 5.5 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác gi..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel motion graphics 15 giây của Opus 5.5 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác gi...",
+    "is_vip": false
   },
   {
     "code": "L-118",
@@ -2442,7 +2604,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hoạt hình Canvas 2D về bài toán đường dốc nhanh nhất của Galileo trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hoạt hình Canvas 2D về bài toán đường dốc nhanh nhất của Galileo trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầ...",
+    "is_vip": false
   },
   {
     "code": "L-119",
@@ -2457,7 +2620,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Motion graphics 30 giây về sự phát triển của Apple từ 1976 đến 2026 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Motion graphics 30 giây về sự phát triển của Apple từ 1976 đến 2026 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu...",
+    "is_vip": false
   },
   {
     "code": "L-120",
@@ -2472,7 +2636,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Hành trình của photon từ lõi Mặt Trời đến Trái Đất trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | T..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Hành trình của photon từ lõi Mặt Trời đến Trái Đất trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | T...",
+    "is_vip": false
   },
   {
     "code": "L-121",
@@ -2487,7 +2652,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Mô phỏng vườn thiền interactive trong một file HTML trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ ..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Mô phỏng vườn thiền interactive trong một file HTML trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ ...",
+    "is_vip": false
   },
   {
     "code": "L-122",
@@ -2502,7 +2668,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hoạt hình SVG vẽ tay 30 giây, nhạc nền tổng hợp bằng code trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hoạt hình SVG vẽ tay 30 giây, nhạc nền tổng hợp bằng code trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | ...",
+    "is_vip": false
   },
   {
     "code": "L-123",
@@ -2517,7 +2684,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Explainer video quá trình tiến hóa của con mắt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác g..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Explainer video quá trình tiến hóa của con mắt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác g...",
+    "is_vip": false
   },
   {
     "code": "L-124",
@@ -2532,7 +2700,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Ngôi nhà 3D mọc lên từng nét từ bản phác thảo bút chì trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Ngôi nhà 3D mọc lên từng nét từ bản phác thảo bút chì trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran...",
+    "is_vip": false
   },
   {
     "code": "L-125",
@@ -2547,7 +2716,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Phim interactive AI \"The Humanity Machine\" dài 60 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tra..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Phim interactive AI \"The Humanity Machine\" dài 60 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tra...",
+    "is_vip": false
   },
   {
     "code": "L-126",
@@ -2562,7 +2732,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bài trình bày HTML interactive có thuyết minh về hiệu ứng mạng lưới trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Bài trình bày HTML interactive có thuyết minh về hiệu ứng mạng lưới trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng...",
+    "is_vip": false
   },
   {
     "code": "L-127",
@@ -2577,7 +2748,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Video interactive 60 giây mô phỏng động đất do kiến tạo mảng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | v..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Video interactive 60 giây mô phỏng động đất do kiến tạo mảng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | v...",
+    "is_vip": false
   },
   {
     "code": "L-128",
@@ -2592,7 +2764,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel kinetic typography điện ảnh 30 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác giả..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel kinetic typography điện ảnh 30 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | | Tác giả...",
+    "is_vip": false
   },
   {
     "code": "L-129",
@@ -2607,7 +2780,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Giải thích interactive cách mã QR lưu giữ và sửa thông điệp trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Giải thích interactive cách mã QR lưu giữ và sửa thông điệp trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra ...",
+    "is_vip": false
   },
   {
     "code": "L-130",
@@ -2622,7 +2796,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation toán học: tỷ lệ vàng, Mandelbrot và hình học thiêng liêng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation toán học: tỷ lệ vàng, Mandelbrot và hình học thiêng liêng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng...",
+    "is_vip": false
   },
   {
     "code": "L-131",
@@ -2637,7 +2812,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation 3D mũ giáp Iron Man bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web | | ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation 3D mũ giáp Iron Man bằng Three.js trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web | | ...",
+    "is_vip": false
   },
   {
     "code": "L-132",
@@ -2652,7 +2828,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Đèn dung nham thực tế bằng WebGL trong một file HTML trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ..."
+    "desc": "Gói hướng dẫn dựng công cụ theo phong cách Đèn dung nham thực tế bằng WebGL trong một file HTML trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | công cụ...",
+    "is_vip": false
   },
   {
     "code": "L-133",
@@ -2667,7 +2844,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Animation thẻ widget: phóng to và hiện dần từng chi tiết trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Animation thẻ widget: phóng to và hiện dần từng chi tiết trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video...",
+    "is_vip": false
   },
   {
     "code": "L-134",
@@ -2682,7 +2860,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Mô hình trực quan hóa dòng chảy mảnh vụn thay đổi lòng sông trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | vi..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Mô hình trực quan hóa dòng chảy mảnh vụn thay đổi lòng sông trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | vi...",
+    "is_vip": false
   },
   {
     "code": "L-135",
@@ -2697,7 +2876,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Giải thích vòng tròn màu bằng motion graphics 20 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | ..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Giải thích vòng tròn màu bằng motion graphics 20 giây trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | ...",
+    "is_vip": false
   },
   {
     "code": "L-136",
@@ -2712,7 +2892,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Phim ngắn tạo sinh 50 giây \"Painting the Night\" trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Phim ngắn tạo sinh 50 giây \"Painting the Night\" trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang web ...",
+    "is_vip": false
   },
   {
     "code": "L-137",
@@ -2727,7 +2908,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Mô phỏng núi lửa Krakatoa thời gian thực bằng WebGL2 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Mô phỏng núi lửa Krakatoa thời gian thực bằng WebGL2 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | trang...",
+    "is_vip": false
   },
   {
     "code": "L-138",
@@ -2742,7 +2924,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Phim ngắn về đức tin vẽ bằng một đường nét liền mạch trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | |..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Phim ngắn về đức tin vẽ bằng một đường nét liền mạch trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video | |...",
+    "is_vip": false
   },
   {
     "code": "L-139",
@@ -2757,7 +2940,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation giải thích quang di truyền học đầy ấn tượng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation giải thích quang di truyền học đầy ấn tượng trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tran...",
+    "is_vip": false
   },
   {
     "code": "L-140",
@@ -2772,7 +2956,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation 3D interactive xây nhà từ móng đến hoàn thiện trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Animation 3D interactive xây nhà từ móng đến hoàn thiện trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr...",
+    "is_vip": false
   },
   {
     "code": "L-141",
@@ -2787,7 +2972,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Pháo dã chiến Napoleon 1857 hoạt động đầy đủ bằng Three.js WebGPU trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đ..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Pháo dã chiến Napoleon 1857 hoạt động đầy đủ bằng Three.js WebGPU trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đ...",
+    "is_vip": false
   },
   {
     "code": "L-142",
@@ -2802,7 +2988,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hành trình 30 năm tới trong một cảnh quay liền không cắt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | t..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Hành trình 30 năm tới trong một cảnh quay liền không cắt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | t...",
+    "is_vip": false
   },
   {
     "code": "L-143",
@@ -2817,7 +3004,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel motion design 15 giây: so sánh Sol và Opus 5.5 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video ..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Showreel motion design 15 giây: so sánh Sol và Opus 5.5 trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video ...",
+    "is_vip": false
   },
   {
     "code": "L-144",
@@ -2832,7 +3020,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Dinh thự giờ vàng dựng bằng code ngay trong trình duyệt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Dinh thự giờ vàng dựng bằng code ngay trong trình duyệt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | tr...",
+    "is_vip": false
   },
   {
     "code": "L-145",
@@ -2847,7 +3036,8 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng nội dung theo phong cách Cơ hội lớn nhất của nhân loại, không lời trên Fable 5.5.  | | | |---|---| | Model | Fable 5.5 | | Định dạng đầu ra | nội dung | | Tác..."
+    "desc": "Gói hướng dẫn dựng nội dung theo phong cách Cơ hội lớn nhất của nhân loại, không lời trên Fable 5.5.  | | | |---|---| | Model | Fable 5.5 | | Định dạng đầu ra | nội dung | | Tác...",
+    "is_vip": false
   },
   {
     "code": "L-146",
@@ -2862,14 +3052,15 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Motion film cập nhật Paracortex Terminal trên Fable 5.5.  | | | |---|---| | Model | Fable 5.5 | | Định dạng đầu ra | video | | Tác giả |..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Motion film cập nhật Paracortex Terminal trên Fable 5.5.  | | | |---|---| | Model | Fable 5.5 | | Định dạng đầu ra | video | | Tác giả |...",
+    "is_vip": false
   },
   {
     "code": "L-147",
     "stt": 192,
-    "series": "studio",
-    "series_name": "Studio VIP",
-    "series_badge": "text-amber-400 bg-amber-500/10 border-amber-500/25",
+    "series": "lab",
+    "series_name": "Community Lab",
+    "series_badge": "text-sky-400 bg-sky-500/10 border-sky-500/25",
     "title": "Thử Claude Opus 5.5 với Hyperframes chỉ bằng một prompt",
     "url": "https://editornghiepdu.vn/store/skills/timguignard-623571",
     "category": "software",
@@ -2877,7 +3068,8 @@
     "format": "Agent Skill (SKILL.md / Zip)",
     "platform": "Claude Code / Anthropic",
     "tag": "Claude Code Skill",
-    "desc": "Gói hướng dẫn dựng video theo phong cách Thử Claude Opus 5.5 với Hyperframes chỉ bằng một prompt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video ..."
+    "desc": "Gói hướng dẫn dựng video theo phong cách Thử Claude Opus 5.5 với Hyperframes chỉ bằng một prompt trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu ra | video ...",
+    "is_vip": false
   },
   {
     "code": "L-148",
@@ -2892,6 +3084,7 @@
     "format": "Agent Skill (SKILL.md)",
     "platform": "AI Agent / Timeline Tool",
     "tag": "AI Editor Skill",
-    "desc": "Gói hướng dẫn dựng trang web theo phong cách Trang interactive và video 30 giây do Opus 5.5 tự chọn chủ đề trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu r..."
+    "desc": "Gói hướng dẫn dựng trang web theo phong cách Trang interactive và video 30 giây do Opus 5.5 tự chọn chủ đề trên Opus 5.5.  | | | |---|---| | Model | Opus 5.5 | | Định dạng đầu r...",
+    "is_vip": false
   }
 ]

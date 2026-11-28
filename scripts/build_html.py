@@ -12,8 +12,8 @@ def build():
         resources = json.load(f)
 
     total_count = len(resources)
-    studio_count = len([r for r in resources if r.get("series") == "studio"])
-    lab_count = len([r for r in resources if r.get("series") == "lab"])
+    vip_count = len([r for r in resources if r.get("is_vip", r.get("series") == "studio")])
+    free_count = total_count - vip_count
 
     # Count by category
     cat_counts = {
@@ -67,7 +67,8 @@ def build():
     for item in resources:
         code = item.get("code", "00")
         series = item.get("series", "lab")
-        is_studio = (series == "studio")
+        is_vip = bool(item.get("is_vip", series == "studio"))
+        tier = "vip" if is_vip else "free"
         category = item.get("category", "preset")
         theme = cat_themes.get(category, cat_themes["preset"])
 
@@ -81,24 +82,27 @@ def build():
         js_url = url.replace('\\', '\\\\').replace("'", "\\'")
         js_title = safe_title.replace("'", "\\'")
 
-        if is_studio:
+        if is_vip:
             series_label = "HÀNG MUA VIP"
             series_badge = "bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 text-white shadow-sm shadow-amber-500/25 border border-amber-300/40 font-sans tracking-wide"
             card_border = "border-amber-300/80 bg-gradient-to-b from-amber-50/25 to-white shadow-md shadow-amber-500/5 hover:border-amber-400 hover:shadow-amber-500/15"
             series_icon = '<i data-lucide="crown" class="w-3.5 h-3.5 text-yellow-200"></i>'
+            tier_keywords = "vip hàng mua bản quyền trả phí"
         else:
             series_label = "SHARE FREE"
             series_badge = "bg-slate-100 text-slate-700 border border-slate-200 font-sans"
             card_border = "border-slate-200/90 bg-white hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5"
             series_icon = '<i data-lucide="gift" class="w-3.5 h-3.5 text-slate-400"></i>'
+            tier_keywords = "free chia sẻ miễn phí cộng đồng"
 
-        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')} {series_label} vip hàng mua bản quyền free chia sẻ"
+        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')} {series_label} {tier_keywords}"
         safe_search = html_escape.escape(raw_search, quote=True)
 
         cards_html += f"""
         <!-- Resource Card #{code} -->
         <article class="resource-card group relative flex flex-col justify-between {card_border} rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5"
                  data-series="{series}"
+                 data-tier="{tier}"
                  data-cat="{category}"
                  data-search="{safe_search}">
             
@@ -335,17 +339,17 @@ def build():
                         class="series-tab active px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-slate-900 transition-all">
                     Tất Cả ({total_count})
                 </button>
-                <button onclick="filterBySeries('studio')" data-series="studio"
+                <button onclick="filterBySeries('vip')" data-series="vip"
                         class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-bold text-amber-800 hover:text-amber-900 transition-all flex items-center gap-1.5">
                     <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-500"></i>
                     <span>💎 Hàng Mua VIP</span>
-                    <span class="px-1.5 py-0.2 rounded-full bg-amber-200/90 text-amber-900 text-[10px] font-mono font-extrabold">{studio_count}</span>
+                    <span class="px-1.5 py-0.2 rounded-full bg-amber-200/90 text-amber-900 text-[10px] font-mono font-extrabold">{vip_count}</span>
                 </button>
-                <button onclick="filterBySeries('lab')" data-series="lab"
+                <button onclick="filterBySeries('free')" data-series="free"
                         class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
                     <i data-lucide="gift" class="w-3.5 h-3.5 text-slate-500"></i>
                     <span>🎁 Share Free</span>
-                    <span class="px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-700 text-[10px] font-mono font-bold">{lab_count}</span>
+                    <span class="px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-700 text-[10px] font-mono font-bold">{free_count}</span>
                 </button>
             </div>
 
@@ -432,11 +436,11 @@ def build():
             let visible = 0;
 
             cards.forEach(card => {{
-                const cardSeries = card.getAttribute('data-series');
+                const cardTier = card.getAttribute('data-tier');
                 const cardCat = card.getAttribute('data-cat');
                 const cardSearch = (card.getAttribute('data-search') || '').toLowerCase();
 
-                const matchSeries = (currentSeries === 'all' || cardSeries === currentSeries);
+                const matchSeries = (currentSeries === 'all' || cardTier === currentSeries);
                 const matchCategory = (currentCategory === 'all' || cardCat === currentCategory);
                 const matchSearch = (!searchQuery || cardSearch.includes(searchQuery));
 
