@@ -81,15 +81,23 @@ def build():
         js_url = url.replace('\\', '\\\\').replace("'", "\\'")
         js_title = safe_title.replace("'", "\\'")
 
-        series_label = "Studio Series" if is_studio else "Lab Tool"
-        series_badge = "bg-slate-900 text-white font-mono" if is_studio else "bg-slate-100 text-slate-700 border border-slate-200 font-mono"
+        if is_studio:
+            series_label = "HÀNG MUA VIP"
+            series_badge = "bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 text-white shadow-sm shadow-amber-500/25 border border-amber-300/40 font-sans tracking-wide"
+            card_border = "border-amber-300/80 bg-gradient-to-b from-amber-50/25 to-white shadow-md shadow-amber-500/5 hover:border-amber-400 hover:shadow-amber-500/15"
+            series_icon = '<i data-lucide="crown" class="w-3.5 h-3.5 text-yellow-200"></i>'
+        else:
+            series_label = "SHARE FREE"
+            series_badge = "bg-slate-100 text-slate-700 border border-slate-200 font-sans"
+            card_border = "border-slate-200/90 bg-white hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5"
+            series_icon = '<i data-lucide="gift" class="w-3.5 h-3.5 text-slate-400"></i>'
 
-        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')} {series_label}"
+        raw_search = f"{code} #{code} {item.get('title', '')} {item.get('desc', '')} {item.get('tag', '')} {item.get('format', '')} {item.get('platform', '')} {series_label} vip hàng mua bản quyền free chia sẻ"
         safe_search = html_escape.escape(raw_search, quote=True)
 
         cards_html += f"""
         <!-- Resource Card #{code} -->
-        <article class="resource-card group relative flex flex-col justify-between bg-white border border-slate-200/90 rounded-2xl p-5 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-300 hover:-translate-y-0.5"
+        <article class="resource-card group relative flex flex-col justify-between {card_border} rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5"
                  data-series="{series}"
                  data-cat="{category}"
                  data-search="{safe_search}">
@@ -102,8 +110,9 @@ def build():
                 <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-3">
                     <div class="flex items-center gap-2">
                         <span class="font-mono text-sm font-bold text-slate-900">#{code}</span>
-                        <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold {series_badge}">
-                            {series_label}
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-bold {series_badge}">
+                            {series_icon}
+                            <span>{series_label}</span>
                         </span>
                     </div>
                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border {theme['badge']}">
@@ -321,19 +330,21 @@ def build():
             </div>
 
             <!-- Series Switcher (Segmented Control) -->
-            <div class="flex items-center gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200 self-start md:self-auto">
+            <div class="flex items-center gap-1.5 p-1 rounded-xl bg-slate-100 border border-slate-200 self-start md:self-auto">
                 <button onclick="filterBySeries('all')" data-series="all"
-                        class="series-tab active px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-slate-900 transition-all">
+                        class="series-tab active px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:text-slate-900 transition-all">
                     Tất Cả ({total_count})
                 </button>
                 <button onclick="filterBySeries('studio')" data-series="studio"
-                        class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
-                    <span>Studio</span>
-                    <span class="px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-700 text-[10px] font-mono font-bold">{studio_count}</span>
+                        class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-bold text-amber-800 hover:text-amber-900 transition-all flex items-center gap-1.5">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>💎 Hàng Mua VIP</span>
+                    <span class="px-1.5 py-0.2 rounded-full bg-amber-200/90 text-amber-900 text-[10px] font-mono font-extrabold">{studio_count}</span>
                 </button>
                 <button onclick="filterBySeries('lab')" data-series="lab"
-                        class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
-                    <span>Lab</span>
+                        class="series-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
+                    <i data-lucide="gift" class="w-3.5 h-3.5 text-slate-500"></i>
+                    <span>🎁 Share Free</span>
                     <span class="px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-700 text-[10px] font-mono font-bold">{lab_count}</span>
                 </button>
             </div>
